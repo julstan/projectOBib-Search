@@ -1,0 +1,16 @@
+<?php return array (
+  'api.submissions.403.unpublishedIssues' => 'Sie haben keine Berechtigung, unveröffentlichte Ausgaben zu sehen.',
+  'api.publications.403.submissionsDidNotMatch' => 'Die Publikation, die Sie suchen, ist nicht Teil dieser EInreichung.',
+  'api.publications.403.contextsDidNotMatch' => 'Die Publikation, die Sie suchen, ist nicht Teil dieser Zeitschrift.',
+  'api._payments.400.invalidPaymentMethod' => 'Die von Ihnen gewählte Zahlungsmethode wird nicht unterstützt.',
+  'api.emailTemplates.403.notAllowedChangeContext' => 'Sie haben keine Berechtigung diese E-Mail-Vorlage zu einer anderen Zeitschrift zu verschieben.',
+  'api.contexts.404.contextNotFound' => 'Die Zeitschrift, nach der Sie suchen, wurde nicht gefunden.',
+  'api.contexts.403.notAllowedDelete' => 'Sie haben keine Berechtigung diese Zeitschrift zu löschen.',
+  'api.contexts.403.notAllowedEdit' => 'Sie haben keine Berechtigung diese Zeitschrift zu ändern.',
+  'api.contexts.403.requiresContext' => 'Sie können diese Zeitschrift nicht von der site-wide API aus ändern.',
+  'api.contexts.403.contextsDidNotMatch' => 'Sie können diese Zeitschrift nicht ansehen oder ändern, außer Sie stellen eine Anfrage an die API der Zeitschrift oder die site-wide API.',
+  'api.contexts.403.notAllowed' => 'Sie haben keine Berechtigung diese Zeitschrift anzusehen.',
+  'api.contexts.403.requestedDisabledContexts' => 'Sie können nur Zeitschriften ansehen die freigeschaltet sind.',
+  'api.submissions.403.contextRequired' => 'Um eine Einreichung zu erstellen oder zu ändern, müssen Sie eine Anfrage an den API endpoint der Zeitschrift stellen.',
+  'api.submissions.403.cantChangeContext' => 'Sie können die Zeitschrift einer Einreichung nicht ändern.',
+);
