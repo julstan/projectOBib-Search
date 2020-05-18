@@ -1,4 +1,4 @@
-# Open Journal Systems (OJS)
+# Open Journal Systems (OJS test)
 
 > Open Journal Systems (OJS) has been developed by the Public Knowledge Project. For general information about OJS and other open research systems, visit the [PKP web site][pkp].
 
