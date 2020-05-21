@@ -1,0 +1,258 @@
+/**
+ * @file plugins/themes/bootstrap3/index.less
+ *
+ * Copyright (c) 2014-2017 Simon Fraser University Library
+ * Copyright (c) 2003-2017 John Willinsky
+ * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ *
+ * @brief Bootstrap 3 theme stylesheet. This is the base styles that must be
+ *   included for any theme.
+ *
+ */
+
+@import "../bootstrap/less/bootstrap.less";
+
+// Collapse margins on the site name in the header
+.navbar-header .site-name {
+    margin: 0;
+}
+
+// Resize the logo in the header
+.navbar-brand-logo img {
+    max-height: 100%;
+    width: auto;
+}
+
+// Set color of links in navbar
+.navbar-default .nav > li > a {
+    color: @navbar-default-link-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: @navbar-default-link-hover-color;
+        background: @navbar-default-link-hover-bg;
+    }
+
+    &:disabled {
+        color: @navbar-default-link-disabled-color;
+        background: @navbar-default-link-disabled-bg;
+    }
+}
+
+// Page header subtitles
+.page-header small {
+    display: block;
+    margin-top: 0.5em;
+}
+
+// Wrap homepage journal description and additional content in margins
+.pkp_page_index .journal-description,
+.pkp_page_index .additional_content {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+// Cap the height of an issue thumbnail image
+.issue-toc {
+
+    img {
+        max-height: 25em;
+    }
+}
+
+.article-summary .media-heading small {
+  font-size: 85%;
+}
+
+.article-details {
+
+    // Add space below authors on article page
+    .authors {
+        margin-bottom: 2em;
+    }
+
+  .author + .author {
+    margin-top: 0.5em;
+  }
+
+    .download .btn {
+      margin: 0.5em 0;
+      display: block;
+    }
+
+    // Add space between citation output and list of citation formats
+    #citationOutput {
+        margin-bottom: @panel-body-padding;
+        word-wrap: break-word;
+    }
+
+    // Hide the bibliography number produced by some CSL styles
+    .csl-left-margin {
+        display: none;
+    }
+}
+
+.article-sidebar {
+
+    // Ensure doi link doesn't extend beyond container
+    .doi {
+        word-wrap: break-word;
+    }
+}
+
+// Because we want to float the search right when the header is not collapsed
+// Why you no give us pull-md-right bootstrap?
+.pull-md-right {
+
+    @media(min-width: @screen-md) {
+        float: right;
+    }
+}
+
+// Override <h*> styles in media headings so that we can preserve accessible
+// heading structure without distorting the media style
+.media-heading h1,
+.media-heading h2,
+.media-heading h3,
+.media-heading h4,
+.media-heading h5,
+.media-heading h6,
+h1.media-heading,
+h2.media-heading,
+h3.media-heading,
+h4.media-heading,
+h5.media-heading,
+h6.media-heading {
+    font-size: @font-size-large; // Bootstrap variable
+}
+
+// Adjust lead text in media headings relative to the <h*> styles above
+.media .lead {
+    font-size: @font-size-base; // Bootstrap variable
+}
+
+// Media elements need a little bit more spacing in almost all themes
+.media {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+// Set a max size for media list thumbnails
+.media-left img {
+    max-width: 128px;
+}
+
+// Apply .panel and .list-group styling to  block output with lists
+.pkp_block {
+    &:extend(.panel);
+    &:extend(.panel-default);
+
+    .title {
+        &:extend(.panel-heading);
+        &:extend(.panel-default > .panel-heading);
+        display: block;
+    }
+
+    ul {
+        &:extend(.list-group);
+        &:extend(.panel > .list-group);
+
+        li {
+            &:extend(.list-group-item);
+            &:extend(.panel > .list-group .list-group-item);
+        }
+    }
+
+    .content {
+      &:extend(.panel-body);
+    }
+}
+
+// Apply bootstrap table style to .cmp_table elements
+.cmp_table {
+  &:extend(.table all);
+}
+
+// Apply .btn styles to makeSubmission block plugin
+.pkp_block.block_make_submission {
+
+    a {
+        &:extend(.btn);
+        &:extend(.btn-default);
+    }
+}
+
+// Style the footer
+footer[role="contentinfo"] {
+    background: @gray-lighter; // bootstrap variable
+    padding: 2em;
+    margin-top: 4em;
+}
+
+// Style the PDF and HTML view
+.header_view {
+	z-index: 2;
+	background: @navbar-default-bg;
+  &:extend(.navbar all);
+  &:extend(.navbar-default all);
+
+  a {
+    display: inline-block;
+    padding: @navbar-padding-vertical @navbar-padding-horizontal;
+    color: @navbar-default-link-color;
+
+    &:hover,
+    &:focus {
+        color: @navbar-default-link-hover-color;
+        background: @navbar-default-link-hover-bg;
+    }
+
+    &:active {
+        color: @navbar-default-link-active-color;
+        background: @navbar-default-link-active-bg;
+    }
+
+    &:disabled {
+        color: @navbar-default-link-disabled-color;
+        background: @navbar-default-link-disabled-bg;
+    }
+  }
+
+  .return,
+  .download .label {
+    &:extend(.sr-only all);
+  }
+
+  .download {
+    &:extend(.pull-right all);
+  }
+}
+
+.galley_view {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow-y: hidden;
+
+	iframe {
+		width: 100%;
+		height: 100%;
+		padding-top: @navbar-height;
+		border: none;
+	}
+}
+
+// Hide the citation number in the CSL output
+#citationOutput .csl-left-margin {
+  display: none;
+}
+
+// Forms
+//
+// Apply to a span that marks required form fields.
+.form-control-required {
+  color: @brand-danger;
+}

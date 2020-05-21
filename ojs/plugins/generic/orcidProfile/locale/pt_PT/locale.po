@@ -1,0 +1,181 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-11-19T11:05:17+00:00\n"
+"PO-Revision-Date: 2020-01-30 18:48+0000\n"
+"Last-Translator: Carla Marques <carla.marques@sdum.uminho.pt>\n"
+"Language-Team: Portuguese (Portugal) <http://translate.pkp.sfu.ca/projects/"
+"plugins/orcid-profile-plugin/pt_PT/>\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 3.9.1\n"
+
+msgid "plugins.generic.orcidProfile.displayName"
+msgstr "Plugin Perfil ORCID"
+
+msgid "plugins.generic.orcidProfile.description"
+msgstr "Permite a importação do perfil de autor do ORCID."
+
+msgid "plugins.generic.orcidProfile.instructions"
+msgstr "Pode popular este formulário com informação do perfil ORCID. Insira o seu endereço de email ou o ID ORCID associado ao seu perfil ORCID, depois clique em \"Submeter\"."
+
+msgid "plugins.generic.orcidProfile.noData"
+msgstr "Não foi possível encontrar dados do ORCID."
+
+msgid "plugins.generic.orcidProfile.emailOrOrcid"
+msgstr "Email ou ID ORCID:"
+
+msgid "plugins.generic.orcidProfile.submitAction"
+msgstr "Submeter"
+
+msgid "plugins.generic.orcidProfile.manager.orcidProfileSettings"
+msgstr "Configurações do Perfil ORCID"
+
+msgid "plugins.generic.orcidProfile.manager.settings.description"
+msgstr "Configure a API ORCID para importar o perfil ORCID no perfil da revista."
+
+msgid "plugins.generic.orcidProfile.manager.settings.orcidProfileAPIPath"
+msgstr "API ORCID"
+
+msgid "plugins.generic.orcidProfile.manager.settings.orcidProfileAPIPath.public"
+msgstr "Público"
+
+msgid "plugins.generic.orcidProfile.manager.settings.orcidProfileAPIPath.publicSandbox"
+msgstr "Ambiente de testes Público"
+
+msgid "plugins.generic.orcidProfile.manager.settings.orcidProfileAPIPath.member"
+msgstr "Membro"
+
+msgid "plugins.generic.orcidProfile.manager.settings.orcidProfileAPIPath.memberSandbox"
+msgstr "Ambiente de testes para Membros"
+
+msgid "plugins.generic.orcidProfile.manager.settings.orcidClientId"
+msgstr "ID de Cliente"
+
+msgid "plugins.generic.orcidProfile.manager.settings.orcidClientSecret"
+msgstr "Chave Secreta do Cliente"
+
+msgid "plugins.generic.orcidProfile.author.submission"
+msgstr "Submissão ORCID"
+
+msgid "plugins.generic.orcidProfile.author.submission.success"
+msgstr "A sua publicação foi associada com sucesso ao seu ID ORCID."
+
+msgid "plugins.generic.orcidProfile.author.submission.failure"
+msgstr "A sua submissão não foi associada com sucesso com o seu ID ORCID. Contacte o editor-gestor da revista com o seu nome, ID ORCID e detalhes da submissão."
+
+msgid "plugins.generic.orcidProfile.authFailure"
+msgstr "O OJS não conseguiu comunicar com o serviço ORCID. Contacte o editor-gestor da revista com o nome, ORCID iD, e detalhes da submissão."
+
+msgid "plugins.generic.orcidProfile.fieldset"
+msgstr "ORCID"
+
+msgid "plugins.generic.orcidProfile.connect"
+msgstr "Criar ou Conetar o seu ORCID iD"
+
+msgid "plugins.generic.orcidProfile.manager.settings.title"
+msgstr "Configurações da API ORCID"
+
+msgid "plugins.generic.orcidProfile.manager.settings.hidden"
+msgstr "oculto"
+
+msgid "plugins.generic.orcidProfile.manager.settings.description.globallyconfigured"
+msgstr "A API ORCID foi configurada globalmente pelo servidor. As seguintes credenciais foram guardadas."
+
+msgid "plugins.generic.orcidProfile.manager.settings.orcidScope"
+msgstr "Âmbito de acesso ao perfil"
+
+msgid "plugins.generic.orcidProfile.manager.settings.mailSectionTitle"
+msgstr "Configurações de e-mail"
+
+msgid "plugins.generic.orcidProfile.manager.settings.logSectionTitle"
+msgstr "Log de pedido ORCID"
+
+msgid "plugins.generic.orcidProfile.manager.settings.logLevel.help"
+msgstr "Selecione a quantidade de logs de saída escritos pelo plugin"
+
+msgid "plugins.generic.orcidProfile.manager.settings.logLevel.error"
+msgstr "Erros"
+
+msgid "plugins.generic.orcidProfile.manager.settings.logLevel.all"
+msgstr "Todos"
+
+msgid "plugins.generic.orcidProfile.author.accessDenied"
+msgstr "Acesso ao ORCID foi negado em"
+
+msgid "plugins.generic.orcidProfile.author.accessTokenStored"
+msgstr "Acesso ao registo ORCID concedido com âmbito {$orcidAccessScope}, válido até"
+
+msgid "plugins.generic.orcidProfile.author.requestAuthorization"
+msgstr "Enviar e-mail para solicitar autorização ORCID ao contribuidor"
+
+msgid "plugins.generic.orcidProfile.author.deleteORCID"
+msgstr "Eliminar ORCID iD e acesso token!"
+
+msgid "plugins.generic.orcidProfile.author.orcidEmptyNotice"
+msgstr "Ver abaixo para solicitar ORCID iD autenticado"
+
+msgid "plugins.generic.orcidProfile.author.unauthenticated"
+msgstr "ORCID iD não autenticado! Solicite autenticação ao contribuidor."
+
+msgid "plugins.generic.orcidProfile.verify.title"
+msgstr "Autorização ORCID"
+
+msgid "plugins.generic.orcidProfile.verify.sendSubmissionToOrcid.success"
+msgstr "A submissão foi adicionada ao seu registo ORCID."
+
+msgid "plugins.generic.orcidProfile.verify.sendSubmissionToOrcid.failure"
+msgstr "A submissão não foi adicionada ao seu registo ORCID."
+
+msgid "plugins.generic.orcidProfile.verify.sendSubmissionToOrcid.notpublished"
+msgstr "A submissão será adicionada ao seu registo ORCID durante a publicação."
+
+msgid "plugins.generic.orcidProfile.verify.success"
+msgstr "O seu ORCID iD foi verificado e associado à submissão com sucesso."
+
+msgid "plugins.generic.orcidProfile.verify.failure"
+msgstr "O seu ORCID iD não pode ser verificado. O link já não se encontra válido."
+
+msgid "plugins.generic.orcidProfile.verify.duplicateOrcid"
+msgstr "Esta submissão já tem um ORCID iD associado."
+
+msgid "plugins.generic.orcidProfile.verify.denied"
+msgstr "Não autorizou acesso ao seu registo ORCID."
+
+msgid "plugins.generic.orcidProfile.failure.contact"
+msgstr "Contacte o editor-gestor informando o seu nome, ORCID iD, e detalhes da sua submissão."
+
+msgid "plugins.generic.orcidProfile.authorise"
+msgstr "Autorize e conecte o seu ORCID iD"
+
+msgid "plugins.generic.orcidProfile.about.title"
+msgstr "O que é o ORCID?"
+
+msgid "plugins.generic.orcidProfile.about.orcidExplanation"
+msgstr "ORCID é uma organização não lucrativa independente que fornece um identificador persistente - um ORCID iD - que o distingue dos outros investigadores e um mecanismo para ligar os seus resultados de investigação e atividades ao seu iD. O ORCID está integrado em muitos sistemas usados pelos editores, financiadores, instituições, e outros serviços relacionados com a investigação. Saiba mais em <a href=\"https://orcid.org\">orcid.org</a>."
+
+msgid "plugins.generic.orcidProfile.about.howAndWhy.title"
+msgstr "Como e porquê recolhemos os iDs ORCID?"
+
+msgid "plugins.generic.orcidProfile.about.howAndWhy"
+msgstr ""
+"Esta revista está a recolher o seu ORCID iD para que possamos [adicionar finalidade e distinguir entre Membro da API e API pública].\n"
+"\tQuando clica em “Autorizo” no popup do ORCID, iremos pedir-lhe que partilhe o seu iD usando um processo autenticado: ou para <a href=\"https://support.orcid.org/hc/en-us/articles/360006897454\">obter um ORCID iD</a> ou, se já tiver, <a href=\"https://support.orcid.org/hc/en-us/categories/360000661673\">entrar na sua conta ORCID</a>, dando-nos assim acesso ao seu ORCID iD. Fazemos isto para assegurarmo-nos que se encontra corretamente identificado e conectado de forma segura ao seu ORCID iD.<br>\n"
+"\tSaiba mais em <a href=\"https://orcid.org/blog/2017/02/20/whats-so-special-about-signing\">Porque é tão importante fazer login.</a>"
+
+msgid "plugins.generic.orcidProfile.about.display.title"
+msgstr "Onde ficam disponíveis os ORCID iDs?"
+
+msgid "plugins.generic.orcidProfile.about.display"
+msgstr ""
+"Para confirmar que tem usado o seu iD e que se encontra autenticado, disponibilizamos o ícon do ORCID iD <img src=\"https://orcid.org/sites/default/files/images/orcid_16x16(1).gif\" alt=\"iD icon\" width=\"16\" height=\"16\" border=\"0\"> ao lado do seu nome na página do artigo da sua submissão e no seu perfil de utilizador público.<br>\n"
+"\t\tSaiba mais em <a href=\"https://orcid.org/blog/2013/02/22/how-should-orcid-id-be-displayed\">Como deve ser disponibilizado o ORCID iD.</a>"
+
+msgid "plugins.generic.orcidProfile.manager.settings.sendMailToAuthorsOnPublication"
+msgstr ""
+"Enviar um email a solicitar autorização ao ORCID dos autores quando um "
+"artigo for aceite, ou seja enviado para edição de texto"

@@ -1,0 +1,547 @@
+/*Stylesheet fuer o-bib*/
+
+/*Image-Darstellung in den HTML-files:*/
+
+
+/*Webfont lato festlegen */
+.css-selector {
+	font-family: 'Lato', sans-serif;
+}
+
+
+/* entfernt den grauen Rand um die Cover der Ausgaben */
+.thumbnail {
+	border: 0;
+}
+
+img {
+border: 0;
+Max-width: 100%;
+}
+
+/* Anzeige der Zusatzdateien */
+a.galley-link.btn.btn-default.file, a.galley-link.btn.btn-default.pdf {
+	font-size: 90%;
+	overflow: hidden;
+	text-align: left;
+	padding: 4px 2px 4px 2px;
+	word-wrap: normal;
+	text-overflow: ellipsis;
+}
+/* Links in den Hinweistexten deutlicher hervorheben */
+a.advice {
+	text-decoration: underline;
+}
+
+p.lead.description {
+	font-size: 100%;
+}
+
+.show {display: list-item !important;}
+
+/*li.show {
+	list-style-type: none;
+    padding-left: 20px;
+    margin-left: 25px;
+    background-image:url('/public/site/images/bullet_7_grey.png');
+    background-repeat:no-repeat;
+    background-position: 0% 10%;
+	padding-bottom: 1em;
+}*/
+
+
+/* Header-Graphik wird über template eingefügt, deshalb muss das Menü nach oben gezogen werden, ansonsten ist der Header zu hoch */
+#main-navigation{
+	margin-top: -15px;
+}
+
+/* Header-Graphik wird über template eingefügt, deshalb muss das Menü nach oben gezogen werden, ansonsten ist der Header zu hoch */
+div.pull-md-right{
+	margin-top: -15px;	
+}
+
+/* Titel des Journals auskommentieren, weil Logo im Header */
+a.navbar-brand{
+	display: none;
+}
+
+/* Titel des Journals ist auf allen Seiten gleich formatiert */
+a.navbar-brand{
+	font-size: 25px;
+	font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
+	font-weight: 500;
+}
+
+
+/* Breaking Points des Informationsblocks anpassen*/
+@media only screen and (max-width: 990px){
+	#sidebar {
+		width: 75%;
+	}
+}
+
+/* fett markiertes "o-bib" in blau */
+.obib{
+	color: #0070B9;
+	}
+
+/*Download-Button fuer Images in HTML-files auskommentieren
+a.galley-link.btn.btn-default.file {
+	display: none;
+}
+
+/*PKP-Logo im Footer auskommentieren:*/
+footer img.img-responsive {
+	display: none;
+}
+
+
+/* Formatiert die Ziffern der Ueberschriften in den Artikeltexten 
+h2.chapter_num>span, h3.chapter_num>span {
+	font-weight: 500;
+}*/
+
+
+/* Artikel-summary: Umbruch bei Autorennamen erzwingen */
+.orcid::after {
+	content: "\A";
+	white-space: pre;
+}
+
+
+/*HTML-Anpassungen*/
+p.Kolumnentitel {
+	font-size: 39px;
+	font-family: "Lato", "News Cycle", "Arial Narrow Bold", sans-serif;
+	font-weight: 700;
+	line-height: 1.1;
+	color: #000;
+}
+
+h1.article_title {
+	font-size: 39px;
+	font-family: "Lato", "News Cycle", "Arial Narrow Bold", sans-serif;
+	font-weight: 700;
+	line-height: 1.1;
+	color: #000;
+}
+
+p.Titel-1 {
+	font-size: 32px;
+	font-family: "Lato", "News Cycle", "Arial Narrow Bold", sans-serif;
+	font-weight: 700;
+	line-height: 1.1;
+	color: #000;
+}
+
+div[id] p.Titel-3{
+	font-size: 32px;
+	font-family: "Lato", "News Cycle", "Arial Narrow Bold", sans-serif;
+	font-weight: 700;
+	line-height: 1.1;
+	color: #000;
+}
+
+div[id] p.Titel-4{
+	font-size: 26px;
+	font-family: "Lato", "News Cycle", "Arial Narrow Bold", sans-serif;
+	font-weight: 700;
+	line-height: 1.1;
+	color: #000;
+}
+
+p.Autor {
+	font-style: italic;
+	font-family: Lato, Georgia, "Times New Roman", Times, serif;
+	font-size: 15px;
+	line-height: 1.42857143;
+	color: #777;
+	background-color: #fff;
+}
+
+/*funktioniert leider nicht für dieses HTML: https://ojs1604.ub.uni-muenchen.de/article/view/2016H3S54-59/5497 */
+p.Fliesstext-ohne-Abstand {
+	font-style: strong;
+	font-family: Lato, Georgia, "Times New Roman", Times, serif;
+	font-size: 15px;
+	line-height: 1.42857143;
+	color: #777;
+	background-color: #fff;
+}
+
+div[id] p.Fliesstext {
+	font-family: Lato, Georgia, "Times New Roman", Times, serif;
+	font-size: 15px;
+	line-height: 1.42857143;
+	color: #777;
+	background-color: #fff;
+}
+
+div[id] li.Aufzaehlung {
+	font-family: Lato, Georgia, "Times New Roman", Times, serif;
+	font-size: 15px;
+	line-height: 1.42857143;
+	color: #777;
+	background-color: #fff;
+}
+
+div[id] li.Aufzaehlung-letzter-Absatz {
+	font-family: Lato, Georgia, "Times New Roman", Times, serif;
+	font-size: 15px;
+	line-height: 1.42857143;
+	color: #777;
+	background-color: #fff;
+}
+
+div[id] p.Fussnote-eingerueckt {
+	font-family: Lato, Georgia, "Times New Roman", Times, serif !important;
+	font-size: 12px;
+	line-height: 1.42857143;
+	color: #777;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+
+/*funktioniert leider nicht für dieses HTML: https://ojs1604.ub.uni-muenchen.de/article/view/2016H3S54-59/5497 */
+div.body_blankline {
+	font-family: Lato, Georgia, "Times New Roman", Times, serif;
+	font-size: 15px;
+	line-height: 1.42857143;
+	color: #777;
+	
+}
+
+/* Formatierung für erste Überschrift */
+div[id] .article_title {
+	font-size: 39px;
+	font-family: "Lato", "News Cycle", "Arial Narrow Bold", sans-serif;
+	font-weight: 700;
+	line-height: 1.1;
+	color: #000;
+}
+
+/* Formatierung für Fließtext */
+div[id] .body_blankline{
+	font-family: Lato, Georgia, "Times New Roman", Times, serif;
+	font-size: 15px;
+	line-height: 1.42857143;
+	color: #777;
+	background-color: #fff;
+	box-sizing: border-box;
+ }
+
+/*Formatierung für zweite Überschrift */
+div[id] .article_subtitle {
+	font-size: 32px;
+	font-family: "Lato", "News Cycle", "Arial Narrow Bold", sans-serif !important;
+	margin-top: 21px;
+	margin-bottom: 10.5px;
+	font-weight: 700;
+	line-height: 1.1;
+	color: #000;
+}
+
+/*Formatierung einer Zwischenüberschrift */
+div[id] .chapter {
+	font-size: 32px !important;
+	font-family: "Lato", "News Cycle", "Arial Narrow Bold", sans-serif !important;
+	margin-top: 21px;
+	margin-bottom: 10.5px;
+	font-weight: 700;
+	line-height: 1.1;
+	color: #000;
+}
+
+/*Formatierung einer Zwischenüberschrift */
+p.chapter_num {
+	font-size: 18px;
+	font-family: "Lato", "News Cycle", "Arial Narrow Bold", sans-serif !important;
+	margin-top: 21px !important;
+	margin-bottom: 10.5px !important;
+	font-weight: bold;
+	line-height: 1.1;
+	color: #000;
+}
+
+/*Formatierung von Listen */
+div[id] .list_end {
+	font-family: Lato, Georgia, "Times New Roman", Times, serif;
+	font-size: 15px;
+	line-height: 1.42857143;
+	color: #777;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+
+/*Formatierung eines abstract-Titels */
+div[id] .abstract_title {
+	font-family: Lato, Georgia, "Times New Roman", Times, serif;
+	font-size: 15px;
+	line-height: 1.42857143;
+	color: #777;
+	background-color: #fff;
+	box-sizing: border-box;
+	font-weight: bold;
+}
+
+
+/*abstract-Titel vor Ausgabe 3/2015 */
+p.Abstract-Titel {
+	font-family: Lato, Georgia, "Times New Roman", Times, serif;
+	font-size: 15px;
+	line-height: 1.42857143;
+	color: #777;
+	background-color: #fff;
+	box-sizing: border-box;
+	font-weight: bold;
+}
+
+
+/*Formatierung eines abstracts */
+div[id] .abstract {
+	font-family: Lato, Georgia, "Times New Roman", Times, serif;
+	font-size: 15px;
+	line-height: 1.42857143;
+	color: #777;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+
+/*Formatierung der meta-info */
+div[id] .meta_info {
+	font-family: Lato, Georgia, "Times New Roman", Times, serif;
+	font-size: 15px;
+	line-height: 1.42857143;
+	color: #777;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+
+/*Formatierung der hochgestellten Zeichen */
+div[id] .footnote-anchor, a._idFootnoteLink._idGenColorInherit {
+	font-family: Lato, Georgia, "Times New Roman", Times, serif !important;
+	vertical-align: 4px; 
+	font-size: 80%;
+	line-height: 1.42857143;
+	color: #777;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+
+a.footnote-link, a._idFootnoteAnchor._idGenColorInherit{
+	font-family: Lato, Georgia, "Times New Roman", Times, serif !important;
+	vertical-align: +6px; 
+	font-size: 70%;
+	color: #777;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+
+/*Formatierung der Fußnoten */
+div[id] .annotations {
+	font-family: Lato, Georgia, "Times New Roman", Times, serif !important;
+	font-size: 12px;
+	line-height: 1.42857143;
+	color: #777;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+
+/*Fußnotenüberschrift vor Ausgabe 3/2015 */
+p.Titel-3 {
+	font-family: Lato, Georgia, "Times New Roman", Times, serif;
+	font-size: 15px;
+	line-height: 1.42857143;
+	color: #777;
+	background-color: #fff;
+	box-sizing: border-box;
+	font-weight: bold;
+}
+
+
+/*Fußnote vor Ausgabe 3/2015 */
+p.Fussnote-eingerueckt {
+	font-family: Lato, Georgia, "Times New Roman", Times, serif !important;
+	font-size: 12px;
+	line-height: 1.42857143;
+	color: #777;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+
+/* Formatierung für Fließtext */
+div[id] .list_literature{
+	font-family: Lato, Georgia, "Times New Roman", Times, serif;
+	font-size: 15px;
+	list-style-type: none;
+	list-style-position: outside;
+	line-height: 1.42857143;
+	color: #777;
+ }
+
+/* Formatierung für Links mit Unterstreichung */
+div[id] .a, div.author_guidelines a{
+	text-decoration: underline;
+	color: #0000ff;
+ }
+
+span.Hyperlink{
+	text-decoration: underline;
+	color: #0000ff;
+}
+
+span.regular a{
+	text-decoration: underline;
+	color: #0000ff;
+}
+
+table.author_identification a{
+	text-decoration: underline;
+	color: #0000ff;
+}
+
+/* Formatierung von verschachtelten nummerierten Listen */
+
+ol.ebene1 {
+  counter-reset:listenpunkt_ebene1;
+  list-style-type:none;
+}
+ol.ebene1 li:before {
+  content: counter(listenpunkt_ebene1) ". ";
+  counter-increment:listenpunkt_ebene1;
+}
+ol.ebene2 {
+  counter-reset:listenpunkt_ebene2;
+  list-style-type:none;
+}
+ol.ebene2 li:before {
+  content: counter(listenpunkt_ebene1)"."counter(listenpunkt_ebene2,decimal) ". ";
+  counter-increment:listenpunkt_ebene2;
+}
+
+/* Formatierung für Firefox-Browser */
+ul.citation_formats_styles {
+	margin-left: 150px;
+}
+ul.citation_formats_styles li {
+	font-size: 1.0em;
+}
+
+/* Header-Graphik kann auch über css eingefügt werden, aber dann müssen die Breaking Points hier angepasst werden 
+header.navbar.navbar-default{
+	background-image: url(//ojs1604.ub.uni-muenchen.de/public/site/o-bib_banner_web_XL.png);
+	max-height: 75%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+@media only screen and (max-width: 1350px){
+	header.navbar.navbar-default{
+		background-image: url(//ojs1604.ub.uni-muenchen.de/public/site/o-bib_banner_web_L.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+	form.navbar-form.navbar-left{
+		padding-top: 110px;
+	}
+	
+	#main-navigation{
+	padding-top: 90px;
+	margin-top: 30px;
+	}
+	li.dropdown.open{
+	padding-top: 90px;
+	margin-top: 30px;
+	}
+}	
+
+@media only screen and (max-width: 1100px){
+	header.navbar.navbar-default{
+		background-image: url(//ojs1604.ub.uni-muenchen.de/public/site/o-bib_banner_web_S.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+
+	#main-navigation{
+	padding-top: 90px;
+	margin-top: 20px;
+	}
+	li.dropdown.open{
+	padding-top: 90px;
+	margin-top: 30px;
+	}
+}
+
+@media only screen and (max-width: 800px){
+	header.navbar.navbar-default{
+		background-image: url(//ojs1604.ub.uni-muenchen.de/public/site/o-bib_banner_web_S.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+
+	#main-navigation{
+	padding-top: 90px;
+	margin-top: 30px;
+	}
+	li.dropdown.open{
+	padding-top: 90px;
+	margin-top: 30px;
+	}
+}
+
+@media only screen and (max-width: 480px){
+	header.navbar.navbar-default{
+		background-image: none;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+
+	div.navbar-header{
+		background-image: url(//ojs1604.ub.uni-muenchen.de/public/site/o-bib_banner_web_S.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+
+	#main-navigation{
+		padding-top: 1px;
+		margin-top: 30px;
+	}
+	
+	form.navbar-form.navbar-left{
+		padding-top: 1px;
+	}
+	
+	#nav-menu.navbar-collapse.collapse.in{
+		padding-top: 1px;
+	}
+}
+*/
+table.issue_ob {
+	border-collapse: collapse;
+}
+
+td.issue_ob {
+	border: 0px;
+	padding: 10px;
+	vertical-align: top;
+}
+
+table.issue {
+	border-collapse: collapse;
+}
+
+td.issue {
+	border: 1px solid #000;
+	padding: 10px;
+	vertical-align: top;
+}
+
+
+div.heft a { color: #0000ff; }
+div.heft a:link, div.heft a:visited { color: #0000ff; }
+div.heft a:active, div.heft a:hover { color: #0000ff; }
+
+/* Überschriften in Editor-Liste */
+h4.editors {
+	margin-top: 2em;
+}

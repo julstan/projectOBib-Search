@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-11-19T11:05:16+00:00\n"
+"PO-Revision-Date: 2019-11-19T11:05:16+00:00\n"
+"Language: \n"
+
+msgid "plugins.generic.orcidProfile.displayName"
+msgstr "Plugin pro profil ORCID"
+
+msgid "plugins.generic.orcidProfile.description"
+msgstr "Umožňuje import informací o uživatelských profilech z ORCID."
+
+msgid "plugins.generic.orcidProfile.instructions"
+msgstr "Tento formulář můžete předvyplnit informacemi z profilu ORCID. Zadejte emailovou adresu nebo ORCID iD přidruženou k profilu ORCID a klikněte na tlačítko Odeslat."
+
+msgid "plugins.generic.orcidProfile.noData"
+msgstr "Nelze získat z ORCID žádná data."
+
+msgid "plugins.generic.orcidProfile.emailOrOrcid"
+msgstr "Emailová adresa nebo ORCID iD:"
+
+msgid "plugins.generic.orcidProfile.manager.orcidProfileSettings"
+msgstr "Nastavení profilu ORCID"
+
+msgid "plugins.generic.orcidProfile.manager.settings.description"
+msgstr "Nakonfigurujte rozhraní ORCID API pro použití při stahování informací z profilu ORCID do profilu uživatele."
+
+msgid "plugins.generic.orcidProfile.manager.settings.orcidProfileAPIPath"
+msgstr "ORCID API"
+
+msgid "plugins.generic.orcidProfile.manager.settings.orcidProfileAPIPath.public"
+msgstr "Veřejný"
+
+msgid "plugins.generic.orcidProfile.manager.settings.orcidProfileAPIPath.publicSandbox"
+msgstr "Veřejné pískoviště"
+
+msgid "plugins.generic.orcidProfile.manager.settings.orcidProfileAPIPath.member"
+msgstr "Člen"
+
+msgid "plugins.generic.orcidProfile.manager.settings.orcidProfileAPIPath.memberSandbox"
+msgstr "Členské pískoviště"
+
+msgid "plugins.generic.orcidProfile.manager.settings.orcidClientId"
+msgstr "ID klienta:"
+
+msgid "plugins.generic.orcidProfile.manager.settings.orcidClientSecret"
+msgstr "\"Client Secret\" (tajemství klienta)"
+
+msgid "plugins.generic.orcidProfile.author.submission"
+msgstr "ORCID příspěvku"
+
+msgid "plugins.generic.orcidProfile.author.submission.success"
+msgstr "Váš příspěvek byl úspěšně přidružen k vaší ORDID iD."
+
+msgid "plugins.generic.orcidProfile.author.submission.failure"
+msgstr "Váš příspěvek nemohl být úspěšně přidružen k vašemu ORDID iD. Obraťte se na správce časopisu se svým jménem, ORCID ID a podrobnostmi o vašem příspěvku."
+
+msgid "plugins.generic.orcidProfile.authFailure"
+msgstr "Systém OJS nebyl schopen komunikovat se službou ORCID. Obraťte se na správce časopisu se svým jménem, ORCID iD a podrobnostmi o vašem příspěvku."
+
+msgid "plugins.generic.orcidProfile.fieldset"
+msgstr "ORCID"
+
+msgid "plugins.generic.orcidProfile.connect"
+msgstr "Vytvořte či připojte vaše ORCID iD"
