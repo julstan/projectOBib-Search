@@ -1,0 +1,51 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-11-19T11:06:14+00:00\n"
+"PO-Revision-Date: 2019-11-19T11:06:14+00:00\n"
+"Language: \n"
+
+msgid "plugins.reports.reviews.displayName"
+msgstr "Звіт про рецензування"
+
+msgid "plugins.reports.reviews.description"
+msgstr "Цей модуль дозволяє формувати звіти у форматі CSV зі списками призначень на рецензування рукописів, надісланих до журналу."
+
+msgid "plugins.reports.reviews.round"
+msgstr "Раунд"
+
+msgid "plugins.reports.reviews.submissionTitle"
+msgstr "Назва матеріалу"
+
+msgid "plugins.reports.reviews.submissionId"
+msgstr "ID матеріалу"
+
+msgid "plugins.reports.reviews.reviewer"
+msgstr "Рецензент"
+
+msgid "plugins.reports.reviews.dateAssigned"
+msgstr "Дата призначення"
+
+msgid "plugins.reports.reviews.dateNotified"
+msgstr "Дата інформування"
+
+msgid "plugins.reports.reviews.dateConfirmed"
+msgstr "Дата підтвердження"
+
+msgid "plugins.reports.reviews.dateCompleted"
+msgstr "Дата завершення"
+
+msgid "plugins.reports.reviews.dateReminded"
+msgstr "Дата нагадування"
+
+msgid "plugins.reports.reviews.recommendation"
+msgstr "Рекомендація"
+
+msgid "plugins.reports.reviews.comments"
+msgstr "Коментарі до матеріалу"
