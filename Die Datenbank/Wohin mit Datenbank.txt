@@ -1,0 +1,3 @@
+Die Datenbank muss einfach in das Verzeichnis gepackt werden (natürlich muss sie die vorherige ojs-Datenbank ersetzen):
+
+C:\xampp\mysql\data
