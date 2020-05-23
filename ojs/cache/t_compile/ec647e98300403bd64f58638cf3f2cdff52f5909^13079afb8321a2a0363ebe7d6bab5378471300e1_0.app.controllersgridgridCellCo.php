@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-23 11:12:11
+/* Smarty version 3.1.34-dev-7, created on 2020-05-23 17:16:18
   from 'app:controllersgridgridCellCo' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ec8e8eb95a1f1_36172529',
+  'unifunc' => 'content_5ec93e42715880_67451859',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '13079afb8321a2a0363ebe7d6bab5378471300e1' => 
     array (
       0 => 'app:controllersgridgridCellCo',
-      1 => 1590153804,
+      1 => 1590244069,
       2 => 'app',
     ),
   ),
@@ -21,8 +21,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:linkAction/linkAction.tpl' => 1,
   ),
 ),false)) {
-function content_5ec8e8eb95a1f1_36172529 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\saraf\\OneDrive\\Dokumente\\HdM\\Semester4\\obib\\htdocs\\projectOBib-Search\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
+function content_5ec93e42715880_67451859 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\saraf\\xampp\\htdocs\\projectOBib-Search\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
 ?>
 
 <?php $_smarty_tpl->_assignInScope('_label', $_smarty_tpl->tpl_vars['label']->value);?>

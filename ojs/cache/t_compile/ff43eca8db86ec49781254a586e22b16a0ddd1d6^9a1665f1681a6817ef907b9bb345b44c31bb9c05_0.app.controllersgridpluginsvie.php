@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-23 12:51:38
+/* Smarty version 3.1.34-dev-7, created on 2020-05-23 17:16:33
   from 'app:controllersgridpluginsvie' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ec9003a0033d0_27946526',
+  'unifunc' => 'content_5ec93e51dff1f0_32530540',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9a1665f1681a6817ef907b9bb345b44c31bb9c05' => 
     array (
       0 => 'app:controllersgridpluginsvie',
-      1 => 1590153804,
+      1 => 1590244069,
       2 => 'app',
     ),
   ),
@@ -22,8 +22,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:controllers/revealMore.tpl' => 2,
   ),
 ),false)) {
-function content_5ec9003a0033d0_27946526 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\saraf\\OneDrive\\Dokumente\\HdM\\Semester4\\obib\\htdocs\\projectOBib-Search\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
+function content_5ec93e51dff1f0_32530540 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\saraf\\xampp\\htdocs\\projectOBib-Search\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <div class="pkp_plugin_details">
 

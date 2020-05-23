@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-23 11:12:06
+/* Smarty version 3.1.34-dev-7, created on 2020-05-23 17:16:15
   from 'app:dashboardindex.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ec8e8e63d2558_16122384',
+  'unifunc' => 'content_5ec93e3f109d21_12929524',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a9f648fa76ca397b9d4cc4c6c88f9417b91e0ea8' => 
     array (
       0 => 'app:dashboardindex.tpl',
-      1 => 1590153805,
+      1 => 1590244070,
       2 => 'app',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:common/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5ec8e8e63d2558_16122384 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ec93e3f109d21_12929524 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("app:common/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('pageTitle'=>"navigation.submissions"), 0, false);
 ?>
 
