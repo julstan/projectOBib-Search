@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-22 22:21:39
+/* Smarty version 3.1.34-dev-7, created on 2020-05-23 11:27:49
   from 'app:controllerstabauthorDashb' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ec834539a6e05_23247968',
+  'unifunc' => 'content_5ec8ec95760286_77698107',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fc32d36e7a4ad3303ec79e51951776442360a0aa' => 
     array (
       0 => 'app:controllerstabauthorDashb',
-      1 => 1586500794,
+      1 => 1590153805,
       2 => 'app',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:authorDashboard/reviewRoundTab.tpl' => 1,
   ),
 ),false)) {
-function content_5ec834539a6e05_23247968 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ec8ec95760286_77698107 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['submission']->value->getStageId() >= @constant('WORKFLOW_STAGE_ID_EXTERNAL_REVIEW') && !$_smarty_tpl->tpl_vars['reviewRounds']->value->wasEmpty()) {?>
 	<?php $_smarty_tpl->_subTemplateRender("app:authorDashboard/reviewRoundTab.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('reviewRounds'=>$_smarty_tpl->tpl_vars['reviewRounds']->value,'reviewRoundTabsId'=>"externalReviewRoundTabs",'lastReviewRoundNumber'=>$_smarty_tpl->tpl_vars['lastReviewRoundNumber']->value), 0, false);
 ?>

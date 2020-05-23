@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-22 22:11:48
+/* Smarty version 3.1.34-dev-7, created on 2020-05-23 11:32:29
   from 'app:manageIssuesissuesTabs.tp' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ec83204771d47_03395257',
+  'unifunc' => 'content_5ec8edadf20095_39713057',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '648b388a99d388345b2ee9cc07ddc9dd3d5715c0' => 
     array (
       0 => 'app:manageIssuesissuesTabs.tp',
-      1 => 1586500703,
+      1 => 1590153847,
       2 => 'app',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ec83204771d47_03395257 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ec8edadf20095_39713057 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
  type="text/javascript">
 	// Attach the JS file tab handler.

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-22 22:11:54
+/* Smarty version 3.1.34-dev-7, created on 2020-05-23 11:32:39
   from 'app:controllersgridissuesform' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ec8320a154fd0_88897585',
+  'unifunc' => 'content_5ec8edb75d5ca4_29413494',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2c17a4e278715e5b42412e7ed69cb503620a23b5' => 
     array (
       0 => 'app:controllersgridissuesform',
-      1 => 1586500703,
+      1 => 1590153846,
       2 => 'app',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:linkAction/linkAction.tpl' => 1,
   ),
 ),false)) {
-function content_5ec8320a154fd0_88897585 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ec8edb75d5ca4_29413494 (Smarty_Internal_Template $_smarty_tpl) {
 echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['help'][0], array( array('file'=>"issue-management",'section'=>"edit-issue-data",'class'=>"pkp_help_tab"),$_smarty_tpl ) );?>
 
 <?php echo '<script'; ?>

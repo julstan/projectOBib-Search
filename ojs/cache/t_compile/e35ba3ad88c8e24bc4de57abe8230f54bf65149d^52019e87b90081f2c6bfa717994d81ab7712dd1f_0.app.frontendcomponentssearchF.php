@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-06 14:18:08
+/* Smarty version 3.1.34-dev-7, created on 2020-05-23 11:34:49
   from 'app:frontendcomponentssearchF' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5eb2c72023fc21_63715765',
+  'unifunc' => 'content_5ec8ee39ade379_40917364',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '52019e87b90081f2c6bfa717994d81ab7712dd1f' => 
     array (
       0 => 'app:frontendcomponentssearchF',
-      1 => 1583420250,
+      1 => 1590153845,
       2 => 'app',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eb2c72023fc21_63715765 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ec8ee39ade379_40917364 (Smarty_Internal_Template $_smarty_tpl) {
 if (!$_smarty_tpl->tpl_vars['currentJournal']->value || $_smarty_tpl->tpl_vars['currentJournal']->value->getSetting('publishingMode') != @constant('PUBLISHING_MODE_NONE')) {?>
 <form class="navbar-form navbar-left" role="search" method="post" action="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('page'=>"search",'op'=>"search"),$_smarty_tpl ) );?>
 ">

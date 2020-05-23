@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-22 22:15:11
+/* Smarty version 3.1.34-dev-7, created on 2020-05-23 11:12:23
   from 'app:submissionformsectionPoli' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ec832cf8584f7_57157395',
+  'unifunc' => 'content_5ec8e8f75072e0_57943178',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c7565994a336b0fec83c39199b0a6a452b09b238' => 
     array (
       0 => 'app:submissionformsectionPoli',
-      1 => 1586500703,
+      1 => 1590153847,
       2 => 'app',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ec832cf8584f7_57157395 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ec8e8f75072e0_57943178 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('class', "section-policy section-id-".((string)$_smarty_tpl->tpl_vars['sectionId']->value)." ".((string)$_smarty_tpl->tpl_vars['class']->value));?>
 
 <?php $_block_plugin1 = isset($_smarty_tpl->smarty->registered_plugins['block']['fbvFormSection'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['fbvFormSection'][0][0] : null;

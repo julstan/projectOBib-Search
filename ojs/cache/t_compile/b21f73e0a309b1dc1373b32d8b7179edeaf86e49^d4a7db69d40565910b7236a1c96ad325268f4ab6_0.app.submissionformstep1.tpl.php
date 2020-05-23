@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-22 22:15:11
+/* Smarty version 3.1.34-dev-7, created on 2020-05-23 11:12:23
   from 'app:submissionformstep1.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ec832cf313d78_06659527',
+  'unifunc' => 'content_5ec8e8f71bd570_99594746',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd4a7db69d40565910b7236a1c96ad325268f4ab6' => 
     array (
       0 => 'app:submissionformstep1.tpl',
-      1 => 1586500703,
+      1 => 1590153847,
       2 => 'app',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'core:submission/form/step1.tpl' => 1,
   ),
 ),false)) {
-function content_5ec832cf313d78_06659527 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ec8e8f71bd570_99594746 (Smarty_Internal_Template $_smarty_tpl) {
 if (count($_smarty_tpl->tpl_vars['sectionOptions']->value) == 1) {?>
 	 <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"author.submit.notAccepting"),$_smarty_tpl ) );?>
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-22 22:15:08
+/* Smarty version 3.1.34-dev-7, created on 2020-05-23 11:12:20
   from 'app:submissionformindex.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ec832ccbace64_16197956',
+  'unifunc' => 'content_5ec8e8f42b6206_57898368',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10d18cabd09acc581a020d1f09ef304f29a1da44' => 
     array (
       0 => 'app:submissionformindex.tpl',
-      1 => 1586500794,
+      1 => 1590153806,
       2 => 'app',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:common/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5ec832ccbace64_16197956 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ec8e8f42b6206_57898368 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('pageTitle', "submission.submit.title");
 $_smarty_tpl->_subTemplateRender("app:common/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

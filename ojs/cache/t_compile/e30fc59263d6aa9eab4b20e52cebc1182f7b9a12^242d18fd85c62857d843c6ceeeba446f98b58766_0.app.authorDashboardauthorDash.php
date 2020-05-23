@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-22 22:19:42
+/* Smarty version 3.1.34-dev-7, created on 2020-05-23 11:27:36
   from 'app:authorDashboardauthorDash' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ec833de0e2ca1_46802533',
+  'unifunc' => 'content_5ec8ec88ead633_42716994',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '242d18fd85c62857d843c6ceeeba446f98b58766' => 
     array (
       0 => 'app:authorDashboardauthorDash',
-      1 => 1586500703,
+      1 => 1590153846,
       2 => 'app',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:common/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5ec833de0e2ca1_46802533 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ec8ec88ead633_42716994 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('primaryAuthor', $_smarty_tpl->tpl_vars['submission']->value->getPrimaryAuthor());
 if (!$_smarty_tpl->tpl_vars['primaryAuthor']->value) {
 $_smarty_tpl->_assignInScope('authors', $_smarty_tpl->tpl_vars['submission']->value->getAuthors());
