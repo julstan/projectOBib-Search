@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-22 22:25:15
+/* Smarty version 3.1.34-dev-7, created on 2020-05-26 13:59:13
   from 'app:frontendpagesabout.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ec8352b7ba7f0_02225061',
+  'unifunc' => 'content_5ecd049129d311_36337203',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb59ba72e0e986feec9a52ef595eb9a41c15df09' => 
     array (
       0 => 'app:frontendpagesabout.tpl',
-      1 => 1583420250,
+      1 => 1590491589,
       2 => 'app',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:common/frontend/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5ec8352b7ba7f0_02225061 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ecd049129d311_36337203 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("app:frontend/components/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('pageTitle'=>"about.aboutContext"), 0, false);
 ?>
 
@@ -37,7 +37,7 @@ $_smarty_tpl->_subTemplateRender("app:frontend/components/header.tpl", $_smarty_
 </h1>
 	</div>
 	
-	<?php echo $_smarty_tpl->tpl_vars['currentContext']->value->getLocalizedSetting('about');?>
+	<?php echo $_smarty_tpl->tpl_vars['currentContext']->value->getLocalizedData('about');?>
 
 </div><!-- .page -->
 
