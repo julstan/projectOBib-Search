@@ -63,25 +63,25 @@
 	{* /Submission Checklist *}
 
 	{* Author Guidelines *}
-	{if $currentJournal->getLocalizedData('authorGuidelines')}
+	{if $currentJournal->getLocalizedSetting('authorGuidelines')}
 		<div class="author_guidelines">
 			<h2 class="page-header">
 				{translate key="about.authorGuidelines"}
 				{include file="frontend/components/editLink.tpl" page="management" op="settings" path="journal" anchor="guidelines" sectionTitleKey="about.authorGuidelines"}
 			</h2>
-			{$currentJournal->getLocalizedData('authorGuidelines')}
+			{$currentJournal->getLocalizedSetting('authorGuidelines')}
 		</div>
 	{/if}
 	{* /Author Guidelines *}
 
 	{* Copyright Notice *}
-	{if $currentJournal->getLocalizedData('copyrightNotice')}
+	{if $currentJournal->getLocalizedSetting('copyrightNotice')}
 		<div class="copyright-notice">
 			<h2 class="page-header">
 				{translate key="about.copyrightNotice"}
 				</span>{include file="frontend/components/editLink.tpl" page="management" op="settings" path="journal" anchor="policies" sectionTitleKey="about.copyrightNotice"}
 			</h2>
-			{$currentJournal->getLocalizedData('copyrightNotice')}
+			{$currentJournal->getLocalizedSetting('copyrightNotice')}
 		</div>
 	{/if}
 	{* /Copyright Notice *}

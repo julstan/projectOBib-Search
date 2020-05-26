@@ -21,7 +21,7 @@
 	</div>
 	{* /Page Title *}
 
-	{$currentJournal->getLocalizedData('editorialTeam')}
+	{$currentJournal->getLocalizedSetting('editorialTeam')}
 </div><!-- .page -->
 
 {include file="common/frontend/footer.tpl"}

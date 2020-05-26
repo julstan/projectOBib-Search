@@ -21,7 +21,7 @@
 	</div>
 	{* /Page Title *}
 
-	{$currentContext->getLocalizedData('about')}
+	{$currentContext->getLocalizedSetting('about')}
 </div><!-- .page -->
 
 {include file="common/frontend/footer.tpl"}

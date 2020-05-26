@@ -16,24 +16,12 @@
  * @uses $pubIdPlugins @todo
  *}
 <article class="article-details">
-
-	{* Notification that this is an old version *}
-	{if $currentPublication->getId() !== $publication->getId()}
-		<div class="alert alert-warning" role="alert">
-			{capture assign="latestVersionUrl"}{url page="article" op="view" path=$article->getBestId()}{/capture}
-			{translate key="submission.outdatedVersion"
-				datePublished=$publication->getData('datePublished')|date_format:$dateFormatShort
-				urlRecentVersion=$latestVersionUrl|escape
-			}
-		</div>
-	{/if}
-
 	<header>
 		<h1 class="page-header">
-			{$publication->getLocalizedTitle()|escape}
-			{if $publication->getLocalizedData('subtitle')}
+			{$article->getLocalizedTitle()|escape}
+			{if $article->getLocalizedSubtitle()}
 				<small>
-					{$publication->getLocalizedData('subtitle')|escape}
+					{$article->getLocalizedSubtitle()|escape}
 				</small>
 			{/if}
 		</h1>
@@ -47,22 +35,13 @@
 			<h2 class="sr-only">{translate key="plugins.themes.bootstrap3.article.sidebar"}</h2>
 
 			{* Article/Issue cover image *}
-			{if $publication->getLocalizedData('coverImage') || ($issue && $issue->getLocalizedCoverImage())}
+			{if $article->getLocalizedCoverImage() || $issue->getLocalizedCoverImage()}
 				<div class="cover-image">
-					{if $publication->getLocalizedData('coverImage')}
-						{assign var="coverImage" value=$publication->getLocalizedData('coverImage')}
-						<img
-							class="img-responsive"
-							src="{$publication->getLocalizedCoverImageUrl($article->getData('contextId'))|escape}"
-							alt="{$coverImage.altText|escape|default:''}"
-						>
+					{if $article->getLocalizedCoverImage()}
+						<img class="img-responsive" src="{$article->getLocalizedCoverImageUrl()|escape}"{if $article->getLocalizedCoverImageAltText()} alt="{$article->getLocalizedCoverImageAltText()|escape}"{/if}>
 					{else}
 						<a href="{url page="issue" op="view" path=$issue->getBestIssueId()}">
-							<img
-								class="img-responsive"
-								src="{$issue->getLocalizedCoverImageUrl()|escape}"
-								alt="{$issue->getLocalizedCoverImageAltText()|escape|default:''}"
-							>
+							<img class="img-responsive" src="{$issue->getLocalizedCoverImageUrl()|escape}"{if $issue->getLocalizedCoverImageAltText()} alt="{$issue->getLocalizedCoverImageAltText()|escape}"{/if}>
 						</a>
 					{/if}
 				</div>
@@ -87,39 +66,12 @@
 			<div class="list-group">
 
 				{* Published date *}
-				{if $publication->getData('datePublished')}
+				{if $article->getDatePublished()}
 					<div class="list-group-item date-published">
 						{capture assign=translatedDatePublished}{translate key="submissions.published"}{/capture}
 						<strong>{translate key="semicolon" label=$translatedDatePublished}</strong>
-						{$publication->getData('datePublished')|date_format}
+						{$article->getDatePublished()|date_format}
 					</div>
-					{* If this is an updated version *}
-					{if $firstPublication->getID() !== $publication->getId()}
-						<div class="list-group-item date-updated">
-							{capture assign=translatedUpdated}{translate key="common.updated"}{/capture}
-							<strong>{translate key="semicolon" label=$translatedUpdated}</strong>
-							{$publication->getData('datePublished')|date_format:$dateFormatShort}
-						</div>
-					{/if}
-					{* Versions *}
-					{if count($article->getPublishedPublications()) > 1}
-						<div class="list-group-item versions">
-							<strong>{capture assign=translatedVersions}{translate key="submission.versions"}{/capture}
-							{translate key="semicolon" label=$translatedVersions}</strong>
-							{foreach from=array_reverse($article->getPublishedPublications()) item=iPublication}
-								{capture assign="name"}{translate key="submission.versionIdentity" datePublished=$iPublication->getData('datePublished')|date_format:$dateFormatShort version=$iPublication->getData('version')}{/capture}
-								<div>
-									{if $iPublication->getId() === $publication->getId()}
-										{$name}
-									{elseif $iPublication->getId() === $currentPublication->getId()}
-										<a href="{url page="article" op="view" path=$article->getBestId()}">{$name}</a>
-									{else}
-										<a href="{url page="article" op="view" path=$article->getBestId()|to_array:"version":$iPublication->getId()}">{$name}</a>
-									{/if}
-								</div>
-							{/foreach}
-						</div>
-					{/if}
 				{/if}
 
 				{* DOI (requires plugin) *}
@@ -170,9 +122,9 @@
 				{* Screen-reader heading for easier navigation jumps *}
 				<h2 class="sr-only">{translate key="plugins.themes.bootstrap3.article.main"}</h2>
 
-				{if $publication->getData('authors')}
+				{if $article->getAuthors()}
 					<div class="authors">
-						{foreach from=$publication->getData('authors') item=author}
+						{foreach from=$article->getAuthors() item=author}
 							<div class="author">
 								<strong>{$author->getFullName()|escape}</strong>
 								{if $author->getLocalizedAffiliation()}
@@ -194,11 +146,11 @@
 				{/if}
 
 				{* Article abstract *}
-				{if $publication->getLocalizedData('abstract')}
+				{if $article->getLocalizedAbstract()}
 					<div class="article-summary" id="summary">
 						<h2>{translate key="article.abstract"}</h2>
 						<div class="article-abstract">
-							{$publication->getLocalizedData('abstract')|strip_unsafe_html|nl2br}
+							{$article->getLocalizedAbstract()|strip_unsafe_html|nl2br}
 						</div>
 					</div>
 				{/if}
@@ -241,7 +193,7 @@
 										</li>
 									{/foreach}
 							  </ul>
-
+							
 								<!-- 29.05.2019 (akku) bug behoben, weil endnote-Export nicht angezeigt werden konnte -->
 							  		{if count($citationDownloads)}
 										<div class="label">
@@ -258,7 +210,8 @@
 											{/foreach}
 										</ul>
 									{/if}
-
+							  
+							  
 							</div>
 						</div>
 					</div>
@@ -292,6 +245,18 @@
 					{/if}
 				{/foreach}
 
+				{* Article Subject *}
+				{if $article->getLocalizedSubject()}
+					<div class="panel panel-default subject">
+						<div class="panel-heading">
+							{translate key="article.subject"}
+						</div>
+						<div class="panel-body">
+							{$article->getLocalizedSubject()|escape}
+						</div>
+					</div>
+				{/if}
+
 				{* Issue article appears in *}
 				<div class="panel panel-default issue">
 					<div class="panel-heading">
@@ -317,7 +282,7 @@
 				{/if}
 
 				{* Licensing info *}
-				{if $licenseTerms || $licenseUrl}
+				{if $copyright || $licenseUrl}
 					<div class="panel panel-default copyright">
 						<div class="panel-body">
 							{if $licenseUrl}
@@ -333,14 +298,14 @@
 									</a>
 								{/if}
 							{/if}
-							{$licenseTerms}
+							{$copyright}
 						</div>
 					</div>
 				{/if}
 
 				{* Author biographies *}
 				{assign var="hasBiographies" value=0}
-				{foreach from=$publication->getData('authors') item=author}
+				{foreach from=$article->getAuthors() item=author}
 					{if $author->getLocalizedBiography()}
 						{assign var="hasBiographies" value=$hasBiographies+1}
 					{/if}
@@ -355,7 +320,7 @@
 							{/if}
 						</div>
 						<div class="panel-body">
-							{foreach from=$publication->getData('authors') item=author}
+							{foreach from=$article->getAuthors() item=author}
 								{if $author->getLocalizedBiography()}
 									<div class="media biography">
 										<div class="media-body">
@@ -380,17 +345,11 @@
 				{call_hook name="Templates::Article::Details"}
 
 				{* References *}
-				{if $parsedCitations || $publication->getData('citationsRaw')}
+				{if $article->getCitations()}
 					<div class="article-references">
 						<h2>{translate key="submission.citations"}</h2>
 						<div class="article-references-content">
-							{if $parsedCitations}
-								{foreach from=$parsedCitations item="parsedCitation"}
-									<p>{$parsedCitation->getCitationWithLinks()|strip_unsafe_html} {call_hook name="Templates::Article::Details::Reference" citation=$parsedCitation}</p>
-								{/foreach}
-							{else}
-								{$publication->getData('citationsRaw')|nl2br}
-							{/if}
+							{$article->getCitations()|nl2br}
 						</div>
 					</div>
 				{/if}

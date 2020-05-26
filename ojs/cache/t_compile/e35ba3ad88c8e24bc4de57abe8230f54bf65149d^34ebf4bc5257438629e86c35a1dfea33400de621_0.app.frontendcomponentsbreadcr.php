@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-26 12:48:57
+/* Smarty version 3.1.34-dev-7, created on 2020-05-23 11:34:49
   from 'app:frontendcomponentsbreadcr' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5eccf419130dd7_04255298',
+  'unifunc' => 'content_5ec8ee39c0d539_51071692',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '34ebf4bc5257438629e86c35a1dfea33400de621' => 
     array (
       0 => 'app:frontendcomponentsbreadcr',
-      1 => 1590486595,
+      1 => 1590153845,
       2 => 'app',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eccf419130dd7_04255298 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ec8ee39c0d539_51071692 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <nav class="cmp_breadcrumbs" role="navigation" aria-label="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.breadcrumbLabel"),$_smarty_tpl ) );?>
 ">

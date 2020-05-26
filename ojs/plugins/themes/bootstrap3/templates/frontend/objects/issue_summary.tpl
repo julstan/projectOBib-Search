@@ -19,7 +19,7 @@
 	{if $issue->getLocalizedCoverImage()}
 		<div class="media-left">
 			<a class="cover" href="{url|escape op="view" path=$issue->getBestIssueId($currentJournal)}">
-				<img class="media-object" src="{$issue->getLocalizedCoverImageUrl()|escape}" alt="{$issue->getLocalizedCoverImageAltText()|escape|default:''}">
+				<img class="media-object" src="{$issue->getLocalizedCoverImageUrl()|escape}">
 			</a>
 		</div>
 	{/if}

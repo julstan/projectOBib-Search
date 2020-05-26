@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-26 11:56:41
+/* Smarty version 3.1.34-dev-7, created on 2020-05-22 22:00:06
   from 'app:frontendcomponentsnotific' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ecce7d9de4966_33945891',
+  'unifunc' => 'content_5ec82f4629b9a3_66884318',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '959cdfb9c139350b3e526eb67ae0136140909d66' => 
     array (
       0 => 'app:frontendcomponentsnotific',
-      1 => 1590486595,
+      1 => 1583420250,
       2 => 'app',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ecce7d9de4966_33945891 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ec82f4629b9a3_66884318 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\ojsrepo\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
 ?>
 <div class="cmp_notification <?php echo smarty_modifier_replace(call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['type']->value )),' ','_');?>
