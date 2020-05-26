@@ -14,7 +14,7 @@
  * @uses $hideGalleys bool Hide the article galleys for this article?
  * @uses $primaryGenreIds array List of file genre ids for primary file types
  *}
-{assign var=articlePath value=$article->getBestArticleId($currentJournal)}
+{assign var=articlePath value=$article->getBestId($currentJournal)}
 {if (!$section.hideAuthor && $article->getHideAuthor() == $smarty.const.AUTHOR_TOC_DEFAULT) || $article->getHideAuthor() == $smarty.const.AUTHOR_TOC_SHOW}
 	{assign var="showAuthor" value=true}
 {/if}
@@ -23,7 +23,7 @@
 	{if $article->getLocalizedCoverImage()}
 		<div class="cover media-left">
 			<a href="{url page="article" op="view" path=$articlePath}" class="file">
-				<img class="media-object" src="{$article->getLocalizedCoverImageUrl()|escape}">
+				<img class="media-object" src="{$article->getLocalizedCoverImageUrl()|escape}" alt="{$article->getLocalizedCoverImageAltText()|escape|default:''}">
 			</a>
 		</div>
 	{/if}
@@ -71,7 +71,7 @@
 						{/if}
 					{/if}
 					{assign var="hasArticleAccess" value=$hasAccess}
-					{if ($article->getAccessStatus() == $smarty.const.ARTICLE_ACCESS_OPEN)}
+					{if $currentContext->getSetting('publishingMode') == $smarty.const.PUBLISHING_MODE_OPEN || $publication->getData('accessStatus') == $smarty.const.ARTICLE_ACCESS_OPEN}
 						{assign var="hasArticleAccess" value=1}
 					{/if}
 					{include file="frontend/objects/galley_link.tpl" parent=$article hasAccess=$hasArticleAccess}
