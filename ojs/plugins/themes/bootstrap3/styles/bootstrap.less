@@ -101,6 +101,10 @@
     }
 }
 
+.article_count {
+    margin-bottom: 1em;
+}
+
 // Because we want to float the search right when the header is not collapsed
 // Why you no give us pull-md-right bootstrap?
 .pull-md-right {
@@ -243,6 +247,34 @@ footer[role="contentinfo"] {
 		padding-top: @navbar-height;
 		border: none;
 	}
+
+	&.galley_view_with_notice {
+
+		iframe {
+			padding-top: @navbar-height * 2;
+		}
+	}
+
+	.galley_view_notice {
+		position: absolute;
+		top: @navbar-height;
+		width: 100%;
+		height: @navbar-height;
+		background: @brand-danger;
+	}
+
+	.galley_view_notice_message {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+
+		a {
+			text-decoration: underline;
+		}
+	}
 }
 
 // Hide the citation number in the CSL output
@@ -255,4 +287,12 @@ footer[role="contentinfo"] {
 // Apply to a span that marks required form fields.
 .form-control-required {
   color: @brand-danger;
+}
+
+.references a {
+  // Avoid long links overflow
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
 }

@@ -25,10 +25,7 @@
 <body class="pkp_page_{$requestedPage|escape|default:"index"} pkp_op_{$requestedOp|escape|default:"index"}{if $showingLogo} has_site_logo{/if}">
 	<div class="pkp_structure_page">
 
-		<nav id="accessibility-nav" class="sr-only" role="navigation" aria-labelled-by="accessible-menu-label">
-			<div id="accessible-menu-label">
-				{translate|escape key="plugins.themes.bootstrap3.accessible_menu.label"}
-			</div>
+		<nav id="accessibility-nav" class="sr-only" role="navigation" aria-label="{translate|escape key="plugins.themes.bootstrap3.accessible_menu.label"}">
 			<ul>
 			  <li><a href="#main-navigation">{translate|escape key="plugins.themes.bootstrap3.accessible_menu.main_navigation"}</a></li>
 			  <li><a href="#main-content">{translate|escape key="plugins.themes.bootstrap3.accessible_menu.main_content"}</a></li>
@@ -46,21 +43,21 @@
 						{load_menu name="user" id="navigationUser" ulClass="nav nav-pills tab-list pull-right"}
 					</nav>
 				</div><!-- .row -->
-				
-			<!--logo in den Header einfÃ¼gen-->
+
+			<!--logo in den Header einfügen-->
 			<div style="border: 0px dotted yellow; width: 100%; text-align: center; height: 75px; z-index: 100; position: relative;">
 				<a href="{$homeUrl}">
 					<img src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{else}alt="{translate key="common.pageHeaderLogo.altText"}"{/if}>
 				</a>
-				
+
 			</div><!-- .container-fluid -->
-			
+
 			<div class="container-fluid">
 
 				<div class="navbar-header">
 
 					{* Mobile hamburger menu *}
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false" aria-controls="navbar">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false" aria-controls="nav-menu">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>

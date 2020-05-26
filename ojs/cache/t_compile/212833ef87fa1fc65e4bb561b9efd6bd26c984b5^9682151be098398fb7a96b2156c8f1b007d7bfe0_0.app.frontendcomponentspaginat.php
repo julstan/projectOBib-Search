@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-23 11:34:45
+/* Smarty version 3.1.34-dev-7, created on 2020-05-26 12:48:52
   from 'app:frontendcomponentspaginat' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ec8ee35ca74e4_00013546',
+  'unifunc' => 'content_5eccf4147782d7_99017440',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9682151be098398fb7a96b2156c8f1b007d7bfe0' => 
     array (
       0 => 'app:frontendcomponentspaginat',
-      1 => 1590153845,
+      1 => 1590486595,
       2 => 'app',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ec8ee35ca74e4_00013546 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eccf4147782d7_99017440 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['prevUrl']->value || $_smarty_tpl->tpl_vars['nextUrl']->value) {?>
 	<nav aria-label="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"common.pagination.label"),$_smarty_tpl ) ) ));?>
 ">

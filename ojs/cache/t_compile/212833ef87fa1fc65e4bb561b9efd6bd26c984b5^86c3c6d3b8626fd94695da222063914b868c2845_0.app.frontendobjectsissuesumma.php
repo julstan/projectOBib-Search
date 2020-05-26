@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-23 11:34:45
+/* Smarty version 3.1.34-dev-7, created on 2020-05-26 12:48:52
   from 'app:frontendobjectsissuesumma' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ec8ee35a81745_32792973',
+  'unifunc' => 'content_5eccf414508685_50259510',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '86c3c6d3b8626fd94695da222063914b868c2845' => 
     array (
       0 => 'app:frontendobjectsissuesumma',
-      1 => 1590153845,
+      1 => 1590486596,
       2 => 'app',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ec8ee35a81745_32792973 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eccf414508685_50259510 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="issue-summary media">
 
 		<?php $_smarty_tpl->_assignInScope('issueTitle', $_smarty_tpl->tpl_vars['issue']->value->getLocalizedTitle());?>
@@ -31,6 +31,7 @@ function content_5ec8ee35a81745_32792973 (Smarty_Internal_Template $_smarty_tpl)
 			<a class="cover" href="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('op'=>"view",'path'=>$_smarty_tpl->tpl_vars['issue']->value->getBestIssueId($_smarty_tpl->tpl_vars['currentJournal']->value)),$_smarty_tpl ) ) ));?>
 ">
 				<img class="media-object" src="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['issue']->value->getLocalizedCoverImageUrl() ));?>
+" alt="<?php echo (($tmp = @call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['issue']->value->getLocalizedCoverImageAltText() )))===null||$tmp==='' ? '' : $tmp);?>
 ">
 			</a>
 		</div>

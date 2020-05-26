@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-23 11:34:49
+/* Smarty version 3.1.34-dev-7, created on 2020-05-26 12:48:56
   from 'app:frontendpagesissue.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ec8ee3922c3e1_41899638',
+  'unifunc' => 'content_5eccf4188157e5_32031012',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fcbc2cabc0d4dff6219d7e4b5d36c1363533cfd8' => 
     array (
       0 => 'app:frontendpagesissue.tpl',
-      1 => 1590153845,
+      1 => 1590486596,
       2 => 'app',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:common/frontend/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5ec8ee3922c3e1_41899638 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eccf4188157e5_32031012 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("app:frontend/components/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('pageTitleTranslated'=>$_smarty_tpl->tpl_vars['issueIdentification']->value), 0, false);
 ?>
 
