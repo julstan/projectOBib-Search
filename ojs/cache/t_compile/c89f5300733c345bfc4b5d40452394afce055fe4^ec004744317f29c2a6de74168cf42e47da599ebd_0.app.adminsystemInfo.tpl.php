@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-25 13:07:05
+/* Smarty version 3.1.34-dev-7, created on 2020-05-26 15:31:29
   from 'app:adminsystemInfo.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ecba6d91ba6f7_34355425',
+  'unifunc' => 'content_5ecd1a31e94662_47603784',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ec004744317f29c2a6de74168cf42e47da599ebd' => 
     array (
       0 => 'app:adminsystemInfo.tpl',
-      1 => 1586500794,
+      1 => 1590493729,
       2 => 'app',
     ),
   ),
@@ -22,8 +22,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:common/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5ecba6d91ba6f7_34355425 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\ojsrepo\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
+function content_5ecd1a31e94662_47603784 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\saraf\\xampp\\htdocs\\projectOBib-Search\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 $_smarty_tpl->_assignInScope('pageTitle', "admin.systemInformation");
 $_smarty_tpl->_subTemplateRender("app:common/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

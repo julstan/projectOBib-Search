@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-23 16:40:31
+/* Smarty version 3.1.34-dev-7, created on 2020-05-26 13:50:21
   from 'plugins-plugins-generic-webFeed-generic-webFeed:block.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ec935df10b078_63956944',
+  'unifunc' => 'content_5ecd027d196729_96826230',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '68f9881179b0918b683ccd65bfe977b84e0327c3' => 
     array (
       0 => 'plugins-plugins-generic-webFeed-generic-webFeed:block.tpl',
-      1 => 1590244091,
+      1 => 1590493756,
       2 => 'plugins-plugins-generic-webFeed-generic-webFeed',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ec935df10b078_63956944 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ecd027d196729_96826230 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="pkp_block block_web_feed">
 	<span class="title"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"journal.currentIssue"),$_smarty_tpl ) );?>
 </span>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-23 11:35:09
+/* Smarty version 3.1.34-dev-7, created on 2020-05-26 15:31:25
   from 'app:adminindex.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ec8ee4d6d7627_94504712',
+  'unifunc' => 'content_5ecd1a2db0fae9_99147890',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e7315c2d256da370b88dfcb90db35dd31eedaa4e' => 
     array (
       0 => 'app:adminindex.tpl',
-      1 => 1590153803,
+      1 => 1590493729,
       2 => 'app',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:common/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5ec8ee4d6d7627_94504712 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ecd1a2db0fae9_99147890 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('pageTitle', "admin.siteAdmin");
 $_smarty_tpl->_subTemplateRender("app:common/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

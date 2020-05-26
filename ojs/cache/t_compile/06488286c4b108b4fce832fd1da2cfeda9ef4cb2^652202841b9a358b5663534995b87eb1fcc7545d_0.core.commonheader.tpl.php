@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-23 17:16:15
+/* Smarty version 3.1.34-dev-7, created on 2020-05-26 13:50:43
   from 'core:commonheader.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ec93e3f4135d4_45081485',
+  'unifunc' => 'content_5ecd02930741d9_68818335',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '652202841b9a358b5663534995b87eb1fcc7545d' => 
     array (
       0 => 'core:commonheader.tpl',
-      1 => 1590244069,
+      1 => 1590493729,
       2 => 'core',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:controllers/notification/notificationOptions.tpl' => 1,
   ),
 ),false)) {
-function content_5ec93e3f4135d4_45081485 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ecd02930741d9_68818335 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\saraf\\xampp\\htdocs\\projectOBib-Search\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
 ?>
 <!DOCTYPE html>

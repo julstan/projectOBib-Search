@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-26 13:14:11
+/* Smarty version 3.1.34-dev-7, created on 2020-05-26 13:50:20
   from 'app:frontendobjectsissuetoc.t' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5eccfa038ae617_60914798',
+  'unifunc' => 'content_5ecd027c6d30f4_09726036',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '26de9c47ced54328a8eb56e39bb4d4079aa049c6' => 
     array (
       0 => 'app:frontendobjectsissuetoc.t',
-      1 => 1590491589,
+      1 => 1590493781,
       2 => 'app',
     ),
   ),
@@ -23,8 +23,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/objects/article_summary.tpl' => 1,
   ),
 ),false)) {
-function content_5eccfa038ae617_60914798 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\ojsrepo\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
+function content_5ecd027c6d30f4_09726036 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\saraf\\xampp\\htdocs\\projectOBib-Search\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <div class="issue-toc">
 

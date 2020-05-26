@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-25 13:07:06
+/* Smarty version 3.1.34-dev-7, created on 2020-05-26 15:31:30
   from 'core:commonheader.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ecba6da3f2545_55589698',
+  'unifunc' => 'content_5ecd1a3245d3b0_23352318',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '652202841b9a358b5663534995b87eb1fcc7545d' => 
     array (
       0 => 'core:commonheader.tpl',
-      1 => 1586500794,
+      1 => 1590493729,
       2 => 'core',
     ),
   ),
@@ -22,8 +22,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:controllers/notification/notificationOptions.tpl' => 1,
   ),
 ),false)) {
-function content_5ecba6da3f2545_55589698 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\ojsrepo\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
+function content_5ecd1a3245d3b0_23352318 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\saraf\\xampp\\htdocs\\projectOBib-Search\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo smarty_modifier_replace($_smarty_tpl->tpl_vars['currentLocale']->value,"_","-");?>
