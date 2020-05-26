@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-22 22:00:05
+/* Smarty version 3.1.34-dev-7, created on 2020-05-26 13:56:03
   from 'app:frontendpagessearch.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ec82f452d31a5_85189137',
+  'unifunc' => 'content_5ecd03d3674ba6_82653525',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '756a7119cb48731a8fd45c250b45f4bcca2d6b01' => 
     array (
       0 => 'app:frontendpagessearch.tpl',
-      1 => 1583420250,
+      1 => 1590491589,
       2 => 'app',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:common/frontend/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5ec82f452d31a5_85189137 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ecd03d3674ba6_82653525 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\ojsrepo\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\function.html_select_date.php','function'=>'smarty_function_html_select_date',),));
 $_smarty_tpl->_subTemplateRender("app:frontend/components/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('pageTitle'=>"common.search"), 0, false);
 ?>
@@ -117,7 +117,7 @@ $_block_repeat=true;
 echo $_block_plugin1->smartyIterate(array('from'=>'results','item'=>'result'), null, $_smarty_tpl, $_block_repeat);
 while ($_block_repeat) {
 ob_start();?>
-				<?php $_smarty_tpl->_subTemplateRender("app:frontend/objects/article_summary.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('article'=>$_smarty_tpl->tpl_vars['result']->value['publishedArticle'],'showDatePublished'=>true,'hideGalleys'=>true), 0, false);
+				<?php $_smarty_tpl->_subTemplateRender("app:frontend/objects/article_summary.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('article'=>$_smarty_tpl->tpl_vars['result']->value['publishedSubmission'],'showDatePublished'=>true,'hideGalleys'=>true), 0, false);
 ?>
 			<?php $_block_repeat=false;
 echo $_block_plugin1->smartyIterate(array('from'=>'results','item'=>'result'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
