@@ -1,6 +1,6 @@
-
-# Editors, IDEs..
-
+__pycache__
+db.sqlite3
+*.pyc
 .vscode
 .idea
 .vim
