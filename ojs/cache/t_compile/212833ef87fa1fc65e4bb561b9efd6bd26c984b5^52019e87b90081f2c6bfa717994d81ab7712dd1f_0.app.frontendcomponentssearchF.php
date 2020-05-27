@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-22 22:28:30
+/* Smarty version 3.1.34-dev-7, created on 2020-05-26 13:40:23
   from 'app:frontendcomponentssearchF' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ec835eea39145_50864363',
+  'unifunc' => 'content_5ecd00276ea187_67113348',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '52019e87b90081f2c6bfa717994d81ab7712dd1f' => 
     array (
       0 => 'app:frontendcomponentssearchF',
-      1 => 1583420250,
+      1 => 1590491588,
       2 => 'app',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ec835eea39145_50864363 (Smarty_Internal_Template $_smarty_tpl) {
-if (!$_smarty_tpl->tpl_vars['currentJournal']->value || $_smarty_tpl->tpl_vars['currentJournal']->value->getSetting('publishingMode') != @constant('PUBLISHING_MODE_NONE')) {?>
+function content_5ecd00276ea187_67113348 (Smarty_Internal_Template $_smarty_tpl) {
+if (!$_smarty_tpl->tpl_vars['currentJournal']->value || $_smarty_tpl->tpl_vars['currentJournal']->value->getData('publishingMode') != @constant('PUBLISHING_MODE_NONE')) {?>
 <form class="navbar-form navbar-left" role="search" method="post" action="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('page'=>"search",'op'=>"search"),$_smarty_tpl ) );?>
 ">
   <div class="form-group">

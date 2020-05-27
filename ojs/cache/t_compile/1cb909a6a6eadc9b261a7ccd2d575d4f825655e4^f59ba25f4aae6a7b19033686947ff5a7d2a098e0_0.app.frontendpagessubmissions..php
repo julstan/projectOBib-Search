@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-22 22:20:26
+/* Smarty version 3.1.34-dev-7, created on 2020-05-26 14:22:24
   from 'app:frontendpagessubmissions.' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ec8340a117832_04635793',
+  'unifunc' => 'content_5ecd0a0028ae99_82500650',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f59ba25f4aae6a7b19033686947ff5a7d2a098e0' => 
     array (
       0 => 'app:frontendpagessubmissions.',
-      1 => 1583420250,
+      1 => 1590491589,
       2 => 'app',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:common/frontend/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5ec8340a117832_04635793 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ecd0a0028ae99_82500650 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("app:frontend/components/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('pageTitle'=>"about.submissions"), 0, false);
 ?>
 
@@ -96,7 +96,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		</div>
 	<?php }?>
 	
-		<?php if ($_smarty_tpl->tpl_vars['currentJournal']->value->getLocalizedSetting('authorGuidelines')) {?>
+		<?php if ($_smarty_tpl->tpl_vars['currentJournal']->value->getLocalizedData('authorGuidelines')) {?>
 		<div class="author_guidelines">
 			<h2 class="page-header">
 				<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"about.authorGuidelines"),$_smarty_tpl ) );?>
@@ -104,12 +104,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 				<?php $_smarty_tpl->_subTemplateRender("app:frontend/components/editLink.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('page'=>"management",'op'=>"settings",'path'=>"journal",'anchor'=>"guidelines",'sectionTitleKey'=>"about.authorGuidelines"), 0, true);
 ?>
 			</h2>
-			<?php echo $_smarty_tpl->tpl_vars['currentJournal']->value->getLocalizedSetting('authorGuidelines');?>
+			<?php echo $_smarty_tpl->tpl_vars['currentJournal']->value->getLocalizedData('authorGuidelines');?>
 
 		</div>
 	<?php }?>
 	
-		<?php if ($_smarty_tpl->tpl_vars['currentJournal']->value->getLocalizedSetting('copyrightNotice')) {?>
+		<?php if ($_smarty_tpl->tpl_vars['currentJournal']->value->getLocalizedData('copyrightNotice')) {?>
 		<div class="copyright-notice">
 			<h2 class="page-header">
 				<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"about.copyrightNotice"),$_smarty_tpl ) );?>
@@ -117,7 +117,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 				</span><?php $_smarty_tpl->_subTemplateRender("app:frontend/components/editLink.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('page'=>"management",'op'=>"settings",'path'=>"journal",'anchor'=>"policies",'sectionTitleKey'=>"about.copyrightNotice"), 0, true);
 ?>
 			</h2>
-			<?php echo $_smarty_tpl->tpl_vars['currentJournal']->value->getLocalizedSetting('copyrightNotice');?>
+			<?php echo $_smarty_tpl->tpl_vars['currentJournal']->value->getLocalizedData('copyrightNotice');?>
 
 		</div>
 	<?php }?>
