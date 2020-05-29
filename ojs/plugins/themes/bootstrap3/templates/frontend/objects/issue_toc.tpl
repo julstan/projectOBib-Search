@@ -101,13 +101,13 @@
 		{foreach name=sections from=$publishedSubmissions item=section}
 			<section class="section">
 				{if $section.articles}
-					{if $section.title}
+					{*{if $section.title}
 						<div class="page-header">
 							<h2>
 								<small>{$section.title|escape}</small>
 							</h2>
 						</div>
-					{/if}
+					{/if}*}
 					<div class="media-list">
 						{foreach from=$section.articles item=article}
 							{include file="frontend/objects/article_summary.tpl"}
