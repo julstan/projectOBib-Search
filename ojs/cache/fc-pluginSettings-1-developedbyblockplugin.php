@@ -1,4 +1,4 @@
 <?php return array (
-  'enabled' => false,
+  'enabled' => true,
   'seq' => 0,
 );
