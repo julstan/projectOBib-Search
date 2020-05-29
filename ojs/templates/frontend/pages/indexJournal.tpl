@@ -65,6 +65,12 @@
 			</div><!-- .more -->
 		</section>
 	{/if}
+	
+	{if $additionalHomeContent}
+		<div class="additional_content">
+			{$additionalHomeContent}
+		</div>
+	{/if}
 
 	{* Latest issue *}
 	{if $issue}
@@ -83,12 +89,7 @@
 		</section>
 	{/if}
 
-	{* Additional Homepage Content *}
-	{if $additionalHomeContent}
-		<div class="additional_content">
-			{$additionalHomeContent}
-		</div>
-	{/if}
+
 </div><!-- .page -->
 
 {include file="frontend/components/footer.tpl"}
