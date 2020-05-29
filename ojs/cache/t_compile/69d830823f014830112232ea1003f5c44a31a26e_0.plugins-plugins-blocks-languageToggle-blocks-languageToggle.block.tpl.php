@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-26 13:50:21
+/* Smarty version 3.1.34-dev-7, created on 2020-05-29 20:30:53
   from 'plugins-plugins-blocks-languageToggle-blocks-languageToggle:block.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ecd027d3e0126_77982314',
+  'unifunc' => 'content_5ed154dde77121_65877144',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '69d830823f014830112232ea1003f5c44a31a26e' => 
     array (
       0 => 'plugins-plugins-blocks-languageToggle-blocks-languageToggle:block.tpl',
-      1 => 1590493739,
+      1 => 1586500703,
       2 => 'plugins-plugins-blocks-languageToggle-blocks-languageToggle',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ecd027d3e0126_77982314 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\saraf\\xampp\\htdocs\\projectOBib-Search\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
+function content_5ed154dde77121_65877144 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\ojsrepo\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
 if ($_smarty_tpl->tpl_vars['enableLanguageToggle']->value) {?>
 <div class="pkp_block block_language">
 	<span class="title">
