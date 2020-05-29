@@ -5,7 +5,7 @@
 .idea
 .vim
 
-/config.inc.php
+ojs/config.inc.php
 ./build
 temp
 /files
