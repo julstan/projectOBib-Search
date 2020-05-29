@@ -101,6 +101,7 @@
 		{foreach name=sections from=$publishedSubmissions item=section}
 			<section class="section">
 				{if $section.articles}
+					{* hier Rubriken Titel versteckt*}
 					{*{if $section.title}
 						<div class="page-header">
 							<h2>
