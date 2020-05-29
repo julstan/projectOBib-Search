@@ -36,6 +36,13 @@
 		</div>
 	{/if}
 
+	{* Additional Homepage Content *}
+	{if $additionalHomeContent}
+		<section class="additional_content">
+			{$additionalHomeContent}
+		</section>
+	{/if}
+	
 	{* Announcements *}
 	{if $numAnnouncementsHomepage && $announcements|count}
 		<section class="cmp_announcements media">
@@ -75,12 +82,7 @@
 		</section>
 	{/if}
 
-	{* Additional Homepage Content *}
-	{if $additionalHomeContent}
-		<section class="additional_content">
-			{$additionalHomeContent}
-		</section>
-	{/if}
+
 </div><!-- .page -->
 
 {include file="frontend/components/footer.tpl"}
