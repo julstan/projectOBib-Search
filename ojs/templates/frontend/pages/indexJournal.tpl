@@ -35,6 +35,12 @@
 		</section>
 	{/if}
 
+	{if $additionalHomeContent}
+		<div class="additional_content">
+			{$additionalHomeContent}
+		</div>
+	{/if}
+
 	{* Announcements *}
 	{if $numAnnouncementsHomepage && $announcements|@count}
 		<section class="cmp_announcements highlight_first">
@@ -65,12 +71,7 @@
 			</div><!-- .more -->
 		</section>
 	{/if}
-	
-	{if $additionalHomeContent}
-		<div class="additional_content">
-			{$additionalHomeContent}
-		</div>
-	{/if}
+
 
 	{* Latest issue *}
 	{if $issue}
