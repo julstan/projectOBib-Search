@@ -69,6 +69,18 @@
 					<input type="text" for="authors" name="authors" value="{$authors|escape}">
 				{/block}
 			</div>
+
+{*Suche nach Rubrik in etwa so ähnlich*}
+			<div class="section">
+				<label class="label" for="sections">
+					{translate key="search.section"}
+				</label>
+				{block name=searchSection}
+					<input type="text" for="sections" name="sections" value="{$sections|escape}">
+				{/block}
+			</div>
+
+
 			{call_hook name="Templates::Search::SearchResults::AdditionalFilters"}
 		</fieldset>
 
