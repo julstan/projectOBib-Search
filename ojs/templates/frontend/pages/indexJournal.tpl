@@ -72,7 +72,7 @@
 		</section>
 	{/if}
 
-
+	<hr><hr><hr><hr>
 	{* Latest issue *}
 	{if $issue}
 		<section class="current_issue">
