@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-29 20:30:52
+/* Smarty version 3.1.34-dev-7, created on 2020-05-29 20:50:04
   from 'app:frontendcomponentssearchF' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ed154dc457cc8_34608546',
+  'unifunc' => 'content_5ed1595c47d0a4_11513208',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ed154dc457cc8_34608546 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ed1595c47d0a4_11513208 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 if (!$_smarty_tpl->tpl_vars['currentJournal']->value || $_smarty_tpl->tpl_vars['currentJournal']->value->getData('publishingMode') != @constant('PUBLISHING_MODE_NONE')) {?>
@@ -48,7 +48,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['paramKey']->value => $_smarty_tpl->tp
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12597844205ed154dc452925_46434327', 'searchQuerySimple');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16500142915ed1595c477ef2_79829542', 'searchQuerySimple');
 ?>
 
 
@@ -69,12 +69,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12597844205ed154dc
 <?php }
 }
 /* {block 'searchQuerySimple'} */
-class Block_12597844205ed154dc452925_46434327 extends Smarty_Internal_Block
+class Block_16500142915ed1595c477ef2_79829542 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'searchQuerySimple' => 
   array (
-    0 => 'Block_12597844205ed154dc452925_46434327',
+    0 => 'Block_16500142915ed1595c477ef2_79829542',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
