@@ -102,16 +102,17 @@
 			<section class="section">
 				{if $section.articles}
 					{* hier Rubriken Titel versteckt*}
-					{*{if $section.title}
+					{if $section.title}
 						<div class="page-header">
 							<h2>
 								<small>{$section.title|escape}</small>
 							</h2>
 						</div>
-					{/if}*}
+					{/if}
 					<div class="media-list">
 						{foreach from=$section.articles item=article}
 							{include file="frontend/objects/article_summary.tpl"}
+							{$article|@print_r}
 						{/foreach}
 					</div>
 				{/if}
