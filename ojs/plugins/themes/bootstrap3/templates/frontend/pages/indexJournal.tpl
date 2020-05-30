@@ -42,7 +42,7 @@
 			{$additionalHomeContent}
 		</section>
 	{/if}
-	
+
 	{* Announcements *}
 	{if $numAnnouncementsHomepage && $announcements|count}
 		<section class="cmp_announcements media">

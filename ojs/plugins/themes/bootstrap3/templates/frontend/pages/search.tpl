@@ -48,7 +48,7 @@
 				{translate key="search.advancedFilters"}
 			</legend>
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-5">
 					<div class="form-group">
 						<label for="dateFromYear">
 							{translate key="search.dateFrom"}
@@ -70,13 +70,37 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-2">
+					<label>Boolesche Operatoren</label>
+					<button>UND</button>
+					<button>ODER</button>
+					<button>NICHT</button>
+				</div>
+				<div class="col-md-5">
 					<div class="form-group">
 						<label for="authors">
 							{translate key="search.author"}
 						</label>
 						<input class="form-control" type="text" for="authors" name="authors" value="{$authors|escape}">
 					</div>
+
+					{*Rubriken Suche*}
+					<div class="form-group">
+						<label for="sections">
+							{translate key="search.section"}
+						</label>
+						<input class="form-control" type="text" for="sections" name="sections" value="{$sections|escape}">
+						<label>funktioniert noch nicht</label>
+					</div>
+					<select class="form-group" searchable="Search here..">
+						<option value="1">Rubrik 1</option>
+						<option value="2">Aufsätze 2</option>
+						<option value="3">Kongressbänder 3</option>
+						<option value="4">Rubrik 4</option>
+						<option value="5">Rubrik 5</option>
+					</select>
+
+
 				</div>
 			</div>
 		</fieldset>
