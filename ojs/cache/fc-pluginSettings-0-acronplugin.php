@@ -27,7 +27,7 @@
     ),
     2 => 
     array (
-      'className' => 'plugins.importexport.doaj.DOAJInfoSender',
+      'className' => 'plugins.importexport.crossref.CrossrefInfoSender',
       'frequency' => 
       array (
         'hour' => 24,
@@ -49,7 +49,7 @@
     ),
     4 => 
     array (
-      'className' => 'plugins.importexport.medra.MedraInfoSender',
+      'className' => 'plugins.importexport.doaj.DOAJInfoSender',
       'frequency' => 
       array (
         'hour' => 24,
@@ -60,7 +60,7 @@
     ),
     5 => 
     array (
-      'className' => 'plugins.importexport.crossref.CrossrefInfoSender',
+      'className' => 'plugins.importexport.medra.MedraInfoSender',
       'frequency' => 
       array (
         'hour' => 24,
@@ -83,7 +83,7 @@
     ),
     7 => 
     array (
-      'className' => 'plugins.importexport.doaj.DOAJInfoSender',
+      'className' => 'plugins.importexport.crossref.CrossrefInfoSender',
       'frequency' => 
       array (
         'hour' => 24,
@@ -105,7 +105,7 @@
     ),
     9 => 
     array (
-      'className' => 'plugins.importexport.medra.MedraInfoSender',
+      'className' => 'plugins.importexport.doaj.DOAJInfoSender',
       'frequency' => 
       array (
         'hour' => 24,
@@ -116,7 +116,7 @@
     ),
     10 => 
     array (
-      'className' => 'plugins.importexport.crossref.CrossrefInfoSender',
+      'className' => 'plugins.importexport.medra.MedraInfoSender',
       'frequency' => 
       array (
         'hour' => 24,
@@ -139,7 +139,7 @@
     ),
     12 => 
     array (
-      'className' => 'plugins.importexport.doaj.DOAJInfoSender',
+      'className' => 'plugins.importexport.crossref.CrossrefInfoSender',
       'frequency' => 
       array (
         'hour' => 24,
@@ -161,7 +161,7 @@
     ),
     14 => 
     array (
-      'className' => 'plugins.importexport.medra.MedraInfoSender',
+      'className' => 'plugins.importexport.doaj.DOAJInfoSender',
       'frequency' => 
       array (
         'hour' => 24,
@@ -172,7 +172,7 @@
     ),
     15 => 
     array (
-      'className' => 'plugins.importexport.crossref.CrossrefInfoSender',
+      'className' => 'plugins.importexport.medra.MedraInfoSender',
       'frequency' => 
       array (
         'hour' => 24,
@@ -183,118 +183,6 @@
     ),
     16 => 
     array (
-      'className' => 'plugins.generic.usageStats.UsageStatsLoader',
-      'frequency' => 
-      array (
-        'hour' => 24,
-      ),
-      'args' => 
-      array (
-        0 => 'autoStage',
-      ),
-    ),
-    17 => 
-    array (
-      'className' => 'plugins.importexport.doaj.DOAJInfoSender',
-      'frequency' => 
-      array (
-        'hour' => 24,
-      ),
-      'args' => 
-      array (
-      ),
-    ),
-    18 => 
-    array (
-      'className' => 'plugins.importexport.datacite.DataciteInfoSender',
-      'frequency' => 
-      array (
-        'hour' => 24,
-      ),
-      'args' => 
-      array (
-      ),
-    ),
-    19 => 
-    array (
-      'className' => 'plugins.importexport.medra.MedraInfoSender',
-      'frequency' => 
-      array (
-        'hour' => 24,
-      ),
-      'args' => 
-      array (
-      ),
-    ),
-    20 => 
-    array (
-      'className' => 'plugins.importexport.crossref.CrossrefInfoSender',
-      'frequency' => 
-      array (
-        'hour' => 24,
-      ),
-      'args' => 
-      array (
-      ),
-    ),
-    21 => 
-    array (
-      'className' => 'plugins.generic.usageStats.UsageStatsLoader',
-      'frequency' => 
-      array (
-        'hour' => 24,
-      ),
-      'args' => 
-      array (
-        0 => 'autoStage',
-      ),
-    ),
-    22 => 
-    array (
-      'className' => 'plugins.importexport.doaj.DOAJInfoSender',
-      'frequency' => 
-      array (
-        'hour' => 24,
-      ),
-      'args' => 
-      array (
-      ),
-    ),
-    23 => 
-    array (
-      'className' => 'plugins.importexport.datacite.DataciteInfoSender',
-      'frequency' => 
-      array (
-        'hour' => 24,
-      ),
-      'args' => 
-      array (
-      ),
-    ),
-    24 => 
-    array (
-      'className' => 'plugins.importexport.medra.MedraInfoSender',
-      'frequency' => 
-      array (
-        'hour' => 24,
-      ),
-      'args' => 
-      array (
-      ),
-    ),
-    25 => 
-    array (
-      'className' => 'plugins.importexport.crossref.CrossrefInfoSender',
-      'frequency' => 
-      array (
-        'hour' => 24,
-      ),
-      'args' => 
-      array (
-      ),
-    ),
-    26 => 
-    array (
       'className' => 'lib.pkp.classes.task.ReviewReminder',
       'frequency' => 
       array (
@@ -304,7 +192,7 @@
       array (
       ),
     ),
-    27 => 
+    17 => 
     array (
       'className' => 'lib.pkp.classes.task.StatisticsReport',
       'frequency' => 
@@ -315,7 +203,7 @@
       array (
       ),
     ),
-    28 => 
+    18 => 
     array (
       'className' => 'classes.tasks.SubscriptionExpiryReminder',
       'frequency' => 

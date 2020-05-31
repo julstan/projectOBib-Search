@@ -22,3 +22,4 @@ styles/build.css
 cypress.env.json
 cypress/logs/
 cypress/screenshots/
+/ojs/cache/

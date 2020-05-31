@@ -35,6 +35,12 @@
 		</section>
 	{/if}
 
+	{if $additionalHomeContent}
+		<div class="additional_content">
+			{$additionalHomeContent}
+		</div>
+	{/if}
+
 	{* Announcements *}
 	{if $numAnnouncementsHomepage && $announcements|@count}
 		<section class="cmp_announcements highlight_first">
@@ -66,6 +72,7 @@
 		</section>
 	{/if}
 
+	<hr><hr><hr><hr>
 	{* Latest issue *}
 	{if $issue}
 		<section class="current_issue">
@@ -83,12 +90,7 @@
 		</section>
 	{/if}
 
-	{* Additional Homepage Content *}
-	{if $additionalHomeContent}
-		<div class="additional_content">
-			{$additionalHomeContent}
-		</div>
-	{/if}
+
 </div><!-- .page -->
 
 {include file="frontend/components/footer.tpl"}
