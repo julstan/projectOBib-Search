@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-26 13:14:11
+/* Smarty version 3.1.34-dev-7, created on 2020-05-28 17:24:58
   from 'app:frontendobjectsarticlesum' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5eccfa03cea4e5_02289373',
+  'unifunc' => 'content_5ecfd7ca2240c3_95539935',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7cf1cd52b8ba8108de77f197078de34b733dd394' => 
     array (
       0 => 'app:frontendobjectsarticlesum',
-      1 => 1590491589,
+      1 => 1590675259,
       2 => 'app',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/objects/galley_link.tpl' => 1,
   ),
 ),false)) {
-function content_5eccfa03cea4e5_02289373 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ecfd7ca2240c3_95539935 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('articlePath', $_smarty_tpl->tpl_vars['article']->value->getBestId($_smarty_tpl->tpl_vars['currentJournal']->value));
 if ((!$_smarty_tpl->tpl_vars['section']->value['hideAuthor'] && $_smarty_tpl->tpl_vars['article']->value->getHideAuthor() == @constant('AUTHOR_TOC_DEFAULT')) || $_smarty_tpl->tpl_vars['article']->value->getHideAuthor() == @constant('AUTHOR_TOC_SHOW')) {?>
 	<?php $_smarty_tpl->_assignInScope('showAuthor', true);
