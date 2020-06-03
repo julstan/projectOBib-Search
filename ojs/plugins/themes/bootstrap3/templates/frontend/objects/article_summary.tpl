@@ -52,7 +52,7 @@
 				</div>
 			{/if}
 {* hier Label für NEU*}
-			<button class="btn btn-success">NEW in article_summary.tpl</button>
+			<button class="btn btn-success">NEW</button>
 
 			{* Page numbers for this article *}
 			{if $article->getPages()}
