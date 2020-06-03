@@ -3,9 +3,9 @@
 /**
  * @file CustomHeaderPlugin.inc.php
  *
- * Copyright (c) 2013-2020 Simon Fraser University
- * Copyright (c) 2003-2020 John Willinsky
- * Distributed under the GNU GPL v3. For full terms see the file LICENSE.
+ * Copyright (c) 2013-2019 Simon Fraser University
+ * Copyright (c) 2003-2019 John Willinsky
+ * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class CustomHeaderPlugin
  * @ingroup plugins_generic_customHeader
@@ -125,7 +125,7 @@ class CustomHeaderPlugin extends GenericPlugin {
 	function insertFooter($hookName, $params) {
 		$templateMgr =& $params[0];
 		$output =& $params[2];
-		$request = Application::get()->getRequest();
+		$request = Application::getRequest();
 		$context = $request->getContext();
 		
 		$output .= $this->getSetting($context?$context->getId():CONTEXT_ID_NONE, 'footerContent');
@@ -143,6 +143,6 @@ class CustomHeaderPlugin extends GenericPlugin {
 	 * @return boolean
 	 */
 	function isSitePlugin() {
-		return !(Application::get()->getRequest()->getContext());
+		return !Application::getRequest()->getContext();
 	}
 }

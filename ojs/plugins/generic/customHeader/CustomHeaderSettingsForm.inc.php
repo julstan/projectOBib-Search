@@ -3,9 +3,9 @@
 /**
  * @file CustomHeaderSettingsForm.inc.php
  *
- * Copyright (c) 2013-2020 Simon Fraser University
- * Copyright (c) 2003-2020 John Willinsky
- * Distributed under the GNU GPL v3. For full terms see the file LICENSE.
+ * Copyright (c) 2013-2019 Simon Fraser University
+ * Copyright (c) 2003-2019 John Willinsky
+ * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class CustomHeaderSettingsForm
  * @ingroup plugins_generic_customHeaders
@@ -68,9 +68,7 @@ class CustomHeaderSettingsForm extends Form {
 	/**
 	 * Save settings.
 	 */
-	function execute($request, ...$functionArgs) {
-		parent::execute($request, ...$functionArgs);
-
+	function execute($request) {
 		$this->_plugin->updateSetting($this->_contextId, 'content', $this->getData('content'), 'string');
 		$this->_plugin->updateSetting($this->_contextId, 'footerContent', $this->getData('footerContent'), 'string');
 		$notificationManager = new NotificationManager();

@@ -146,6 +146,10 @@ class BootstrapThreeThemePlugin extends ThemePlugin {
 
 		// Add navigation menu areas for this theme
 		$this->addMenuArea(array('primary', 'user'));
+
+		// child-theme 
+		$this->setParent('BootstrapThreeThemePlugin');		
+		$this->modifyStyle('bootstrap', array('addLess' => array('styles/obib.less')));
 	}
 
 	/**

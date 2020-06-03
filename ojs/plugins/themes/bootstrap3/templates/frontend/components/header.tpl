@@ -43,6 +43,13 @@
 						{load_menu name="user" id="navigationUser" ulClass="nav nav-pills tab-list pull-right"}
 					</nav>
 				</div><!-- .row -->
+
+			<!--logo in den Header einfügen-->
+			<div style="border: 0px dotted yellow; width: 100%; text-align: center; height: 75px; z-index: 100; position: relative;">
+				<a href="{$homeUrl}">
+					<img src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{else}alt="{translate key="common.pageHeaderLogo.altText"}"{/if}>
+				</a>
+
 			</div><!-- .container-fluid -->
 
 			<div class="container-fluid">
@@ -99,13 +106,13 @@
 					{load_menu name="primary" id="main-navigation" ulClass="nav navbar-nav"}
 				{/capture}
 
-				{if !empty(trim($primaryMenu)) || $currentContext}
+				{if !empty(trim($primaryMenu)) || !$noContextsConfigured}
 					<nav id="nav-menu" class="navbar-collapse collapse" aria-label="{translate|escape key="common.navigation.site"}">
 						{* Primary navigation menu for current application *}
 						{$primaryMenu}
 
 						{* Search form *}
-						{if $currentContext}
+						{if !$noContextsConfigured}
 							<div class="pull-md-right">
 								{include file="frontend/components/searchForm_simple.tpl"}
 							</div>
