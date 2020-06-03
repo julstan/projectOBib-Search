@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-28 17:24:57
+/* Smarty version 3.1.34-dev-7, created on 2020-06-03 14:30:15
   from 'app:frontendcomponentsheader.' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ecfd7c9a37f22_37620202',
+  'unifunc' => 'content_5ed797d76e22a4_36692785',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10ae5578a0959129b8d4ceeb9f99c1bb2a9cbd65' => 
     array (
       0 => 'app:frontendcomponentsheader.',
-      1 => 1590675259,
+      1 => 1590776868,
       2 => 'app',
     ),
   ),
@@ -22,8 +22,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/components/searchForm_simple.tpl' => 1,
   ),
 ),false)) {
-function content_5ecfd7c9a37f22_37620202 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\Herzbube\\Xampp\\htdocs\\projectOBib-Search\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
+function content_5ed797d76e22a4_36692785 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\ojsrepo\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
 ?>
 
 <?php $_smarty_tpl->_assignInScope('showingLogo', true);
@@ -69,18 +69,6 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>">
 
 					</nav>
 				</div><!-- .row -->
-
-			<!--logo in den Header einfügen-->
-			<div style="border: 0px dotted yellow; width: 100%; text-align: center; height: 75px; z-index: 100; position: relative;">
-				<a href="<?php echo $_smarty_tpl->tpl_vars['homeUrl']->value;?>
-">
-					<img src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
-/<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['displayPageHeaderLogo']->value['uploadName'],"url" ));?>
-" <?php if ($_smarty_tpl->tpl_vars['displayPageHeaderLogo']->value['altText'] != '') {?>alt="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['displayPageHeaderLogo']->value['altText'] ));?>
-"<?php } else { ?>alt="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"common.pageHeaderLogo.altText"),$_smarty_tpl ) );?>
-"<?php }?>>
-				</a>
-
 			</div><!-- .container-fluid -->
 
 			<div class="container-fluid">
@@ -150,13 +138,13 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>">
 
 				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);?>
 
-				<?php if (!empty(trim($_smarty_tpl->tpl_vars['primaryMenu']->value)) || !$_smarty_tpl->tpl_vars['noContextsConfigured']->value) {?>
+				<?php if (!empty(trim($_smarty_tpl->tpl_vars['primaryMenu']->value)) || $_smarty_tpl->tpl_vars['currentContext']->value) {?>
 					<nav id="nav-menu" class="navbar-collapse collapse" aria-label="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"common.navigation.site"),$_smarty_tpl ) ) ));?>
 ">
 												<?php echo $_smarty_tpl->tpl_vars['primaryMenu']->value;?>
 
 
-												<?php if (!$_smarty_tpl->tpl_vars['noContextsConfigured']->value) {?>
+												<?php if ($_smarty_tpl->tpl_vars['currentContext']->value) {?>
 							<div class="pull-md-right">
 								<?php $_smarty_tpl->_subTemplateRender("app:frontend/components/searchForm_simple.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

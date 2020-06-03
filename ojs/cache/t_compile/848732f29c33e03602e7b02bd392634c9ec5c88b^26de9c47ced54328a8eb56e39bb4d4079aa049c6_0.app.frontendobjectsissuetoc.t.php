@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-28 17:24:58
+/* Smarty version 3.1.34-dev-7, created on 2020-06-03 14:30:16
   from 'app:frontendobjectsissuetoc.t' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ecfd7ca031350_29122753',
+  'unifunc' => 'content_5ed797d8335178_84359661',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '26de9c47ced54328a8eb56e39bb4d4079aa049c6' => 
     array (
       0 => 'app:frontendobjectsissuetoc.t',
-      1 => 1590675259,
+      1 => 1591036707,
       2 => 'app',
     ),
   ),
@@ -23,8 +23,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/objects/article_summary.tpl' => 1,
   ),
 ),false)) {
-function content_5ecfd7ca031350_29122753 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\Herzbube\\Xampp\\htdocs\\projectOBib-Search\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
+function content_5ed797d8335178_84359661 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\ojsrepo\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <div class="issue-toc">
 
@@ -139,7 +139,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['section']->value) {
 ?>
 			<section class="section">
 				<?php if ($_smarty_tpl->tpl_vars['section']->value['articles']) {?>
-					<?php if ($_smarty_tpl->tpl_vars['section']->value['title']) {?>
+										<?php if ($_smarty_tpl->tpl_vars['section']->value['title']) {?>
 						<div class="page-header">
 							<h2>
 								<small><?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['section']->value['title'] ));?>
@@ -155,6 +155,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['article']->value) {
 ?>
 							<?php $_smarty_tpl->_subTemplateRender("app:frontend/objects/article_summary.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
+							<?php echo print_r($_smarty_tpl->tpl_vars['article']->value);?>
+
 						<?php
 }
 }
