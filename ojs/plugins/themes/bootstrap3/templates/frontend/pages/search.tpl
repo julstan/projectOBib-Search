@@ -80,7 +80,7 @@
 				<div class="col-md-5">
 					<div class="form-group">
 						<label for="authors">
-							{translate key="search.author"} {*Hier funktioniert der key: Nach Autor/in*}
+							{translate key="search.author"} {*Hier funktioniert der key: Nach Autor/in / By Author*}
 						</label>
 						<input class="form-control" type="text" for="authors" name="authors" value="{$authors|escape}">
 					</div>
@@ -88,7 +88,7 @@
 					{*Rubriken Suche*}
 					<div class="form-group">
 						<label for="sections">
-							{*{translate key="search.section"}*} {*Der key funktioniert nicht, zeigt ##search.section## an das ist aber höchstwahrscheinlich nur die Übersetzung*} 
+							{*{translate key="search.section"}*} {*Der key dient nur für die Übersetzung*} 
 						Nach Rubrik
 						</label>
 						<input class="form-control" type="text" for="sections" name="sections" value="{$sections|escape}">
