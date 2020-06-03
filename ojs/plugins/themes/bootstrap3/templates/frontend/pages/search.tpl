@@ -36,7 +36,7 @@
 			</label>
 
 			<div class="input-group">
-				<input type="text" id="query" name="query" value="{$query|escape}" class="query form-control" placeholder="{translate key="common.search"}">
+				<input type="text" id="query" name="query" onfocus="this.value=''" value="{$query|escape}" class="query form-control" placeholder="{translate key="common.search"}">
 				<span class="input-group-btn">
 					<input type="submit" value="{translate key="common.search"}" class="btn btn-default">
 				</span>
@@ -63,46 +63,94 @@
 						<label for="dateToYear">
 							{translate key="search.dateTo"}
 						</label>
-						<div class="form-inline">
+						<div class="form-inline" >
 							<div class="form-group">
 								{html_select_date prefix="dateTo" time=$dateTo start_year=$yearStart end_year=$yearEnd year_empty="" month_empty="" day_empty="" field_order="YMD"}
 							</div>
+							
 						</div>
+						
 					</div>
+					<small class="text-muted">Wichtig: Zeitraumsuche mit Suchwort kombinieren</small>
+					<p><span class="label label-info">Info:</span><br>Zeitraumsuche nur in Kombination mit Suchwort möglich</p>
+					<div class="panel panel-primary">
+      <div class="panel-heading">Info:</div>
+      <div class="panel-body">Zeitraumsuche nur in Kombination mit Suchwort möglich</div>
+    </div>
 				</div>
+				
 				{* Unser Code Patty Julika *}
-				<div class="col-md-2">
-					<label>Boolesche Operatoren</label>
-					<button>UND</button>
-					<button>ODER</button>
-					<button>NICHT</button>
-				</div>
-				<div class="col-md-5">
-					<div class="form-group">
+
+
+				{*Boolesche Operatoren und Autor Row 1*}
+				<div class="form-row">
+				<div class="form-group col-md-2">
+				<label class="invisible">Bool 1</label>
+					 <select id="boolesche_operatoren" class="form-control">
+					<option selected>UND</option>
+						<option value="1">ODER</option>
+						<option value="2">NICHT</option>
+						 </select>
+					</div>
+					<div class="form-group col-md-5">
 						<label for="authors">
 							{translate key="search.author"} {*Hier funktioniert der key: Nach Autor/in / By Author*}
 						</label>
-						<input class="form-control" type="text" for="authors" name="authors" value="{$authors|escape}">
+						<div class="input-group">
+						<input class="form-control" type="text" for="authors" name="authors" onfocus="this.value=''" value="{$authors|escape}" placeholder="{translate key="common.search"}">
+						<span class="input-group-btn">
+					<input type="submit" value="{translate key="common.search"}" class="btn btn-info">
+				</span>
+				</div>
 					</div>
+				</div>
 
+
+				{*Boolesche Operatoren und Rubrik Row 2*}
+				<div class="form-row">
+				<div class="form-group col-md-2">
+				<label class="invisible">Bool 2</label>
+					 <select id="boolesche_operatoren" class="form-control">
+					<option selected>UND</option>
+						<option value="1">ODER</option>
+						<option value="2">NICHT</option>
+						 </select>
+					</div>
+				</div>
+				<div class="col-md-5">
+					
+					
 					{*Rubriken Suche*}
 					<div class="form-group">
 						<label for="sections">
 							{*{translate key="search.section"}*} {*Der key dient nur für die Übersetzung*} 
 						Nach Rubrik
 						</label>
-						<input class="form-control" type="text" for="sections" name="sections" value="{$sections|escape}">
+						<div class="input-group">
+						<input class="form-control" type="text" for="sections" name="sections" onfocus="this.value=''" value="{$sections|escape}" placeholder="{translate key="common.search"}">
+						<span class="input-group-btn">
+					<input type="submit" value="{translate key="common.search"}" class="btn btn-info">
+				</span>
+				</div>
 						<label>funktioniert noch nicht</label>
 					</div>
-					<select class="form-group" searchable="Search here..">
-						<option value="1">Rubrik 1</option>
-						<option value="2">Aufsätze 2</option>
-						<option value="3">Kongressbänder 3</option>
-						<option value="4">Rubrik 4</option>
-						<option value="5">Rubrik 5</option>
-					</select>
 
+					{*Rubriken Suche aufklappbar*}
+					<div class="form-group">
+					 <label for="sections">Nach Rubrik</label>
+					 <select id="sections" class="form-control">
+					<option selected>Alle</option>
+						<option value="1">Kongressbeiträge</option>
+						<option value="2">Aufsätze</option>
+						<option value="3">Tagungsberichte</option>
+						<option value="4">Berichte und Mitteilungen</option>
+						<option value="5">Diskussionsbeiträge</option>
+						<option value="6">Rezensionen</option>
+						<option value="7">Landes- und Regionalverbänden VDB</option>
+						 </select>
+					</div>
 
+				</div>
 				</div>
 			</div>
 		</fieldset>
