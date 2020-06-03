@@ -1,4 +1,4 @@
 <?php return array (
-  'bootstrapTheme' => 'bootstrap3',
+  'bootstrapTheme' => 'cerulean',
   'enabled' => true,
 );

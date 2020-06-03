@@ -1,30 +1,18 @@
 <?php
-<<<<<<< HEAD
-/* Smarty version 3.1.34-dev-7, created on 2020-05-28 17:24:58
-=======
-/* Smarty version 3.1.34-dev-7, created on 2020-05-30 13:22:46
->>>>>>> b8631fa7f65ed81205617c774e6126d37babb355
+/* Smarty version 3.1.34-dev-7, created on 2020-06-03 17:37:42
   from 'plugins-plugins-blocks-makeSubmission-blocks-makeSubmission:block.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-<<<<<<< HEAD
-  'unifunc' => 'content_5ecfd7cab6baa0_94505441',
-=======
-  'unifunc' => 'content_5ed24206a54778_69998685',
->>>>>>> b8631fa7f65ed81205617c774e6126d37babb355
+  'unifunc' => 'content_5ed7c3c6c34796_22590780',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0e2c3286932fe624b3b3eea2932722cfbbe64c1a' => 
     array (
       0 => 'plugins-plugins-blocks-makeSubmission-blocks-makeSubmission:block.tpl',
-<<<<<<< HEAD
-      1 => 1590675236,
-=======
-      1 => 1590772910,
->>>>>>> b8631fa7f65ed81205617c774e6126d37babb355
+      1 => 1586500795,
       2 => 'plugins-plugins-blocks-makeSubmission-blocks-makeSubmission',
     ),
   ),
@@ -32,11 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-<<<<<<< HEAD
-function content_5ecfd7cab6baa0_94505441 (Smarty_Internal_Template $_smarty_tpl) {
-=======
-function content_5ed24206a54778_69998685 (Smarty_Internal_Template $_smarty_tpl) {
->>>>>>> b8631fa7f65ed81205617c774e6126d37babb355
+function content_5ed7c3c6c34796_22590780 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="pkp_block block_make_submission">
 	<h2 class="pkp_screen_reader">
 		<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"plugins.block.makeSubmission.linkLabel"),$_smarty_tpl ) );?>
