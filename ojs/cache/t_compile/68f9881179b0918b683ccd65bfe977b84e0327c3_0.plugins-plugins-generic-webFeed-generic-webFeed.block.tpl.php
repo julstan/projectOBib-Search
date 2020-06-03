@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-03 17:37:42
+/* Smarty version 3.1.34-dev-7, created on 2020-06-03 21:09:50
   from 'plugins-plugins-generic-webFeed-generic-webFeed:block.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ed7c3c6537957_28015808',
+  'unifunc' => 'content_5ed7f57e38a1e3_50913876',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ed7c3c6537957_28015808 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ed7f57e38a1e3_50913876 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="pkp_block block_web_feed">
 	<span class="title"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"journal.currentIssue"),$_smarty_tpl ) );?>
 </span>
