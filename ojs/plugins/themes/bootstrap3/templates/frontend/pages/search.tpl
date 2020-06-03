@@ -82,43 +82,41 @@
 				{* Unser Code Patty Julika *}
 
 
-				{*Boolesche Operatoren und Autor Row 1*}
-				<div class="form-row">
-				<div class="form-group col-md-2">
-				<label class="invisible">Bool 1</label>
-					 <select id="boolesche_operatoren" class="form-control">
-					<option selected>UND</option>
+				{*Boolesche Operatoren*}
+				<div class="col-md-2">
+					<div class="form-group">
+						<label class="invisible">1</label>
+					 	<select id="boolesche_operatoren" class="form-control">
+						<option selected>UND</option>
 						<option value="1">ODER</option>
 						<option value="2">NICHT</option>
 						 </select>
 					</div>
-					<div class="form-group col-md-5">
+					<div class="form-group">
+						<label class="invisible">2</label>
+					 	<select id="boolesche_operatoren" class="form-control">
+						<option selected>UND</option>
+						<option value="1">ODER</option>
+						<option value="2">NICHT</option>
+						 </select>
+					</div>
+				</div>
+
+
+				{*Autor Rubrik*}
+				
+				<div class="col-md-5">
+					<div class="form-group">
 						<label for="authors">
 							{translate key="search.author"} {*Hier funktioniert der key: Nach Autor/in / By Author*}
 						</label>
 						<div class="input-group">
 						<input class="form-control" type="text" for="authors" name="authors" onfocus="this.value=''" value="{$authors|escape}" placeholder="{translate key="common.search"}">
 						<span class="input-group-btn">
-					<input type="submit" value="{translate key="common.search"}" class="btn btn-info">
-				</span>
-				</div>
+						<input type="submit" value="{translate key="common.search"}" class="btn btn-info">
+						</span>
+						</div>
 					</div>
-				</div>
-
-
-				{*Boolesche Operatoren und Rubrik Row 2*}
-				<div class="form-row">
-				<div class="form-group col-md-2">
-				<label class="invisible">Bool 2</label>
-					 <select id="boolesche_operatoren" class="form-control">
-					<option selected>UND</option>
-						<option value="1">ODER</option>
-						<option value="2">NICHT</option>
-						 </select>
-					</div>
-				</div>
-				<div class="col-md-5">
-					
 					
 					{*Rubriken Suche*}
 					<div class="form-group">
@@ -129,17 +127,17 @@
 						<div class="input-group">
 						<input class="form-control" type="text" for="sections" name="sections" onfocus="this.value=''" value="{$sections|escape}" placeholder="{translate key="common.search"}">
 						<span class="input-group-btn">
-					<input type="submit" value="{translate key="common.search"}" class="btn btn-info">
-				</span>
-				</div>
+						<input type="submit" value="{translate key="common.search"}" class="btn btn-info">
+						</span>
+						</div>
 						<label>funktioniert noch nicht</label>
 					</div>
 
 					{*Rubriken Suche aufklappbar*}
 					<div class="form-group">
-					 <label for="sections">Nach Rubrik</label>
-					 <select id="sections" class="form-control">
-					<option selected>Alle</option>
+					 	<label for="sections">Nach Rubrik</label>
+					 	<select id="sections" class="form-control">
+						<option selected>Alle</option>
 						<option value="1">Kongressbeiträge</option>
 						<option value="2">Aufsätze</option>
 						<option value="3">Tagungsberichte</option>
@@ -150,7 +148,8 @@
 						 </select>
 					</div>
 
-				</div>
+				
+				
 				</div>
 			</div>
 		</fieldset>
