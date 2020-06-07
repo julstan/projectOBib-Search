@@ -112,7 +112,8 @@
 					<div class="media-list">
 						{foreach from=$section.articles item=article}
 							{include file="frontend/objects/article_summary.tpl"}
-							{$article|@print_r}
+							{*{$article|@print_r}*}
+							{$publication|@print_r:true}
 						{/foreach}
 					</div>
 				{/if}

@@ -31,6 +31,7 @@
 	<header>
 		<h1 class="page-header">
 			{$publication->getLocalizedTitle()|escape}
+			{$publication|@print_r:true}
 			{if $publication->getLocalizedData('subtitle')}
 				<small>
 					{$publication->getLocalizedData('subtitle')|escape}

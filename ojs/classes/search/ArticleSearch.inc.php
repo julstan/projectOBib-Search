@@ -372,8 +372,8 @@ class ArticleSearch extends SubmissionSearch {
 	 * See SubmissionSearch::getDefaultOrderDir()
 	 */
 	function getDefaultOrderDir($orderBy) {
-		$orderDir = 'asc';
-		if (in_array($orderBy, array('score', 'publicationDate', 'issuePublicationDate', 'popularityAll', 'popularityMonth'))) {
+		
+		if (in_array($orderBy, array('publicationDate'))) {
 			$orderDir = 'desc';
 		}
 		return $orderDir;
