@@ -8,9 +8,7 @@
  * Common site sidebar menu -- "Make a Submission" block.
  *}
 <div class="pkp_block block_make_submission">
-	<h2 class="pkp_screen_reader">
-		{translate key="plugins.block.makeSubmission.linkLabel"}
-	</h2>
+	
 
 	<div class="content">
 		<a class="block_make_submission_link" href="{url router=$smarty.const.ROUTE_PAGE page="about" op="submissions"}">

@@ -31,14 +31,14 @@
 	</div>
 
 	{if $articles|@count}
-		<ul class="cmp_article_list">
+		<div class="cmp_article_list">
 			{foreach from=$articles item=article}
-				<li>
+				
 					{* TODO remove section=null workaround. article_summary.tpl expects a specific section array. See issue_toc.tpl. *}
 					{include file="frontend/objects/article_summary.tpl" section=null showDatePublished=true hideGalleys=true}
-				</li>
+			
 			{/foreach}
-		</ul>
+		</div>
 
 		{* Pagination *}
 		{if $prevPage > 1}
