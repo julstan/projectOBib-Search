@@ -98,6 +98,7 @@
 
 	{* Articles *}
 	<div class="sections">
+	{*$publishedSubmissions|@print_r:true*}
 		{foreach name=sections from=$publishedSubmissions item=section}
 			<section class="section">
 				{if $section.articles}
@@ -107,6 +108,10 @@
 							<h2>
 								<small>{$section.title|escape}</small>
 							</h2>
+							{assign var="date" value=$section.articles.0->_data.publications.0->_data.datePublished}
+							{$date}
+							{*$section.articles.0->_data.publications.0->_data.datePublished|@print_r:true*}
+							{*$section.articles.0._data.publications.0._data.datePublished|@print_r:true*}
 						</div>
 					{/if}
 					<div class="media-list">
