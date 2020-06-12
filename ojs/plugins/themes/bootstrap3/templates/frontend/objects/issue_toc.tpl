@@ -108,7 +108,8 @@
 							<h2>
 								<small>{$section.title|escape}</small>
 							</h2>
-							{assign var="date" value=$section.articles.0->_data.publications.0->_data.datePublished}
+							{assign var="number" value=0}
+							{assign var="date" value=$section.articles.$number->_data.publications.$number->_data.datePublished}
 							{$date}
 							{*$section.articles.0->_data.publications.0->_data.datePublished|@print_r:true*}
 							{*$section.articles.0._data.publications.0._data.datePublished|@print_r:true*}
