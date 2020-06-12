@@ -71,12 +71,12 @@
 						</div>
 						
 					</div>
-					<small class="text-muted">Wichtig: Zeitraumsuche mit Suchwort kombinieren</small>
-					<p><span class="label label-info">Info:</span><br>Zeitraumsuche nur in Kombination mit Suchwort möglich</p>
+					<small class="text-muted">Info: <br>Zeitraumsuche immer mit Suchwort kombinieren</small>
+					{*<p><span class="label label-info">Info:</span><br>Zeitraumsuche nur in Kombination mit Suchwort möglich</p>
 					<div class="panel panel-primary">
       <div class="panel-heading">Info:</div>
       <div class="panel-body">Zeitraumsuche nur in Kombination mit Suchwort möglich</div>
-    </div>
+    </div>*}
 				</div>
 				
 				{* Unser Code Patty Julika *}
@@ -118,6 +118,7 @@
 						</div>
 					</div>
 					
+					
 					{*Rubriken Suche*}
 					<div class="form-group">
 						<label for="sections">
@@ -147,9 +148,11 @@
 						<option value="7">Landes- und Regionalverbänden VDB</option>
 						 </select>
 					</div>
-
-				
-				
+								{*Hier müssen wir die Values noch bestimmen*}																	<li class="">
+									<a href="http://localhost/ojsrepo/ojs/index.php/obib/section/view/aus-den-landes--und-regionalverbnden-des-vdb">
+										Landes- und Regionalverbände VDB
+									</a>
+									
 				</div>
 			</div>
 		</fieldset>
@@ -171,7 +174,7 @@
 			{else}
 				{include file="frontend/components/notification.tpl" type="notice" messageKey="search.noResults"}
 			{/if}
-
+	
 		{* Results pagination *}
 		{else}
 			<div class="cmp_pagination">
