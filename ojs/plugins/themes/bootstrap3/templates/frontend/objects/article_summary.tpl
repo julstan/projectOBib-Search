@@ -40,6 +40,12 @@
 			</a>
 		</h3>
 
+{* hier Veroffentlicht*}
+		{if $article->getDatePublished()}
+				<p class="published">
+					{$article->getDatePublished()|escape|date_format:$dateFormatShort}
+				</p>
+			{/if}
 		{if $showAuthor || $article->getPages()}
 
 			{if $showAuthor}
@@ -52,7 +58,23 @@
 				</div>
 			{/if}
 {* hier Label für NEU*}
+	
+			{* wenn DatePublished nicht 4 Wochen älter als aktuelles Datum*}
+			{assign var='f' value=0}
+			{assign var='DatumAufsatz' value=$article->getDatePublished()}
+			{assign var='AktuellDatum' value=$smarty.now|date_format: "%Y-%m-%d"}
+			{if $DatumAufsatz == $AktuellDatum} 
 			<button class="btn btn-success">NEW</button>
+			{math equation="$f + 2"}  {*math equation glaub unnötig, kann man weglassen*} {*hier muss die Ausgabe noch versteckt werden, gerade sieht man die 2*}
+			{elseif $f > 0}
+			<button class="btn btn-primary">NEW</button>
+			{math equation="$f - 1"}
+			{else $f <= 0}
+			{"{$DatumAufsatz} ist älter als 2 Tage von {$AktuellDatum}"}
+			{/if}
+		
+
+		
 
 			{* Page numbers for this article *}
 			{if $article->getPages()}
