@@ -96,9 +96,13 @@
 		</div>
 	{/if}
 
-	{* Articles *}
+
+	
+	
+
+	{* chronologische Reihenfolge *}
 	<div class="sections">
-	{*$publishedSubmissions|@print_r:true*}
+	{assign var="alleDaten" value=[]}
 		{foreach name=sections from=$publishedSubmissions item=section}
 			<section class="section">
 				{if $section.articles}
@@ -108,22 +112,35 @@
 							<h2>
 								<small>{$section.title|escape}</small>
 							</h2>
-							{assign var="number" value=0}
-							{assign var="date" value=$section.articles.$number->_data.publications.$number->_data.datePublished}
-							{$date}
-							{*$section.articles.0->_data.publications.0->_data.datePublished|@print_r:true*}
-							{*$section.articles.0._data.publications.0._data.datePublished|@print_r:true*}
-						</div>
+							{assign var="artikelProRubrik" value=-1}
+							{foreach from=$section.articles item=article}
+								{assign var="artikelProRubrik" value=$artikelProRubrik+1}
+								{$artikelProRubrik}
+								{assign var="artikelVersion" value=-1}
+								{foreach from=$section.articles.$artikelProRubrik->_data.publications key=k item=v}
+									{assign var="artikelVersion" value=$artikelVersion+1}
+									{$artikelVersion} <br> <br>
+									
+										{assign var="datum" value=$section.articles.$artikelProRubrik->_data.publications.$artikelVersion->_data.datePublished}
+										{append var="alleDaten" value=$datum}
+										{foreach from=$alleDaten item=datumEintrag}
+											{$datumEintrag} <br>
+										{/foreach}
+									
+								{/foreach}
+							{/foreach}
+							{*assign var="date" value=$section.articles.$number->_data.publications.$number->_data.datePublished}
+							{$date*}
+							</div>
 					{/if}
 					<div class="media-list">
 						{foreach from=$section.articles item=article}
 							{include file="frontend/objects/article_summary.tpl"}
-							{*{$article|@print_r}*}
-							{$publication|@print_r:true}
 						{/foreach}
 					</div>
 				{/if}
 			</section>
 		{/foreach}
 	</div><!-- .sections -->
+
 </div><!-- .issue-toc -->
