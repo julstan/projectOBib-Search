@@ -121,12 +121,12 @@
 					
 					{*Rubriken Suche*}
 					<div class="form-group">
-						<label for="sections">
+						<label for="section">
 							{*{translate key="search.section"}*} {*Der key dient nur für die Übersetzung*} 
 						Nach Rubrik
 						</label>
 						<div class="input-group">
-						<input class="form-control" type="text" for="sections" name="sections" onfocus="this.value=''" value="{$sections|escape}" placeholder="{translate key="common.search"}">
+						<input class="form-control" type="text" for="section" name="section" onfocus="this.value=''" value="{$section|escape}" placeholder="{translate key="common.search"}">
 						<span class="input-group-btn">
 						<input type="submit" value="{translate key="common.search"}" class="btn btn-info">
 						</span>
@@ -164,8 +164,11 @@
 			</h2>
 			{iterate from=results item=result}
 				{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission showDatePublished=true hideGalleys=true}
+				{*{include file="frontend/objects/article_summary.tpl" section=null showDatePublished=true hideGalleys=true}*}
 			{/iterate}
+			
 		</div>
+	
 
 		{* No results found *}
 		{if $results->wasEmpty()}
@@ -174,7 +177,7 @@
 			{else}
 				{include file="frontend/components/notification.tpl" type="notice" messageKey="search.noResults"}
 			{/if}
-	
+
 		{* Results pagination *}
 		{else}
 			<div class="cmp_pagination">
