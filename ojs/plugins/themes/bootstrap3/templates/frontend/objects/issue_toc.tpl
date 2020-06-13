@@ -129,8 +129,6 @@
 									
 								{/foreach}
 							{/foreach}
-							{* {assign var="date" value=$section.articles.$number->_data.publications.$number->_data.datePublished}
-							{$date} *}
 							</div>
 					{/if}
 					<div class="media-list">
@@ -179,6 +177,34 @@
 				{append var="datenOhneDopplungen" value=$datum}
 				{assign var="letztesDatum" value=$datum}
 			{/if}
+		{/foreach}
+
+		{foreach from=$datenOhneDopplungen item=datum1}
+			{foreach name=sections from=$publishedSubmissions item=section}
+			<section class="section">
+				{if $section.articles}
+					{* hier Rubriken Titel versteckt*}
+						<div class="page-header">
+							{assign var="artikelProRubrik" value=-1}
+							{foreach from=$section.articles item=article}
+								{assign var="artikelProRubrik" value=$artikelProRubrik+1}
+								{assign var="artikelVersion" value=-1}
+								{foreach from=$section.articles.$artikelProRubrik->_data.publications key=k item=v}
+									{assign var="artikelVersion" value=$artikelVersion+1}
+									{assign var="datum" value=$section.articles.$artikelProRubrik->_data.publications.$artikelVersion->_data.datePublished}
+
+									{* prüfen ob datePublished des Artikels == datum1 aus datenOhneDopplungen *}
+									{if $datum1 == $datum}
+										{include file="frontend/objects/article_summary.tpl"}
+									{/if}
+
+								{/foreach}
+							{/foreach}
+						</div>
+				{/if}
+					
+			</section>
+			{/foreach}
 		{/foreach}
 
 		datenOhneDopplungen: 
