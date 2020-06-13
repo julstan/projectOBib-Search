@@ -108,34 +108,34 @@
 				{if $section.articles}
 					{* hier Rubriken Titel versteckt*}
 					{if $section.title}
-						<div class="page-header">
-							<h2>
+						{* <div class="page-header"> *}
+							{* <h2>
 								<small>{$section.title|escape}</small>
-							</h2>
+							</h2> *}
 							{assign var="artikelProRubrik" value=-1}
 							{foreach from=$section.articles item=article}
 								{assign var="artikelProRubrik" value=$artikelProRubrik+1}
-								{$artikelProRubrik}
+								{* {$artikelProRubrik} *}
 								{assign var="artikelVersion" value=-1}
 								{foreach from=$section.articles.$artikelProRubrik->_data.publications key=k item=v}
 									{assign var="artikelVersion" value=$artikelVersion+1}
-									{$artikelVersion} <br> <br>
+									{* {$artikelVersion} <br> <br> *}
 									
 										{assign var="datum" value=$section.articles.$artikelProRubrik->_data.publications.$artikelVersion->_data.datePublished}
 										{append var="alleDaten" value=$datum}
 										{foreach from=$alleDaten item=datumEintrag}
-											{$datumEintrag} <br>
+											{* {$datumEintrag} <br> *}
 										{/foreach}
 									
 								{/foreach}
 							{/foreach}
-							</div>
+							{* </div> *}
 					{/if}
-					<div class="media-list">
+					{* <div class="media-list">
 						{foreach from=$section.articles item=article}
 							{include file="frontend/objects/article_summary.tpl"}
 						{/foreach}
-					</div>
+					</div> *}
 				{/if}
 			</section>
 		{/foreach}
@@ -156,7 +156,7 @@
 			{/foreach}
 			
 
-			neuestes Datum: {$neuestesDatum} <br>
+			{* neuestes Datum: {$neuestesDatum} <br> *}
 			{append var="alleDatenSortiert" value=$neuestesDatum}
 			{assign var="alleDaten" value=[]}
 
@@ -184,7 +184,7 @@
 			<section class="section">
 				{if $section.articles}
 					{* hier Rubriken Titel versteckt*}
-						<div class="page-header">
+						
 							{assign var="artikelProRubrik" value=-1}
 							{foreach from=$section.articles item=article}
 								{assign var="artikelProRubrik" value=$artikelProRubrik+1}
@@ -195,19 +195,22 @@
 
 									{* prüfen ob datePublished des Artikels == datum1 aus datenOhneDopplungen *}
 									{if $datum1 == $datum}
+									<div class="page-header">
+										{$datum}
 										{include file="frontend/objects/article_summary.tpl"}
+										</div>
 									{/if}
 
 								{/foreach}
 							{/foreach}
-						</div>
+						
 				{/if}
 					
 			</section>
 			{/foreach}
 		{/foreach}
 
-		datenOhneDopplungen: 
+		{* datenOhneDopplungen: 
 			{foreach from=$datenOhneDopplungen item=dasDatum}
 				{$dasDatum}
 			{/foreach} <br>
@@ -225,7 +228,7 @@
 		alleDatenSortiert: 
 		{foreach from=$alleDatenSortiert item=datum1}
 			{$datum1}
-		{/foreach} <br>
+		{/foreach} <br> *}
 	</div><!-- .sections -->
 
 </div><!-- .issue-toc -->
