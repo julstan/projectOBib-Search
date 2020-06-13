@@ -129,8 +129,8 @@
 									
 								{/foreach}
 							{/foreach}
-							{*assign var="date" value=$section.articles.$number->_data.publications.$number->_data.datePublished}
-							{$date*}
+							{* {assign var="date" value=$section.articles.$number->_data.publications.$number->_data.datePublished}
+							{$date} *}
 							</div>
 					{/if}
 					<div class="media-list">
@@ -141,6 +141,65 @@
 				{/if}
 			</section>
 		{/foreach}
+		{assign var="neuestesDatum" value="0000-00-00"}
+		{assign var="alleDatenSortiert" value=[]}
+		{assign var="restlicheDaten" value=[]}
+
+		{foreach from=$alleDaten item=datum}
+			{foreach from=$alleDaten item=erstesDatum}
+				{if $erstesDatum > $neuestesDatum}
+					{if $neuestesDatum != "0000-00-00"}
+						{append var="restlicheDaten" value=$neuestesDatum}
+					{/if}
+					{assign var="neuestesDatum" value=$erstesDatum}
+				{else}
+					{append var="restlicheDaten" value=$erstesDatum}
+				{/if}
+			{/foreach}
+			
+
+			neuestes Datum: {$neuestesDatum} <br>
+			{append var="alleDatenSortiert" value=$neuestesDatum}
+			{assign var="alleDaten" value=[]}
+
+			{foreach from=$restlicheDaten item=uebrigesDatum}
+				{append var="alleDaten" value=$uebrigesDatum}
+			{/foreach}
+			{assign var="neuestesDatum" value="0000-00-00"}
+			{assign var="restlicheDaten" value=[]}
+		{/foreach}
+
+		{* Dopplungen in alleDatenSortiert entfernen *}
+
+		{assign var="letztesDatum" value="0000-00-00"}
+		{assign var="datenOhneDopplungen" value=[]}
+
+		{foreach from=$alleDatenSortiert item=datum}
+			{if $datum != $letztesDatum}
+				{append var="datenOhneDopplungen" value=$datum}
+				{assign var="letztesDatum" value=$datum}
+			{/if}
+		{/foreach}
+
+		datenOhneDopplungen: 
+			{foreach from=$datenOhneDopplungen item=dasDatum}
+				{$dasDatum}
+			{/foreach} <br>
+
+		alleDaten: 
+			{foreach from=$alleDaten item=einDatum}
+				{$einDatum}
+			{/foreach} <br>
+
+			restliche Daten:
+			{foreach from=$restlicheDaten item=restlichesDatum}
+				{$restlichesDatum}
+			{/foreach} <br>
+
+		alleDatenSortiert: 
+		{foreach from=$alleDatenSortiert item=datum1}
+			{$datum1}
+		{/foreach} <br>
 	</div><!-- .sections -->
 
 </div><!-- .issue-toc -->
