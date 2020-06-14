@@ -102,133 +102,132 @@
 
 	{* chronologische Reihenfolge *}
 	<div class="sections">
-	{assign var="alleDaten" value=[]}
-		{foreach name=sections from=$publishedSubmissions item=section}
+	{assign var="alleDaten" value=[]}	{* Array mit dem datePublished zu jedem veröffentlichten Artikel *}
+		{foreach name=sections from=$publishedSubmissions item=section}	{* durchgehen des Arrays publishedSubmissions *}
 			<section class="section">
-				{if $section.articles}
-					{* hier Rubriken Titel versteckt*}
-					{if $section.title}
-						{* <div class="page-header"> *}
-							{* <h2>
-								<small>{$section.title|escape}</small>
-							</h2> *}
-							{assign var="artikelProRubrik" value=-1}
-							{foreach from=$section.articles item=article}
-								{assign var="artikelProRubrik" value=$artikelProRubrik+1}
-								{* {$artikelProRubrik} *}
-								{assign var="artikelVersion" value=-1}
-								{foreach from=$section.articles.$artikelProRubrik->_data.publications key=k item=v}
-									{assign var="artikelVersion" value=$artikelVersion+1}
-									{* {$artikelVersion} <br> <br> *}
-									
-										{assign var="datum" value=$section.articles.$artikelProRubrik->_data.publications.$artikelVersion->_data.datePublished}
-										{append var="alleDaten" value=$datum}
-										{foreach from=$alleDaten item=datumEintrag}
-											{* {$datumEintrag} <br> *}
-										{/foreach}
-									
-								{/foreach}
+				{if $section.articles}	{* Prüfen, ob section articles enthält *}
+					{if $section.title}	{* Prüfen, ob section title enthält *}
+						{assign var="artikelProRubrik" value=-1}	{* artikelProRubrik ist eine Zahl die benötigt wird um den Pfad zum Artikel in publishedSubmissions auf der Ebende der Rubrik aufzurufen *}
+																	{* die Variable wird auf -1 gesetzt, da der erste Wert der zum Aufrufen benötigt wird 0 sein muss und in der Schleife immer um 1 addiert wird *}
+						{foreach from=$section.articles item=article}	{* durchgehen der Artikel einer Rubrik *}
+							{assign var="artikelProRubrik" value=$artikelProRubrik+1}
+							{* Ausgabe zum Testen: {$artikelProRubrik} *}
+							{assign var="artikelVersion" value=-1}	{* artikelVersion ist eine Zahl die benötigt wird um den Pfad zur Artikelversion in publishedSubmissions auf der Ebende der Rubrik aufzurufen *}
+																	{* die Variable wird auf -1 gesetzt, da der erste Wert der zum Aufrufen benötigt wird 0 sein muss und in der Schleife immer um 1 addiert wird *}
+							{foreach from=$section.articles.$artikelProRubrik->_data.publications item=version}	{* durchgehen der Artikel pro Rubrik, um Artikelversionen herauszufinden *}
+								{assign var="artikelVersion" value=$artikelVersion+1}
+								{* Ausgabe zum Testen: {$artikelVersion} <br> <br> *}
+								{assign var="datum" value=$section.articles.$artikelProRubrik->_data.publications.$artikelVersion->_data.datePublished} {* datum enthählt das datePublished *}
+								{append var="alleDaten" value=$datum}	{* datePublished der Artikelversion wird in Array alleDaten geschrieben *}
+								{* {foreach from=$alleDaten item=datumEintrag}
+									Ausgabe zum Testen: {$datumEintrag} <br>
+								{/foreach} *}
 							{/foreach}
-							{* </div> *}
-					{/if}
-					{* <div class="media-list">
-						{foreach from=$section.articles item=article}
-							{include file="frontend/objects/article_summary.tpl"}
 						{/foreach}
-					</div> *}
+					{/if}
 				{/if}
 			</section>
 		{/foreach}
-		{assign var="neuestesDatum" value="0000-00-00"}
-		{assign var="alleDatenSortiert" value=[]}
-		{assign var="restlicheDaten" value=[]}
+		{* Ergebnis: wir haben ein Array (alleDaten), das das datePublished jedes veröffentlichten Artikel enthält *}
 
-		{foreach from=$alleDaten item=datum}
-			{foreach from=$alleDaten item=erstesDatum}
-				{if $erstesDatum > $neuestesDatum}
+		{assign var="neuestesDatum" value="0000-00-00"}	{* enthält neuestes Datum aus dem Array alleDaten *}
+														{*ist zu Beginn immer auf einen Wert gesetzt mit dem verglichen werden kann und der das gleiche Format hat wie die Daten in alleDaten *}
+		{assign var="alleDatenSortiert" value=[]}	{* enthält jedes datePublished in chronologisch sortierter Reihenfolge (neu -> alt) *}
+		{assign var="restlicheDaten" value=[]}	{* enthält temporär alle übrigen Daten aus alleDaten, die beim Durchlauf der Schleife nicht das neuesteDatum sind *}
+
+		{foreach from=$alleDaten item=anzahlSchleifendurchgaenge name=datumsSchleife}	{* festlegen, dass Schleife so oft wiederholt wird, wie Daten in alleDaten vorhanden sind *}
+																	{* entspricht in Python "for i in range (len (alleDaten))" *}
+			{foreach from=$alleDaten item=datum}	{* Durchgehen des Arrays alleDaten, um neuestes Datum herauszufinden *}
+				{if $datum > $neuestesDatum}	{* überprüfen ob datum neuer ist als Wert in neuestesDatum *}
 					{if $neuestesDatum != "0000-00-00"}
-						{append var="restlicheDaten" value=$neuestesDatum}
+						{append var="restlicheDaten" value=$neuestesDatum}	{* wenn Wert in neuestesDatum überschrieben wird (also doch nicht das neueste Datum ist), wird dieser Wert in restlicheDaten geschrieben *}
 					{/if}
-					{assign var="neuestesDatum" value=$erstesDatum}
+					{assign var="neuestesDatum" value=$datum}	{* wenn datum neuer ist als neuestesDatum, wird der Wert in neuestesDatum durch datum ersetzt *}
 				{else}
-					{append var="restlicheDaten" value=$erstesDatum}
+					{append var="restlicheDaten" value=$datum}	{* wenn das Datum nicht neuer ist, wird datum in restlicheDaten geschrieben *}
 				{/if}
 			{/foreach}
+			{* Ergebnis: wir haben das neueste Datum aus alleDaten herausgefiltert und alle älteren Daten in restlicheDaten geschrieben *}
 			
+			{* Ausgabe zum Testen: neuestes Datum: {$neuestesDatum} <br> *}
+			{append var="alleDatenSortiert" value=$neuestesDatum}	{* neuestesDatum wird in alleDatenSortiert geschrieben *}
+			{assign var="alleDaten" value=[]}	{* Wert von alleDaten wird durch eine leere Liste ersetzt *}
 
-			{* neuestes Datum: {$neuestesDatum} <br> *}
-			{append var="alleDatenSortiert" value=$neuestesDatum}
-			{assign var="alleDaten" value=[]}
-
-			{foreach from=$restlicheDaten item=uebrigesDatum}
+			{foreach from=$restlicheDaten item=uebrigesDatum}	{* Übertragen der Daten aus restlicheDaten nach alleDaten, damit wir die Schleife (datumsSchleife) erneut durchlaufen können *}
 				{append var="alleDaten" value=$uebrigesDatum}
 			{/foreach}
-			{assign var="neuestesDatum" value="0000-00-00"}
-			{assign var="restlicheDaten" value=[]}
+
+			{assign var="neuestesDatum" value="0000-00-00"}	{* neuestesDatum wieder auf Ausgangswert zurücksetzen, um erneut das neueste Datum bestimmen zu können unter den restlichen Daten *}
+			{assign var="restlicheDaten" value=[]}	{* restlicheDaten auf Ausgangswert zurücksetzen *}
+			{* äußere Schleife wird so oft durchlaufen, bis alleDaten leer ist *}
 		{/foreach}
+		{* Ergebnis: Daten sind sortiert (neu -> alt), es sind aber noch Dopplungen vorhanden *}
 
 		{* Dopplungen in alleDatenSortiert entfernen *}
+		{assign var="zuletztAufgerufenesDatum" value="0000-00-00"}	{* wird benutzt um in Schleife dopplungenEntfernen zu überprüfen, ob das zuvor aufgerufene Datum dasselbe ist wie das aktuell aufgerufene *}
+		{assign var="datenOhneDopplungen" value=[]}	{* Array mit sortierten Daten ohne Dopplungen *}
 
-		{assign var="letztesDatum" value="0000-00-00"}
-		{assign var="datenOhneDopplungen" value=[]}
-
-		{foreach from=$alleDatenSortiert item=datum}
-			{if $datum != $letztesDatum}
-				{append var="datenOhneDopplungen" value=$datum}
-				{assign var="letztesDatum" value=$datum}
+		{foreach from=$alleDatenSortiert item=datum name=dopplungenEntfernen}	{* durchgehen der Daten in alleDatenSortiert *}
+			{if $datum != $zuletztAufgerufenesDatum}	{* prüfen ob Datum identisch *}
+				{append var="datenOhneDopplungen" value=$datum}	{* wenn nicht identisch datum in datenOhneDopplungen schreiben *}
+				{assign var="zuletztAufgerufenesDatum" value=$datum}	{* Wert von zuletztAufgerufenesDatum auf datum setzen *}
 			{/if}
 		{/foreach}
+		{* Ergebnis: Array (datenOhneDopplungen) in dem jedes Datum nur einmal vorkommt und das sortiert ist (neu -> alt) *}
 
-		{foreach from=$datenOhneDopplungen item=datum1}
+		{* Artikel in chronologischer Reihenfolge ausgeben *}
+		{foreach from=$datenOhneDopplungen item=datum}	{* durchgehen der Daten in datenOhneDopplungen *}
+
+			{* durchgehen der Rubriken und jeweiligen Artikel (und deren Versionen) in publishedSubmissions, herausfiltern des datePublished, Kommentare siehe oben *}
 			{foreach name=sections from=$publishedSubmissions item=section}
-			<section class="section">
-				{if $section.articles}
-					{* hier Rubriken Titel versteckt*}
-						
-							{assign var="artikelProRubrik" value=-1}
-							{foreach from=$section.articles item=article}
-								{assign var="artikelProRubrik" value=$artikelProRubrik+1}
-								{assign var="artikelVersion" value=-1}
-								{foreach from=$section.articles.$artikelProRubrik->_data.publications key=k item=v}
-									{assign var="artikelVersion" value=$artikelVersion+1}
-									{assign var="datum" value=$section.articles.$artikelProRubrik->_data.publications.$artikelVersion->_data.datePublished}
+				<section class="section">
+					{if $section.articles}						
+						{assign var="artikelProRubrik" value=-1}
+						{foreach from=$section.articles item=article}
+							{assign var="artikelProRubrik" value=$artikelProRubrik+1}
+							{assign var="artikelVersion" value=-1}
+							{foreach from=$section.articles.$artikelProRubrik->_data.publications key=k item=v}
+								{assign var="artikelVersion" value=$artikelVersion+1}
+			{* ab hier anders wie oben *}
 
-									{* prüfen ob datePublished des Artikels == datum1 aus datenOhneDopplungen *}
-									{if $datum1 == $datum}
+								{assign var="datumVeroeffentlichung" value=$section.articles.$artikelProRubrik->_data.publications.$artikelVersion->_data.datePublished} {* datumVeroeffentlichung enthält datePublished der Artikelversion *}
+
+								{if $datum == $datumVeroeffentlichung}	{* prüfen ob datePublished des Artikels == datum aus datenOhneDopplungen, wenn ja dann Template ausgeben *}
 									<div class="page-header">
-										{$datum}
+										{* Ausgabe zum Testen: {$datumVeroeffentlichung} *}
 										{include file="frontend/objects/article_summary.tpl"}
-										</div>
-									{/if}
-
-								{/foreach}
+									</div>
+								{/if}
 							{/foreach}
-						
-				{/if}
-					
-			</section>
+						{/foreach}	
+					{/if}	
+				</section>
 			{/foreach}
 		{/foreach}
+		{* Ergebnis: chronologisch sortierte Ausgabe der Artikel *}
 
-		{* datenOhneDopplungen: 
-			{foreach from=$datenOhneDopplungen item=dasDatum}
-				{$dasDatum}
-			{/foreach} <br>
+		{* Ausgaben zum Testen: *}
+			{* datenOhneDopplungen: 
+				{foreach from=$datenOhneDopplungen item=dasDatum}
+					{$dasDatum}
+				{/foreach} <br>
 
-		alleDaten: 
-			{foreach from=$alleDaten item=einDatum}
-				{$einDatum}
-			{/foreach} <br>
+			alleDaten: 
+				{foreach from=$alleDaten item=einDatum}
+					{$einDatum}
+				{/foreach} <br>
 
-			restliche Daten:
-			{foreach from=$restlicheDaten item=restlichesDatum}
-				{$restlichesDatum}
-			{/foreach} <br>
+				restliche Daten:
+				{foreach from=$restlicheDaten item=restlichesDatum}
+					{$restlichesDatum}
+				{/foreach} <br>
 
-		alleDatenSortiert: 
-		{foreach from=$alleDatenSortiert item=datum1}
-			{$datum1}
-		{/foreach} <br> *}
+			alleDatenSortiert: 
+			{foreach from=$alleDatenSortiert item=datum1}
+				{$datum1}
+			{/foreach} <br> *}
+		{* Ende Testausgabe *}
+
 	</div><!-- .sections -->
 
 </div><!-- .issue-toc -->
