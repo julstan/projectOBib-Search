@@ -57,24 +57,59 @@
 					{/if}
 				</div>
 			{/if}
-{* hier Label für NEU*}
+
+			{* hier Label für NEU*}
 	
 			{* wenn DatePublished nicht 4 Wochen älter als aktuelles Datum*}
-			{assign var='f' value=0}
+			{*assign var='f' value=0}
 			{assign var='DatumAufsatz' value=$article->getDatePublished()}
 			{assign var='AktuellDatum' value=$smarty.now|date_format: "%Y-%m-%d"}
 			{if $DatumAufsatz == $AktuellDatum} 
 			<button class="btn btn-success">NEW</button>
-			{math equation="$f + 2"}  {*math equation glaub unnötig, kann man weglassen*} {*hier muss die Ausgabe noch versteckt werden, gerade sieht man die 2*}
-			{elseif $f > 0}
+			{math equation="$f + 2"*}  {*math equation glaub unnötig, kann man weglassen*} {*hier muss die Ausgabe noch versteckt werden, gerade sieht man die 2*}
+			{* {elseif $f > 0}
 			<button class="btn btn-primary">NEW</button>
 			{math equation="$f - 1"}
 			{else $f <= 0}
 			{"{$DatumAufsatz} ist älter als 2 Tage von {$AktuellDatum}"}
-			{/if}
-		
+			{/if} *}
 
-		
+			{* Übersicht für Tagesanzahl pro Monat *}
+			{assign var='januar' value=['zahl'=>01, 'anzahlTage'=>31]}
+			{assign var='februar' value=['zahl'=>2, 'anzahlTage'=>28]}
+			{assign var='maerz' value=['zahl'=>3, 'anzahlTage'=>31]}
+			{assign var='april' value=['zahl'=>4, 'anzahlTage'=>30]}
+			{assign var='mai' value=['zahl'=>5, 'anzahlTage'=>31]}
+			{assign var='juni' value=['zahl'=>6, 'anzahlTage'=>30]}
+			{assign var='juli' value=['zahl'=>7, 'anzahlTage'=>31]}
+			{assign var='august' value=['zahl'=>8, 'anzahlTage'=>31]}
+			{assign var='september' value=['zahl'=>9, 'anzahlTage'=>30]}
+			{assign var='oktober' value=['zahl'=>10, 'anzahlTage'=>31]}
+			{assign var='november' value=['zahl'=>11, 'anzahlTage'=>30]}
+			{assign var='dezember' value=['zahl'=>12, 'anzahlTage'=>31]}
+
+			{* Variablen für Veröffentlichungsdatum vom Artikel *}
+			{assign var='counter' value=0}
+			{assign var='tagArtikel' value=$article->getDatePublished()|date_format: "%e"}
+			{assign var='monatArtikel' value=$article->getDatePublished()|date_format: "%m"}
+			{assign var='jahrArtikel' value=$article->getDatePublished()|date_format: "%Y"}
+
+			{* Variablen für Datum von heute *}
+			{assign var='tagDatumHeute' value=$smarty.now|date_format: "%e"}
+			{assign var='monatDatumHeute' value=$smarty.now|date_format: "%m"}
+			{assign var='jahrDatumHeute' value=$smarty.now|date_format: "%Y"}
+
+			{* zu Datum von heute 14 Tage dazu addieren *}
+			{assign var='tagDatumNeu' value=$tagDatumHeute-14}
+			{if $tagDatumNeu < 1}
+				{if $monatDatumHeute == $januar.zahl}
+					{assign var="monatDatumNeu" value=12}
+					{assign var="jahrDatumNeu" value=$jahrDatumHeute-1}
+					{assign var="tagDatumNeu" value=31-abs($tagDatumNeu)}
+					{$tagDatumNeu}
+				{/if}
+			{/if}
+
 
 			{* Page numbers for this article *}
 			{if $article->getPages()}
