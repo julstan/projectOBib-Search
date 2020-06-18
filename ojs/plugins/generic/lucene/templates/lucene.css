@@ -1,0 +1,82 @@
+/**
+ * templates/lucene.css
+ *
+ * Copyright (c) 2013-2020 Simon Fraser University
+ * Copyright (c) 2003-2020 John Willinsky
+ * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ *
+ * Special stylesheet for Lucene search result formatting.
+ */
+
+.plugins_generic_lucene_preResults {
+	width: 100%;
+	margin: 0 0 0.5em 0.5em;
+	line-height: 2em;
+}
+
+.plugins_generic_lucene_preResults_spelling {
+	margin: 0.5em 0 0 0;
+}
+
+.plugins_generic_lucene_preResults_ordering {
+	float: right;
+	margin-top: 0.5em;
+}
+
+.plugins_generic_lucene_similardocuments, .plugins_generic_lucene_highlighting {
+	font-size: 13px;
+}
+
+.plugins_generic_lucene_highlighting {
+	padding: 5px 30px 5px 30px;
+}
+
+.plugins_generic_lucene_highlighting em {
+	font-style: normal;
+	font-weight: bold;
+}
+
+.obj_article_summary {position: relative;}
+.obj_article_summary .title{margin-right: 180px;}
+.plugins_generic_lucene_similardocuments {
+	right: 0;
+	text-align: right;
+	top: 20px;
+	min-width: 180px;
+	position: absolute;
+}
+
+.block_lucene_facets ul {
+	list-style: none;
+	padding: 0;
+}
+
+.block_lucene_facets ul .inner {
+	padding-left: 1em;
+	overflow: hidden;
+	display: none;
+	border: 1px solid #ddd;
+}
+
+.block_lucene_facets ul .inner.show {
+	display: block;
+}
+
+.block_lucene_facets ul li {
+	margin: 0.5em 0;
+}
+
+.block_lucene_facets ul li a.lucenetoggle {
+	width: 100%;
+	display: block;
+	padding: 0.75em;
+	border-radius: 0.15em;
+	border: 1px solid #ddd;
+	transition: background 0.3s ease;
+}
+
+a.lucenetoggle .fa {
+	width: 30px;
+	text-align: center;
+	border-right: 1px solid #ddd;
+}

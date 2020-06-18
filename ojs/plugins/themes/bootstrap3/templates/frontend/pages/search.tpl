@@ -103,7 +103,7 @@
 				</div>
 
 
-				{*Autor Rubrik*}
+				{*Autor Suche*}
 				
 				<div class="col-md-5">
 					<div class="form-group">
@@ -133,7 +133,7 @@
 						</div>
 						<label>funktioniert noch nicht</label>
 					</div>
-
+				
 					{*Rubriken Suche aufklappbar*}
 					<div class="form-group">
 					 	<label for="sections">Nach Rubrik</label>
