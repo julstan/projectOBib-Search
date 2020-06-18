@@ -121,47 +121,37 @@
 					{* {$tagDatumNeu} *}
 
 				{else}
-					{assign var="monatDatumNeu" value=$monatArtikel-1}
+					{assign var="monatDatumNeu" value=$monatDatumHeute-1}
 					{foreach from=$monate item=monat}
 						{if $monat.zahl == $monatDatumNeu}
 							{assign var="tagDatumNeu" value=$monat.anzahlTage-abs($tagDatumNeu)}
 						{/if}
 					{/foreach}
-					{* Monat nicht Januar: {$tagDatumNeu} *}
+					{* Monat nicht Januar: {$tagDatumNeu} {$monatDatumNeu} *}
 				{/if}
 
 			{/if}
 
-			{* Test, warum dder Vergleich zwischen monatArtikel und monatDatumNeu nicht funktioniert *}
-			monatArtikel: {$monatArtikel}
-			monatDatumNeu: {$monatDatumNeu}
-			{if $monatArtikel < $monatDatumNeu}
-				Apfel
-			{else}
-				Banane
-			{/if}
 
 			{* prüfen ob Neu-Label angezeigt werden muss oder nicht *}
 			{if $jahrArtikel >= $jahrDatumNeu}
-				{if $monatArtikel >= $monatDatumNeu}
-					{if $monatArtikel > $monatDatumNeu}
-						<button class="btn btn-primary">NEW</button>
-					{elseif $monatArtikel = $monatDatumNeu}
-						{if $tagArtikel >= $tagDatumNeu}
-						<button class="btn btn-primary">NEW</button>
-						{/if}
-					{/if}
-				{else}
-					<button class="btn btn-primary">OLD</button>
-				{/if}
-			{/if}
+                {if $monatArtikel > $monatDatumNeu}
+                    <button class="btn btn-primary">NEW</button>
+                {/if}
+                {if $monatArtikel = $monatDatumNeu}                     
+                    {if $tagArtikel >= $tagDatumNeu}
+                        <button class="btn btn-primary">NEW</button>
+                    {/if}
+                {/if}
+            {/if}
 
-			{assign var="pflanze" value="02"}
+			{* Nur zum Testen: *}
+			{* {assign var="pflanze" value="02"}
 			{assign var="hedwig" value=20}
 
 			{if $pflanze < $hedwig}
 				hallo
-			{/if}
+			{/if} *}
 
 
 			{* Page numbers for this article *}
