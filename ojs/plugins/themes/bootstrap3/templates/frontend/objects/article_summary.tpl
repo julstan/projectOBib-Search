@@ -135,7 +135,7 @@
 			{* Test, warum dder Vergleich zwischen monatArtikel und monatDatumNeu nicht funktioniert *}
 			monatArtikel: {$monatArtikel}
 			monatDatumNeu: {$monatDatumNeu}
-			{if $monatArtikel < monatDatumNeu}
+			{if $monatArtikel < $monatDatumNeu}
 				Apfel
 			{else}
 				Banane
@@ -154,6 +154,13 @@
 				{else}
 					<button class="btn btn-primary">OLD</button>
 				{/if}
+			{/if}
+
+			{assign var="pflanze" value="02"}
+			{assign var="hedwig" value=20}
+
+			{if $pflanze < $hedwig}
+				hallo
 			{/if}
 
 
