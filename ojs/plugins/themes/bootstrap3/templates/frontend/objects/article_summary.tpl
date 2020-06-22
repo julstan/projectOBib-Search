@@ -57,24 +57,88 @@
 					{/if}
 				</div>
 			{/if}
-{* hier Label für NEU*}
+
+			{* AB HIER NEU-LABEL *}
 	
-			{* wenn DatePublished nicht 4 Wochen älter als aktuelles Datum*}
-			{assign var='f' value=0}
-			{assign var='DatumAufsatz' value=$article->getDatePublished()}
-			{assign var='AktuellDatum' value=$smarty.now|date_format: "%Y-%m-%d"}
-			{if $DatumAufsatz == $AktuellDatum} 
-			<button class="btn btn-success">NEW</button>
-			{math equation="$f + 2"}  {*math equation glaub unnötig, kann man weglassen*} {*hier muss die Ausgabe noch versteckt werden, gerade sieht man die 2*}
-			{elseif $f > 0}
-			<button class="btn btn-primary">NEW</button>
-			{math equation="$f - 1"}
-			{else $f <= 0}
-			{"{$DatumAufsatz} ist älter als 2 Tage von {$AktuellDatum}"}
-			{/if}
-		
+			{* Array in dem für jeden Monat die jeweilige Anzahl der Tage enthalten ist, Monate können anhand der 'zahl' referenziert werden *}
+				{* bewusste Entscheidung für 28 Tage im Februar, da so nur alle vier Jahre manche neu veröffentlichten Artikel einen Tag zu kurz mit dem Neu-Label ausgezeichnet werden *}
+			{assign var='monate' value=[['zahl'=>1, 'anzahlTage'=>31], 
+										['zahl'=>2, 'anzahlTage'=>28], 
+										['zahl'=>3, 'anzahlTage'=>31], 
+										['zahl'=>4, 'anzahlTage'=>30], 
+										['zahl'=>5, 'anzahlTage'=>31], 
+										['zahl'=>6, 'anzahlTage'=>30],
+										['zahl'=>7, 'anzahlTage'=>31],
+										['zahl'=>8, 'anzahlTage'=>31],
+										['zahl'=>9, 'anzahlTage'=>30],
+										['zahl'=>10, 'anzahlTage'=>31],
+										['zahl'=>11, 'anzahlTage'=>30],
+										['zahl'=>12, 'anzahlTage'=>31]]}
 
 		
+
+			{* Variablen für Veröffentlichungsdatum vom Artikel *}
+			{* zerlegen in Tag, Monat und Jahr, um mit den einzelnen Zahlen rechnen zu können *}
+			{assign var='tagArtikel' value=$article->getDatePublished()|date_format: "%e"}
+			{assign var='monatArtikel' value=$article->getDatePublished()|date_format: "%m"}
+			{assign var='jahrArtikel' value=$article->getDatePublished()|date_format: "%Y"}
+
+			{* Variablen für Datum von heute *}
+			{* zerlegen in Tag, Monat und Jahr, um mit den einzelnen Zahlen rechnen zu können *}
+			{assign var='tagDatumHeute' value=$smarty.now|date_format: "%e"}
+			{assign var='monatDatumHeute' value=$smarty.now|date_format: "%m"}
+			{assign var='jahrDatumHeute' value=$smarty.now|date_format: "%Y"}
+
+			{* Testausgabe um herauszufinden ob Datumsrechnung in vorheriges Jahr auch funktionieren *}
+			{* {assign var='tagDatumHeute' value=20}
+			{assign var='monatDatumHeute' value=1}
+			{assign var='jahrDatumHeute' value=2020} *}
+
+			{* wir wollen das Datum herausfinden das 28 Tage zurückliegt, um das Veröffentlichungsdatum zu bekommen, das ein Artikel maximal haben darf um noch mit dem Neu-Label ausgezeichnet zu werden *}
+			
+			{* vom aktuellen Datum (heute) 28 Tage subtrahieren *}
+			{assign var='zielTag' value=$tagDatumHeute-28}
+
+			{* wenn die Zahl des zielTag kleiner als 1 ist, liegt das maximale Zieldatum im vorherigen Monat *}
+			{if $zielTag < 1}
+				{* überprüfen ob im Moment Januar ist *}
+				{if $monatDatumHeute == $monate[0].zahl}
+					{* wenn momentan Januar ist, liegt das Zieldatum im Dezember des vorherigen Jahres *}
+					{assign var="zielMonat" value=12}
+					{assign var="zielJahr" value=$jahrDatumHeute-1}
+					{* zielTag enthält hier noch eine negative Zahl, der Betrag der Zahl soll von 31 abgezogen werden, um den tatsächlichen zielTag zu erhalten *}
+					{assign var="zielTag" value=31-abs($zielTag)}	{* abs(): Funktion die den Betrag der negativen Zahl bestimmt *}
+
+				{* wenn nicht Januar ist, dann... *}
+				{else}
+					{* ...wird vom aktuellen Monat ein Monat zurückgegangen *}
+					{assign var="zielMonat" value=$monatDatumHeute-1}
+					{* ...überprüfen wie viele Tage der zielMonat hat, um zielTag zu errechnen *}
+					{foreach from=$monate item=monat}
+						{if $monat.zahl == $zielMonat}
+							{assign var="zielTag" value=$monat.anzahlTage-abs($zielTag)}
+						{/if}
+					{/foreach}
+				{/if}
+			{/if}
+
+			{* prüfen ob Neu-Label angezeigt werden muss oder nicht *}
+			{* ausschließen welche Artikel vom Veröffentlichungsjahr her kein New-Label bekommen *}
+			{if $jahrArtikel >= $zielJahr}
+				{* wenn der Artikel im aktuellen Monat veröffentlicht wurde, wird ein New-Label angezeigt *}
+                {if $monatArtikel > $zielMonat}
+                    <button class="btn btn-primary">NEW</button>
+                {/if}
+				{* wenn der Monat der Veröffentlichung dem Monat des Zieldatums entspricht... *}
+                {if $monatArtikel == $zielMonat}
+					{* ...und der Veröffentlichungstag größer oder gleich dem Tag des Zieldatums ist, wird New-Label angezeigt *}
+                    {if $tagArtikel >= $zielTag}
+                        <button class="btn btn-primary">NEW</button>
+					{/if}
+                {/if}
+            {/if}
+
+
 
 			{* Page numbers for this article *}
 			{if $article->getPages()}
