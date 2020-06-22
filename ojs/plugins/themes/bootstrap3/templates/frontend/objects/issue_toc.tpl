@@ -96,7 +96,6 @@
 		</div>
 	{/if}
 
-	
 
 	{* chronologische Reihenfolge *}
 	<div class="sections">
@@ -187,16 +186,15 @@
 							{foreach from=$section.articles.$artikelProRubrik->_data.publications key=k item=v}
 								{assign var="artikelVersion" value=$artikelVersion+1}
 			{* ab hier anders wie oben *}
-
-								{assign var="datumVeroeffentlichung" value=$section.articles.$artikelProRubrik->_data.publications.$artikelVersion->_data.datePublished} {* datumVeroeffentlichung enthält datePublished der Artikelversion *}
+							{/foreach}
+							{assign var="datumVeroeffentlichung" value=$section.articles.$artikelProRubrik->_data.publications.$artikelVersion->_data.datePublished} {* datumVeroeffentlichung enthält datePublished der Artikelversion *}
 
 								{if $datum == $datumVeroeffentlichung}	{* prüfen ob datePublished des Artikels == datum aus datenOhneDopplungen, wenn ja dann Template ausgeben *}
 									<div class="page-header">
-										{* Ausgabe zum Testen: {$datumVeroeffentlichung} *}
+										Ausgabe zum Testen: {$datumVeroeffentlichung}
 										{include file="frontend/objects/article_summary.tpl"}
 									</div>
 								{/if}
-							{/foreach}
 						{/foreach}	
 					{/if}	
 				</section>
