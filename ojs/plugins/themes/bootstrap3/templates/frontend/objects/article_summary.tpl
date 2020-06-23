@@ -39,7 +39,7 @@
 				{/if}
 			</a>
 		</h3>
-
+		
 {* hier Veroffentlicht*}
 		{if $article->getDatePublished()}
 				<p class="published">
@@ -57,7 +57,7 @@
 					{/if}
 				</div>
 			{/if}
-
+			
 			{* AB HIER NEU-LABEL *}
 	
 			{* Array in dem für jeden Monat die jeweilige Anzahl der Tage enthalten ist, Monate können anhand der 'zahl' referenziert werden *}
