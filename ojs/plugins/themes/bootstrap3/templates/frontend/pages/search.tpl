@@ -54,11 +54,7 @@
 							{translate key="search.dateFrom"}
 						</label>
 						<span title="Muss mit einer Autoren- oder Freitextsuche kombiniert werden">
-							<svg class="bi bi-info-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-							<path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
-							<circle cx="8" cy="4.5" r="1"/>
-							</svg>
+							<i class="fas fa-info-circle"></i>
 						</span>
 						<div class="form-inline">
 							<div class="form-group">
@@ -134,11 +130,7 @@
 					<div class="form-group">
 					 	<label for="sections">Nach Rubrik</label>
 						 <span title="Muss mit einer Autoren- oder Freitextsuche kombiniert werden">
-								<svg class="bi bi-info-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-									<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-									<path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
-									<circle cx="8" cy="4.5" r="1"/>
-								</svg>
+							<i class="fas fa-info-circle"></i>
 						</span>
 					 	<select id="sections" class="form-control" for="section" name="section">
 						<option value="" selected>Alle</option>    {*Value für Alle wird als lehr übergeben, da in der result Schleife abgefragt wird, ob eine section Abfrage vorhanden ist - value ist also lehr und es werden alle Artikel*}
@@ -214,5 +206,6 @@
 
 	</form>
 </div><!-- .page -->
+<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" data-auto-replace-svg="nest"></script>
 
 {include file="common/frontend/footer.tpl"}
