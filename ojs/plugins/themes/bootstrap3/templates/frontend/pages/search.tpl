@@ -50,16 +50,16 @@
 			<div class="row">
 				<div class="col-md-5">
 					<div class="form-group">
-					<div title="Muss mit einer Autoren- oder Freitextsuche kombiniert werden">
-						<svg class="bi bi-info-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-						<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-						<path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
-						<circle cx="8" cy="4.5" r="1"/>
-						</svg>
-					</div>
 						<label for="dateFromYear">
 							{translate key="search.dateFrom"}
 						</label>
+						<span title="Muss mit einer Autoren- oder Freitextsuche kombiniert werden">
+							<svg class="bi bi-info-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+							<path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
+							<circle cx="8" cy="4.5" r="1"/>
+							</svg>
+						</span>
 						<div class="form-inline">
 							<div class="form-group">
 								{html_select_date prefix="dateFrom" time=$dateFrom start_year=$yearStart end_year=$yearEnd year_empty="" month_empty="" day_empty="" field_order="YMD"}
@@ -128,30 +128,18 @@
 					{*Rubriken Suche*}
 					<div class="form-group">
 						<div {*title="freie Rubrikensuche, muss mit einer Autoren- oder Freitextsuche kombiniert werden"*}>
-							<div title="Muss mit einer Autoren- oder Freitextsuche kombiniert werden">
+						</div>
+						<label for="section">
+					{*Rubriken Suche aufklappbar*}
+					<div class="form-group">
+					 	<label for="sections">Nach Rubrik</label>
+						 <span title="Muss mit einer Autoren- oder Freitextsuche kombiniert werden">
 								<svg class="bi bi-info-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 									<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 									<path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
 									<circle cx="8" cy="4.5" r="1"/>
 								</svg>
-						</div>
-						</div>
-						<label for="section">
-							{*{translate key="search.section"}*} {*Der key dient nur für die Übersetzung*} 
-						{*
-						Nach Rubrik
-						</label>
-						<div class="input-group">
-						<input class="form-control" type="text" for="section" name="section" onfocus="this.value=''" value="{$section|escape}" placeholder="{translate key="common.search"}">
-						<span class="input-group-btn">
-						<input type="submit" value="{translate key="common.search"}" class="btn btn-info">
 						</span>
-						</div>
-					</div>*}
-				
-					{*Rubriken Suche aufklappbar*}
-					<div class="form-group">
-					 	<label for="sections">Nach Rubrik</label>
 					 	<select id="sections" class="form-control" for="section" name="section">
 						<option value="" selected>Alle</option>    {*Value für Alle wird als lehr übergeben, da in der result Schleife abgefragt wird, ob eine section Abfrage vorhanden ist - value ist also lehr und es werden alle Artikel*}
 						<option value="Kongressbeiträge">Kongressbeiträge</option>
@@ -163,6 +151,18 @@
 						<option value="Landes- und Regionalverbänden VDB">Landes- und Regionalverbänden VDB</option>
 						 </select>
 					</div>
+					{*{translate key="search.section"}*} {*Der key dient nur für die Übersetzung*} 
+						{*
+						Nach Rubrik
+						</label>
+						<div class="input-group">
+						<input class="form-control" type="text" for="section" name="section" onfocus="this.value=''" value="{$section|escape}" placeholder="{translate key="common.search"}">
+						<span class="input-group-btn">
+						<input type="submit" value="{translate key="common.search"}" class="btn btn-info">
+						</span>
+						</div>
+					</div>*}
+				
 					<input type="submit" value="{translate key="common.search"}" class="btn btn-info">						
 				</div>
 			</div>
