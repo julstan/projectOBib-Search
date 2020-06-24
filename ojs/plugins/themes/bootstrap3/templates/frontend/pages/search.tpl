@@ -181,7 +181,7 @@
 				{/foreach}
 			
 				{if $section}
-					{if $rubrik==$section}
+					{if $rubrik==$section} {*hier wird überprüft ob section mit einer der ergebnisrubriken überenstimmt*}
 					{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission showDatePublished=true hideGalleys=true}
 					{/if}
 				{else}		

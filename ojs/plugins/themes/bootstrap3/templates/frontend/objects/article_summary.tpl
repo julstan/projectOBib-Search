@@ -57,7 +57,24 @@
 					{/if}
 				</div>
 			{/if}
+
 			
+			{* Hier schlechter Rubrikenname Anzeigecode der so nicht in der Ergebnissliste von Search angezeigt wird, warum auch immer*}
+ 
+ 
+            {* <div>
+             {foreach name=sections from=$publishedSubmissions item=section}
+            {if $section.articles}
+            {if $section.title}
+             <div>
+             <h2>{$section.title|escape}</h2>
+             </div>
+             {/if}
+             {/if}
+            {/foreach}
+             </div> *}
+ 
+
 			{* AB HIER NEU-LABEL *}
 	
 			{* Array in dem für jeden Monat die jeweilige Anzahl der Tage enthalten ist, Monate können anhand der 'zahl' referenziert werden *}
