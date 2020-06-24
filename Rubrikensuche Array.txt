@@ -1,0 +1,217 @@
+Array ( 
+	[article] => Submission Object ( 				
+		[_data] => Array ( 
+			[id] => 12 [contextId] => 1 [currentPublicationId] => 12 [dateLastActivity] => 2020-05-26 15:45:54 [dateSubmitted] => 2020-05-26 14:54:54 [lastModified] => 2020-05-26 14:53:17 [stageId] => 5 [status] => 3 [submissionProgress] => 0 [publications] => Array ( 
+				[0] => Publication Object ( 
+					[_data] => Array ( 
+						[id] => 12 [accessStatus] => 0 [datePublished] => 2020-02-11 [lastModified] => 2020-05-26 15:45:54 [locale] => de_DE [sectionId] => 2 [seq] => 1 [submissionId] => 12 [status] => 3 [version] => 1 [categoryIds] => Array ( ) [copyrightYear] => 2020 [issueId] => 4 [pages] => [abstract] => Array (
+							 [de_DE] => Der Baum 1 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.) 
+						[copyrightHolder] => Array ( 
+							[de_DE] => ) 
+						[prefix] => Array ([de_DE] => )
+
+						[subtitle] => Array 
+							( [de_DE] => Der Baum 1 ) 
+						[title] => Array 
+							( [de_DE] => Der Baum 1 )
+						[authors] => Array 
+							( [0] => Author Object 
+								( [_data] => Array 
+									( [id] => 12 [email] => lodel@lodel.net [includeInBrowse] => 1 [publicationId] => 12 [seq] => 0 [userGroupId] => 14 [country] => BE [orcid] => [url] => [affiliation] => Array 
+										( [de_DE] => ) 
+									[biography] => Array 
+										( [de_DE] => ) 
+									[familyName] => Array 
+										( [de_DE] => Baum ) 
+									[givenName] => Array 
+										( [de_DE] => Baum ) 
+									[preferredPublicName] => Array 
+										( [de_DE] => ) 
+									) 
+								[_hasLoadableAdapters] => [_metadataExtractionAdapters] => Array ( ) [_extractionAdaptersLoaded] => [_metadataInjectionAdapters] => Array ( ) [_injectionAdaptersLoaded] => 
+								)
+							) 
+						[keywords] => Array 
+							( [de_DE] => Array 
+								( [0] => Baum ) 
+							) 
+						[subjects] => Array ( ) [disciplines] => Array ( ) [languages] => Array ( ) [supportingAgencies] => Array ( ) [galleys] => Array ( ) 
+					) {schließt [_data} 
+					[_hasLoadableAdapters] => [_metadataExtractionAdapters] => Array ( ) [_extractionAdaptersLoaded] => [_metadataInjectionAdapters] => Array ( ) [_injectionAdaptersLoaded] => 
+				) 
+			) 
+		) 
+	[_hasLoadableAdapters] => 1 [_metadataExtractionAdapters] => Array ( ) [_extractionAdaptersLoaded] => [_metadataInjectionAdapters] => Array ( ) [_injectionAdaptersLoaded] => 
+	) 
+	[publishedSubmission] => Submission Object 
+		( [_data] => Array 
+			( [id] => 12 [contextId] => 1 [currentPublicationId] => 12 [dateLastActivity] => 2020-05-26 15:45:54 [dateSubmitted] => 2020-05-26 14:54:54 [lastModified] => 2020-05-26 14:53:17 [stageId] => 5 [status] => 3 [submissionProgress] => 0 [publications] => Array 
+				( [0] => Publication Object 
+					( [_data] => Array 
+						( [id] => 12 [accessStatus] => 0 [datePublished] => 2020-02-11 [lastModified] => 2020-05-26 15:45:54 [locale] => de_DE [sectionId] => 2 [seq] => 1 [submissionId] => 12 [status] => 3 [version] => 1 [categoryIds] => Array ( ) [copyrightYear] => 2020 [issueId] => 4 [pages] => [abstract] => Array 
+							( [de_DE] => Der Baum 1 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+							) [copyrightHolder] => Array 
+								( [de_DE] => ) 
+								[prefix] => Array 
+									( [de_DE] => )
+									[subtitle] => Array 
+										( [de_DE] => Der Baum 1 ) 
+										[title] => Array 
+											( [de_DE] => Der Baum 1 ) 
+											[authors] => Array 
+												( [0] => Author Object 
+													( [_data] => Array 
+														( [id] => 12 [email] => lodel@lodel.net [includeInBrowse] => 1 [publicationId] => 12 [seq] => 0 [userGroupId] => 14 [country] => BE [orcid] => [url] => [affiliation] => Array 
+															( [de_DE] => 
+															) 
+															[biography] => Array
+																( [de_DE] => 
+																) 
+																[familyName] => Array 
+																	( [de_DE] => Baum 
+																	) 
+																	[givenName] => Array 
+																		( [de_DE] => Baum 
+																		) 
+																		[preferredPublicName] => Array 
+																			( [de_DE] => 
+																			) 
+														) 
+														[_hasLoadableAdapters] => [_metadataExtractionAdapters] => Array ( ) [_extractionAdaptersLoaded] => [_metadataInjectionAdapters] => Array ( ) [_injectionAdaptersLoaded] => 
+													) 
+												) [keywords] => Array 
+													( [de_DE] => Array 
+														( [0] => Baum 
+														) 
+													) 
+													[subjects] => Array ( ) [disciplines] => Array ( ) [languages] => Array ( ) [supportingAgencies] => Array ( ) [galleys] => Array ( ) 
+										) 
+										[_hasLoadableAdapters] => [_metadataExtractionAdapters] => Array ( ) [_extractionAdaptersLoaded] => [_metadataInjectionAdapters] => Array ( ) [_injectionAdaptersLoaded] => 
+) ) ) 
+[_hasLoadableAdapters] => 1 [_metadataExtractionAdapters] => Array ( ) [_extractionAdaptersLoaded] => [_metadataInjectionAdapters] => Array ( ) [_injectionAdaptersLoaded] => 
+) [issue] => Issue Object 
+	( [_data] => Array 
+		( [id] => 4 [journalId] => 1 [volume] => 2 [number] => 2 [year] => 2019 [published] => 1 [current] => 1 [datePublished] => 2020-05-26 00:00:00 [lastModified] => 2020-05-26 15:47:36 [accessStatus] => 1 [showVolume] => 1 [showNumber] => 1 [showYear] => 1 [showTitle] => 1 [urlPath] => [coverImage] => Array 
+			( [de_DE] => cover_issue_4_de_DE.jpg 
+			) 
+			[coverImageAltText] => Array 
+				( [de_DE] => ) 
+				[description] => Array 
+					( [de_DE] =>
+						Morgensonne...
+
+
+					) 
+					[title] => Array 
+						( [de_DE] => Test 2 Ausgabe 
+						) 
+		) [_hasLoadableAdapters] => [_metadataExtractionAdapters] => Array ( ) [_extractionAdaptersLoaded] => [_metadataInjectionAdapters] => Array ( ) [_injectionAdaptersLoaded] => 
+	) [journal] => Journal Object 
+	( [_data] => Array 
+		( [id] => 1 [urlPath] => obib [enabled] => 1 [seq] => 1 [primaryLocale] => de_DE [copyrightYearBasis] => issue [defaultReviewMode] => 3 [emailSignature] =>
+			________________________________________________________________________
+			Die Welt [enableOai] => 1 [itemsPerPage] => 25 [keywords] => request [membershipFee] => 0 [numPageLinks] => 10 [numWeeksPerResponse] => 4 [numWeeksPerReview] => 4 [publicationFee] => 0 [purchaseArticleFee] => 0 [restrictReviewerFileAccess] => [sidebar] => Array 
+				( [0] => WebFeedBlockPlugin [1] => informationblockplugin [2] => makesubmissionblockplugin [3] => subscriptionblockplugin [4] => languagetoggleblockplugin 
+				) 
+				[styleSheet] => Array 
+					( [name] => styleSheet.css [uploadName] => styleSheet.css [dateUploaded] => 2020-05-06 14:13:48 
+					) 
+					[supportedFormLocales] => Array 
+						( [0] => de_DE ) 
+						[supportedLocales] => Array 
+							( [0] => de_DE [1] => en_US ) 
+							[supportedSubmissionLocales] => Array 
+								( [0] => de_DE ) 
+								[themePluginPath] => bootstrap3 [abbreviation] => Array 
+									( [de_DE] => o-bib ) 
+									[about] => Array 
+										( [de_DE] =>
+											Beschreibung Einstellungen Zeitschrift
+
+										) 
+										[acronym] => Array 
+											( [de_DE] => o-bib ) 
+											[additionalHomeContent] => Array 
+												( [de_DE] => o-bib. Das offene Bibliotheksjournal
+												) 
+											[authorInformation] => Array 
+												( [de_DE] => Haben Sie Interess [en_US] => Interested in submitting to tess. )
+ 											[clockssLicense] => Array 
+												( [de_DE] => Diese Zeitsiation. More... ) 
+											[favicon] => Array 
+												( [de_DE] => Array 
+													( [name] => favicon_de_DE.ico [uploadName] => favicon_de_DE.ico [width] => 32 [height] => 32 [dateUploaded] => 2020-05-06 14:13:48 [altText] => o-bib. Das offene Bibliotheksjournal )
+												 ) 
+											[librarianInformation] => Array 
+												( [de_DE] => Wir ermutigenam that this journal'sibraries to host for their faculty members to use with journals they are involved in editing (see Open Journal Systems).)
+											[lockssLicense] => Array 
+												( [de_DE] => Diese Zeitschrift verwendet das LOCKSS-System, um mit Hilfe der teilnehmenden Bibliotheken ein dezentralen Achivierungssystem zu schaffen, bei dem diese Bibliotheken die Zeitschrift zu Aufbewahrungs- und Wiederherstellungszwecken permanent archivieren. Mehr... [en_US] => This journal utilizes the LOCKSS system to create a distributed archiving system among participating libraries and permits those libraries to create permanent archives of the journal for purposes of preservation and restoration. More... 
+												) 
+											[name] => Array 
+												( [de_DE] => o-bib ) 
+											[openAccessPolicy] => Array 	
+												( [de_DE] => Diese Zeitschrift bietet freien Zugang (Open Access) zu ihren Inhalten, entsprechend der Grundannahme, dass die freie öffentliche Verfügbarkeit von Forschung einem weltweiten Wissensaustausch zugute kommt. [en_US] => This journal provides immediate open access to its content on the principle that making research freely available to the public supports a greater global exchange of knowledge. ) 
+											[pageFooter] => Array 
+												( [de_DE] => )
+ 											[pageHeaderLogoImage] => Array 	
+												( [de_DE] => Array 
+													( [name] => orange.jpeg [uploadName] => pageHeaderLogoImage_de_DE.jpg [width] => 1252 [height] => 836 [dateUploaded] => 2020-06-03 14:55:29 [altText] => lol
+													 ) 
+												)
+											[privacyStatement] => Array 	
+												( [de_DE] =>men und E-Mail-Adressen, die auf den Webs	y.)
+ 											[readerInformation] => Array 
+												( [de_DE] => Wir empfehlf support or readership. See the journal's Privacy Statement, which assures readers that their name and email address will not be used for other purposes. ) 
+											[submissionChecklist] => Array 	
+												([de_DE] => Array 	
+													( [0] => Array 	
+														( [order] => 1 [content] => Der Beitrag ist bisher unveröffentlicht und wurde auch keiner anderen Zeitschrift vorgelegt (andernfalls ist eine Erklärung in "Kommentare für die Redaktion" beigefügt).
+														 )
+													[1] => Array 
+														( [order] => 2 [content] => Die Datei liegt im Format Microsoft Word, RTF oder WordPerfect vor. ) 
+													[2] => Array 
+														( [order] => 3 [content] => Soweit möglich, wurden den Literaturangaben URLs beigefügt. )
+													 [3] => Array 
+														( [order] => 4 [content] => Der Text liegt mit einfachem Zeilenabstand vor, Schriftgröße 12, gegebenenfalls kursiv, nicht unterstrichen (mit Ausnahme der URL-Adressen); alle Illustrationen, Grafiken und Tabellen sind an geeigneter Stelle im Text eingefügt und nicht am Textende. ) 
+													[4] => Array 
+														( [order] => 5 [content] => Der Text folgt den stilistischen und bibliografischen Vorgaben in Richtlinien für Autor/innen , die unter "Über uns" zu finden sind. ) 
+													)
+												[en_US] => Array 	
+													( [0] => Array 	
+														( [order] => 1 [content] => The submission has not been previously published, nor is it before another journal for consideration (or an explanation has been provided in Comments to the Editor). ) 	
+													 [1] => Array 	
+														( [order] => 2 [content] => The submission file is in OpenOffice, Microsoft Word, or RTF document file format. ) 	
+													[2] => Array ( [order] => 3 [content] => Where available, URLs for the references have been provided. ) 	
+													[3] => Array ( [order] => 4 [content] => The text is single-spaced; uses a 12-point font; employs italics, rather than underlining (except with URL addresses); and all illustrations, figures, and tables are placed within the text at the appropriate points, rather than at the end. ) 
+													[4] => Array ( [order] => 5 [content] => The text adheres to the stylistic and bibliographic requirements outlined in the Author Guidelines. ) 
+    													) 
+                                                                                          	) 
+ 		)    {das schließt [id]}
+
+ {Info: das da drunter ist [_data] => Array untergeordnet}
+
+		[_hasLoadableAdapters] => [_metadataExtractionAdapters] => Array ( ) [_extractionAdaptersLoaded] => [_metadataInjectionAdapters] => Array ( ) [_injectionAdaptersLoaded] => 
+	) {das schließt [_data]}
+
+
+ {Info: Array wem untergeordnet? hier stehen Rubrikentitel}
+
+
+[issueAvailable] => 1 [section] => Section Object 
+	( [_data] => Array 	
+		( [reviewFormId] => 0 [editorRestricted] => 0 [sequence] => 1 [id] => 2 [contextId] => 1 [metaIndexed] => 1 [metaReviewed] => 1 [abstractsNotRequired] => 0 [hideTitle] => 0 [hideAuthor] => 0 [browseByEnabled] => 1 [browseByOrder] => datePubDesc [browseByPath] => kongressbeitrge [abbrev] => Array 
+			( [de_DE] => KB ) 
+			[browseByDescription] => Array 
+				( [de_DE] => ) 
+			[identifyType] => Array 
+				( [de_DE] => ) 
+			[policy] => Array 
+				( [de_DE] => ) 
+			[title] => Array 
+				( [de_DE] => Kongressbeiträge ) 
+		)
+		 
+		[_hasLoadableAdapters] => [_metadataExtractionAdapters] => Array ( ) [_extractionAdaptersLoaded] => [_metadataInjectionAdapters] => Array ( ) [_injectionAdaptersLoaded] => 
+	) 
+
+) {EEEEEENDEEEE}

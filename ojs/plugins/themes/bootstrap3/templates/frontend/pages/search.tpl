@@ -156,7 +156,10 @@
 				</div>
 			</div>
 		</fieldset>
-		
+
+		{$section|@print_r:true}
+		{$authors|@print_r:true}
+		{$query|@print_r:true}
 		
 		{* Search results *}
 		<div class="search-results">
@@ -164,9 +167,11 @@
 				{translate key="search.searchResults"}
 			</h2>
 			{iterate from=results item=result}
+				
+
 				{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission showDatePublished=true hideGalleys=true}
 				{*{include file="frontend/objects/article_summary.tpl" section=null showDatePublished=true hideGalleys=true}*}
-				
+				{$result|@print_r:true}
 				{*Versuch sectionId aus dem Array zu holen*}
 				{assign var='SectionID' value=$result.publishedSubmission->_data.sectionId}
 				{if $SectionID}
@@ -175,7 +180,7 @@
 				<p>Keine Section ID</p>
 				{/if}
 				{*Hier in dem Array ist z.B. sectionId -> 4 enthalten*}
-				{$result.publishedSubmission|@print_r:true}
+				{*$result.publishedSubmission|@print_r:true*}
 			{/iterate}
 			
 		</div>

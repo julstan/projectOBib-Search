@@ -150,6 +150,7 @@ class ArticleSearch extends SubmissionSearch {
 			'searchJournal' => $request->getUserVar('searchJournal'),
 			'abstract' => $request->getUserVar('abstract'),
 			'authors' => $request->getUserVar('authors'),
+			'section' => $request->getUserVar('section'),
 			'title' => $request->getUserVar('title'),
 			'galleyFullText' => $request->getUserVar('galleyFullText'),
 			'discipline' => $request->getUserVar('discipline'),
