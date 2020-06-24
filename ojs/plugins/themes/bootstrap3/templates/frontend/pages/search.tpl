@@ -138,6 +138,7 @@
 						</div>
 						<label for="section">
 							{*{translate key="search.section"}*} {*Der key dient nur für die Übersetzung*} 
+						{*
 						Nach Rubrik
 						</label>
 						<div class="input-group">
@@ -146,21 +147,21 @@
 						<input type="submit" value="{translate key="common.search"}" class="btn btn-info">
 						</span>
 						</div>
-					</div>
+					</div>*}
 				
 					{*Rubriken Suche aufklappbar*}
 					<div class="form-group">
 					 	<label for="sections">Nach Rubrik</label>
-					 	<select id="sections" class="form-control">
+					 	<select id="sections" class="form-control" for="section" name="section">
 						<option selected>Alle</option>
-						<option value="1">Kongressbeiträge</option>
-						<option value="2">Aufsätze</option>
-						<option value="3">Tagungsberichte</option>
-						<option value="4">Berichte und Mitteilungen</option>
-						<option value="5">Diskussionsbeiträge</option>
-						<option value="6">Rezensionen</option>
-						<option value="7">Landes- und Regionalverbänden VDB</option>
-						 </select>
+						<option value="Kongressbeiträge">Kongressbeiträge</option>
+						<option value="Aufsätze">Aufsätze</option>
+						<option value="Tagungsberichte">Tagungsberichte</option>
+						<option value="Berichte und Mitteilungen">Berichte und Mitteilungen</option>
+						<option value="Diskussionsbeiträge">Diskussionsbeiträge</option>
+						<option value="Rezensionen">Rezensionen</option>
+						<option value="Landes- und Regionalverbänden VDB">Landes- und Regionalverbänden VDB</option>
+						</select>
 					</div>						
 				</div>
 			</div>
