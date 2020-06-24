@@ -152,8 +152,8 @@
 					{*Rubriken Suche aufklappbar*}
 					<div class="form-group">
 					 	<label for="sections">Nach Rubrik</label>
-					 	<select id="sections" class="form-control" for="section" name="section">
-						<option selected>Alle</option>
+					 	<select id="sections" class="form-control" for="section" name="section">	
+						<option value="" selected>Alle</option>    {*Value für Alle wird als lehr übergeben, da in der result Schleife abgefragt wird, ob eine section Abfrage vorhanden ist - value ist also lehr und es werden alle Artikel angezeigt*}
 						<option value="Kongressbeiträge">Kongressbeiträge</option>
 						<option value="Aufsätze">Aufsätze</option>
 						<option value="Tagungsberichte">Tagungsberichte</option>
@@ -161,7 +161,7 @@
 						<option value="Diskussionsbeiträge">Diskussionsbeiträge</option>
 						<option value="Rezensionen">Rezensionen</option>
 						<option value="Landes- und Regionalverbänden VDB">Landes- und Regionalverbänden VDB</option>
-						</select>
+						 </select>
 					</div>						
 				</div>
 			</div>
