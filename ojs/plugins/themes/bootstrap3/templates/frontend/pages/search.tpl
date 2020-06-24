@@ -49,6 +49,7 @@
 			</legend>
 			<div class="row">
 				<div class="col-md-5">
+					<div title="Muss mit einer Autoren- oder Freitextsuche kombiniert werden">Info</div>
 					<div class="form-group">
 						<label for="dateFromYear">
 							{translate key="search.dateFrom"}
@@ -121,6 +122,7 @@
 					
 					{*Rubriken Suche*}
 					<div class="form-group">
+						<div title="freie Rubrikensuche, muss mit einer Autoren- oder Freitextsuche kombiniert werden">Info</div>
 						<label for="section">
 							{*{translate key="search.section"}*} {*Der key dient nur für die Übersetzung*} 
 						Nach Rubrik
