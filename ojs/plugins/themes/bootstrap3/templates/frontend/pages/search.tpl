@@ -36,9 +36,9 @@
 			</label>
 
 			<div class="input-group">
-				<input type="text" id="query" name="query" onfocus="this.value=''" value="{$query|escape}" class="query form-control" placeholder="{translate key="common.search"}">
 				<span class="input-group-btn">
-					<input type="submit" value="{translate key="common.search"}" class="btn btn-default">
+				<input type="text" id="query" name="query" onfocus="this.value=''" value="{$query|escape}" class="query form-control" placeholder="{translate key="common.search"}">
+					{*<input type="submit" value="{translate key="common.search"}" class="btn btn-default">*}
 				</span>
 			</div>
 		</div>
@@ -117,9 +117,9 @@
 							{translate key="search.author"} {*Hier funktioniert der key: Nach Autor/in / By Author*}
 						</label>
 						<div class="input-group">
-						<input class="form-control" type="text" for="authors" name="authors" onfocus="this.value=''" value="{$authors|escape}" placeholder="{translate key="common.search"}">
 						<span class="input-group-btn">
-						<input type="submit" value="{translate key="common.search"}" class="btn btn-info">
+						<input class="form-control" type="text" for="authors" name="authors" onfocus="this.value=''" value="{$authors|escape}" placeholder="{translate key="common.search"}">
+						{*<input type="submit" value="{translate key="common.search"}" class="btn btn-info">*}
 						</span>
 						</div>
 					</div>
@@ -152,8 +152,8 @@
 					{*Rubriken Suche aufklappbar*}
 					<div class="form-group">
 					 	<label for="sections">Nach Rubrik</label>
-					 	<select id="sections" class="form-control" for="section" name="section">	
-						<option value="" selected>Alle</option>    {*Value für Alle wird als lehr übergeben, da in der result Schleife abgefragt wird, ob eine section Abfrage vorhanden ist - value ist also lehr und es werden alle Artikel angezeigt*}
+					 	<select id="sections" class="form-control" for="section" name="section">
+						<option value="" selected>Alle</option>    {*Value für Alle wird als lehr übergeben, da in der result Schleife abgefragt wird, ob eine section Abfrage vorhanden ist - value ist also lehr und es werden alle Artikel*}
 						<option value="Kongressbeiträge">Kongressbeiträge</option>
 						<option value="Aufsätze">Aufsätze</option>
 						<option value="Tagungsberichte">Tagungsberichte</option>
@@ -162,7 +162,8 @@
 						<option value="Rezensionen">Rezensionen</option>
 						<option value="Landes- und Regionalverbänden VDB">Landes- und Regionalverbänden VDB</option>
 						 </select>
-					</div>						
+					</div>
+					<input type="submit" value="{translate key="common.search"}" class="btn btn-info">						
 				</div>
 			</div>
 		</fieldset>
