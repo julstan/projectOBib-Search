@@ -131,7 +131,6 @@
 						<input type="submit" value="{translate key="common.search"}" class="btn btn-info">
 						</span>
 						</div>
-						<label>funktioniert noch nicht</label>
 					</div>
 				
 					{*Rubriken Suche aufklappbar*}
@@ -148,6 +147,7 @@
 						<option value="7">Landes- und Regionalverbänden VDB</option>
 						 </select>
 					</div>
+					<label>funktioniert noch nicht</label>
 								{*Hier müssen wir die Values noch bestimmen*}																	<li class="">
 									<a href="http://localhost/ojsrepo/ojs/index.php/obib/section/view/aus-den-landes--und-regionalverbnden-des-vdb">
 										Landes- und Regionalverbände VDB
@@ -168,20 +168,15 @@
 			</h2>
 			{iterate from=results item=result}
 				{foreach from=$result item=item}
-					item
 					{assign var='rubrik' value=$item->_data.title.de_DE}
 				{/foreach}
-				blabla: {$rubrik} <br> <br>
-
-				{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission showDatePublished=true hideGalleys=true}
-				{*{include file="frontend/objects/article_summary.tpl" section=null showDatePublished=true hideGalleys=true}*}
-				{* {$result|@print_r:true} *}
-				{*Versuch sectionId aus dem Array zu holen*}
-				{assign var='SectionID' value=$result.publishedSubmission->_data.sectionId}
-				{if $SectionID}
-				<h2>{{$SectionID}}</h2>
-				{else}
-				<p>Keine Section ID</p>
+			
+				{if $section}
+					{if $rubrik==$section}
+					{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission showDatePublished=true hideGalleys=true}
+					{/if}
+				{else}		
+					{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission showDatePublished=true hideGalleys=true}
 				{/if}
 				{*Hier in dem Array ist z.B. sectionId -> 4 enthalten*}
 				{*$result.publishedSubmission|@print_r:true*}
