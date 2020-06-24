@@ -161,13 +161,7 @@
 						<option value="6">Rezensionen</option>
 						<option value="7">Landes- und Regionalverbänden VDB</option>
 						 </select>
-					</div>
-					<label>funktioniert noch nicht</label>
-								{*Hier müssen wir die Values noch bestimmen*}																	<li class="">
-									<a href="http://localhost/ojsrepo/ojs/index.php/obib/section/view/aus-den-landes--und-regionalverbnden-des-vdb">
-										Landes- und Regionalverbände VDB
-									</a>
-									
+					</div>						
 				</div>
 			</div>
 		</fieldset>
