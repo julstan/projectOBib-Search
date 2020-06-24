@@ -167,11 +167,15 @@
 				{translate key="search.searchResults"}
 			</h2>
 			{iterate from=results item=result}
-				
+				{foreach from=$result item=item}
+					item
+					{assign var='rubrik' value=$item->_data.title.de_DE}
+				{/foreach}
+				blabla: {$rubrik} <br> <br>
 
 				{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission showDatePublished=true hideGalleys=true}
 				{*{include file="frontend/objects/article_summary.tpl" section=null showDatePublished=true hideGalleys=true}*}
-				{$result|@print_r:true}
+				{* {$result|@print_r:true} *}
 				{*Versuch sectionId aus dem Array zu holen*}
 				{assign var='SectionID' value=$result.publishedSubmission->_data.sectionId}
 				{if $SectionID}
