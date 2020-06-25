@@ -179,8 +179,6 @@
 				{if $section}
 					{if $rubrik==$section} {*hier wird überprüft ob section mit einer der ergebnisrubriken überenstimmt*}
 					{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission showDatePublished=true hideGalleys=true}
-					{*Warum werden hier der Autorenname und das Label nicht mehr angezeigt in den Ergebnissen, 
-					  es handelt sich um das gleiche article_summary, welches aufgerufen wird?*}
 					<span class="btn btn-danger">Rubrik: {$rubrik} </span>
 					{* so steht die Rubrik unter dem Aufsatz, da sie nicht mit article_summary übermittelt wird *}
 					{/if}

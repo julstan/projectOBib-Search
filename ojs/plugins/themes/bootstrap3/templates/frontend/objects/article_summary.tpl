@@ -17,7 +17,11 @@
 {assign var=articlePath value=$article->getBestId($currentJournal)}
 {if (!$section.hideAuthor && $article->getHideAuthor() == $smarty.const.AUTHOR_TOC_DEFAULT) || $article->getHideAuthor() == $smarty.const.AUTHOR_TOC_SHOW}
 	{assign var="showAuthor" value=true}
+{elseif ($section.hideAuthor && $article->getHideAuthor() == $smarty.const.AUTHOR_TOC_DEFAULT) || $article->getHideAuthor() == $smarty.const.AUTHOR_TOC_SHOW}
+	{assign var="showAuthor" value=true}
 {/if}
+
+{* es wird mit section die Variable $hideauthor geliefert. Bei {elseif} wird das abgefangen, damit der Autor trotzdem angezeigt wird *}
 
 <div class="article-summary media">
 	{if $article->getLocalizedCoverImage()}
@@ -48,7 +52,7 @@
 			{/if}
 		{if $showAuthor || $article->getPages()}
 
-			{if $showAuthor}
+			{if $showAuthor}	{* dieser Abschnitt ist für die ANzeige der Autorennamen zuständig *}
 				<div class="meta">
 					{if $showAuthor}
 						<div class="authors">
