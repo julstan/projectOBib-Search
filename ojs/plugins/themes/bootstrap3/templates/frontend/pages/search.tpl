@@ -200,17 +200,40 @@
 				{include file="frontend/components/notification.tpl" type="notice" messageKey="search.noResults"}
 			{/if}
 
+{*sehr schlechte Notlösung falls wir die Ergebniszählung mit dem Ursprünglichen Code garnicht hinbekommen*}
+{*kann sehr gerne rausgelöscht werden*}
+
+		{assign var="counter" value=0}		{*Variable um die Treffer zu zählen*}
 		{* Results pagination *}
 		{else}
 			<div class="cmp_pagination">
+			{if !$section}
 				{page_info iterator=$results}
 				{page_links anchor="results" iterator=$results name="search" query=$query searchJournal=$searchJournal authors=$authors title=$title abstract=$abstract galleyFullText=$galleyFullText discipline=$discipline subject=$subject type=$type coverage=$coverage indexTerms=$indexTerms dateFromMonth=$dateFromMonth dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateToMonth=$dateToMonth dateToDay=$dateToDay dateToYear=$dateToYear orderBy=$orderBy orderDir=$orderDir}
-			
-			{* Hier rubrik=$rubrik und section=$section eingefügt, hat die Trefferanzeige nicht beeinflusst*}
+				{* Hier rubrik=$rubrik und section=$section eingefügt, hat die Trefferanzeige nicht beeinflusst*}
+		
+				{*Auf welche Variablen/Dateien wird hier verwiesen im Code? Es gibt hhier ja keine direkte Ausgabe*}
+		
+			{elseif $section}
+				{foreach from=$result item=item}
+					{if $rubrik==$section}
+					{counter+1}				{*zählt die Suchergebnisse, wenn über eine Rurbik gescuht wird*}
+					{/if}
+				{/foreach}
+				<p>{counter} Treffer</p>	
+			{/if}
 
 			</div>
 		{/if}
 
+	{*ursprünglicher Code für die Trefferzählung:*}
+		{*{else}
+			<div class="cmp_pagination">
+			{if !$section}
+				{page_info iterator=$results}
+				{page_links anchor="results" iterator=$results name="search" query=$query searchJournal=$searchJournal authors=$authors title=$title abstract=$abstract galleyFullText=$galleyFullText discipline=$discipline subject=$subject type=$type coverage=$coverage indexTerms=$indexTerms dateFromMonth=$dateFromMonth dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateToMonth=$dateToMonth dateToDay=$dateToDay dateToYear=$dateToYear orderBy=$orderBy orderDir=$orderDir}
+			{/if}	
+				{* Hier rubrik=$rubrik und section=$section eingefügt, hat die Trefferanzeige nicht beeinflusst*}
 	</form>
 </div><!-- .page -->
 
