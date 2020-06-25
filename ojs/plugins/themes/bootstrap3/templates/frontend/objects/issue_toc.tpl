@@ -191,7 +191,7 @@
 
 								{if $datum == $datumVeroeffentlichung}	{* prüfen ob datePublished des Artikels == datum aus datenOhneDopplungen, wenn ja dann Template ausgeben *}
 									<div class="page-header">
-										Ausgabe zum Testen: {$datumVeroeffentlichung}
+										{* Ausgabe zum Testen: {$datumVeroeffentlichung} *}
 										{include file="frontend/objects/article_summary.tpl"}
 									</div>
 								{/if}

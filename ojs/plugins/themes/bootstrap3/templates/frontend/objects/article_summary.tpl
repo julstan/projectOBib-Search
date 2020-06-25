@@ -144,13 +144,13 @@
 			{if $jahrArtikel >= $zielJahr}
 				{* wenn der Artikel im aktuellen Monat veröffentlicht wurde, wird ein New-Label angezeigt *}
                 {if $monatArtikel > $zielMonat}
-                    <button class="btn btn-primary">NEW</button>
+                    <button class="btn btn-success">NEW</button>
                 {/if}
 				{* wenn der Monat der Veröffentlichung dem Monat des Zieldatums entspricht... *}
                 {if $monatArtikel == $zielMonat}
 					{* ...und der Veröffentlichungstag größer oder gleich dem Tag des Zieldatums ist, wird New-Label angezeigt *}
                     {if $tagArtikel >= $zielTag}
-                        <button class="btn btn-primary">NEW</button>
+                        <button class="btn btn-success">NEW</button>
 					{/if}
                 {/if}
             {/if}

@@ -133,14 +133,15 @@
 							<i class="fas fa-info-circle"></i>
 						</span>
 					 	<select id="sections" class="form-control" for="section" name="section">
-						<option value="" selected>Alle</option>    {*Value für Alle wird als lehr übergeben, da in der result Schleife abgefragt wird, ob eine section Abfrage vorhanden ist - value ist also lehr und es werden alle Artikel*}
+						<option value="" selected>Alle</option>    {*value= für Alle wird als leer übergeben, da in der result Schleife abgefragt wird, ob eine section Abfrage vorhanden ist - value ist also lehr und es werden alle Artikel*}
 						<option value="Kongressbeiträge">Kongressbeiträge</option>
 						<option value="Aufsätze">Aufsätze</option>
 						<option value="Tagungsberichte">Tagungsberichte</option>
 						<option value="Berichte und Mitteilungen">Berichte und Mitteilungen</option>
 						<option value="Diskussionsbeiträge">Diskussionsbeiträge</option>
 						<option value="Rezensionen">Rezensionen</option>
-						<option value="Landes- und Regionalverbänden VDB">Landes- und Regionalverbänden VDB</option>
+						<option value="Aus den Landes- und Regionalverbänden des VDB">Landes- und Regionalverbänden VDB</option>
+						 {* Es ist wichtig den value= genau so anzugeben, wie der richtige Rubrikenname lautet*}
 						 </select>
 					</div>
 					{*{translate key="search.section"}*} {*Der key dient nur für die Übersetzung*} 
@@ -154,15 +155,17 @@
 						</span>
 						</div>
 					</div>*}
-				
-					<input type="submit" value="{translate key="common.search"}" class="btn btn-info">						
-				</div>
+										
+				</div>	
+			</div>
+			<div class="text-center"> {* ob mittig oder rechts ist einfach geschmackssache, müssen wir uns auf eine Variante einigen *}
+					<input type="submit" value="{translate key="common.search"}" class="btn btn-info">
 			</div>
 		</fieldset>
 
-		{$section|@print_r:true}
+		{* {$section|@print_r:true}
 		{$authors|@print_r:true}
-		{$query|@print_r:true}
+		{$query|@print_r:true} *}
 		
 		{* Search results *}
 		<div class="search-results">
@@ -173,16 +176,19 @@
 				{foreach from=$result item=item}
 					{assign var='rubrik' value=$item->_data.title.de_DE}
 				{/foreach}
-			
 				{if $section}
 					{if $rubrik==$section} {*hier wird überprüft ob section mit einer der ergebnisrubriken überenstimmt*}
 					{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission showDatePublished=true hideGalleys=true}
+					{*Warum werden hier der Autorenname und das Label nicht mehr angezeigt in den Ergebnissen, 
+					  es handelt sich um das gleiche article_summary, welches aufgerufen wird?*}
+					<span class="btn btn-danger">Rubrik: {$rubrik} </span>
+					{* so steht die Rubrik unter dem Aufsatz, da sie nicht mit article_summary übermittelt wird *}
 					{/if}
 				{else}		
 					{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission showDatePublished=true hideGalleys=true}
+					<span class="btn btn-info">Rubrik: {$rubrik} </span>
 				{/if}
-				{*Hier in dem Array ist z.B. sectionId -> 4 enthalten*}
-				{*$result.publishedSubmission|@print_r:true*}
+				
 			{/iterate}
 			
 		</div>
@@ -201,11 +207,16 @@
 			<div class="cmp_pagination">
 				{page_info iterator=$results}
 				{page_links anchor="results" iterator=$results name="search" query=$query searchJournal=$searchJournal authors=$authors title=$title abstract=$abstract galleyFullText=$galleyFullText discipline=$discipline subject=$subject type=$type coverage=$coverage indexTerms=$indexTerms dateFromMonth=$dateFromMonth dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateToMonth=$dateToMonth dateToDay=$dateToDay dateToYear=$dateToYear orderBy=$orderBy orderDir=$orderDir}
+			
+			{* Hier rubrik=$rubrik und section=$section eingefügt, hat die Trefferanzeige nicht beeinflusst*}
+
 			</div>
 		{/if}
 
 	</form>
 </div><!-- .page -->
+
+{* Interessante Einbindung von Fontawesome :^) *}
 <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" data-auto-replace-svg="nest"></script>
 
 {include file="common/frontend/footer.tpl"}
