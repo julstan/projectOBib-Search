@@ -172,12 +172,16 @@
 			<h2>
 				{translate key="search.searchResults"}
 			</h2>
+			{assign var='zahler' value=0}
+
 			{iterate from=results item=result}
 				{foreach from=$result item=item}
 					{assign var='rubrik' value=$item->_data.title.de_DE}
 				{/foreach}
 				{if $section}
 					{if $rubrik==$section} {*hier wird überprüft ob section mit einer der ergebnisrubriken überenstimmt*}
+					{assign var='zahler' value=$zahler+1}	{* hier wird die Anzahl an Suchergebnissen mit Rurbiken für die Trefferanzahl am Ende der Seite gezählt *}
+
 					{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission showDatePublished=true hideGalleys=true}
 					<span class="btn btn-danger">Rubrik: {$rubrik} </span>
 					{* so steht die Rubrik unter dem Aufsatz, da sie nicht mit article_summary übermittelt wird *}
@@ -197,43 +201,44 @@
 			{if $error}
 				{include file="frontend/components/notification.tpl" type="error" message=$error|escape}
 			{else}
+				{$results|@print_r:true}
 				{include file="frontend/components/notification.tpl" type="notice" messageKey="search.noResults"}
 			{/if}
 
 {*sehr schlechte Notlösung falls wir die Ergebniszählung mit dem Ursprünglichen Code garnicht hinbekommen*}
 {*kann sehr gerne rausgelöscht werden*}
 
-		{assign var="counter" value=0}		{*Variable um die Treffer zu zählen*}
 		{* Results pagination *}
 		{else}
 			<div class="cmp_pagination">
-			{if !$section}
-				{page_info iterator=$results}
+			{if !$section}	{* Trefferanzahl bei einer Suche ohne Rubriken*}
+				{page_info iterator=$results}	{* Hier wird die Trefferanzahl-Ausgabe generiert/dieser Code ist dafür zuständig *}
 				{page_links anchor="results" iterator=$results name="search" query=$query searchJournal=$searchJournal authors=$authors title=$title abstract=$abstract galleyFullText=$galleyFullText discipline=$discipline subject=$subject type=$type coverage=$coverage indexTerms=$indexTerms dateFromMonth=$dateFromMonth dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateToMonth=$dateToMonth dateToDay=$dateToDay dateToYear=$dateToYear orderBy=$orderBy orderDir=$orderDir}
 				{* Hier rubrik=$rubrik und section=$section eingefügt, hat die Trefferanzeige nicht beeinflusst*}
+				{*$results ist hier anders als im Rest des Codes - es ist die Trefferanzahl insgesammt und Informationen für die Pagination enthalten*}
 		
-				{*Auf welche Variablen/Dateien wird hier verwiesen im Code? Es gibt hhier ja keine direkte Ausgabe*}
-		
-			{elseif $section}
-				{foreach from=$result item=item}
-					{if $rubrik==$section}
-					{counter+1}				{*zählt die Suchergebnisse, wenn über eine Rurbik gescuht wird*}
-					{/if}
-				{/foreach}
-				<p>{counter} Treffer</p>	
+			{elseif $section}			{* Trefferanzahl Code bei einer Rurbikensuche *}
+				
+				<p>hier zähler: {$zahler}</p>		{* Ausgabe der Trefferanzahl der Rubriken als Kontrolle *}
+				{$results['count']=$zahler}			{* die Trefferanzahl in $results wird verändert *}
+				{page_info iterator=$results}		{* eigentlich Ausgabe der Trefferanzahl, funktioniert immoment nch nicht *}
+													{* es funktioniert noch nicht mit einer Veränderung von $results *}
+				
 			{/if}
 
 			</div>
 		{/if}
-
+					
+					
 	{*ursprünglicher Code für die Trefferzählung:*}
 		{*{else}
 			<div class="cmp_pagination">
 			{if !$section}
 				{page_info iterator=$results}
 				{page_links anchor="results" iterator=$results name="search" query=$query searchJournal=$searchJournal authors=$authors title=$title abstract=$abstract galleyFullText=$galleyFullText discipline=$discipline subject=$subject type=$type coverage=$coverage indexTerms=$indexTerms dateFromMonth=$dateFromMonth dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateToMonth=$dateToMonth dateToDay=$dateToDay dateToYear=$dateToYear orderBy=$orderBy orderDir=$orderDir}
-			{/if}	
-				{* Hier rubrik=$rubrik und section=$section eingefügt, hat die Trefferanzeige nicht beeinflusst*}
+			{/if}	*}
+
+			
 	</form>
 </div><!-- .page -->
 
