@@ -25,9 +25,11 @@
 	</div>
 
 	{* Main Search From *}
+	<div class="row">
+	<div class="col-10 col-xs-10 col-md-10 col-xl-10">
 	<form method="post" id="search-form" class="search-form" action="{url op="search"}" role="search">
 		{csrf}
-
+		 {*nur wichtig für Suchhinweise*}
 		<div class="form-group">
 			{* Repeat the label text just so that screen readers have a clear
 			   label/input relationship *}
@@ -39,10 +41,31 @@
 				<span class="input-group-btn">
 				<input type="text" id="query" name="query" onfocus="this.value=''" value="{$query|escape}" class="query form-control" placeholder="{translate key="common.search"}">
 					{*<input type="submit" value="{translate key="common.search"}" class="btn btn-default">*}
+					<button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseHinweise" aria-expanded="false" aria-controls="collapseHinweise">
+					Suchhinweise <i class="fas fa-chevron-down"></i>
+  					</button>
 				</span>
 			</div>
+		
+		</div>
 		</div>
 
+	</div>
+
+		<div class="collapse" id="collapseHinweise">
+  		<div class="card card-body">
+		<ul>
+   		<li>Groß- und Kleinschreibung der Suchbegriffe werden nicht unterschieden.</li>
+		<li>Häufig vorkommende Worte werden ignoriert</li>
+		<li>Standardmäßig werden nur die Artikel aufgelistet, die <em>alle</em> Suchbegriffe enthalten (implizites <em>UND</em>).</li>
+		<li>Mehrere Suchbegriffe verbunden durch <em>ODER</em> ergeben Artikel, die den einen und/oder den anderen Begriff enthalten, z.B. <em>Bildung ODER Forschung.</em></li>
+		<li>Verwenden Sie Klammern für eine komplexere Suche, z.B. <em>Archiv ((Zeitschrift ODER Vortrag) NICHT Dissertation)</em>.</li>
+		<li>Suchen Sie nach einer genauen Wortfolge, indem Sie sie in Anführungszeichen setzen, z.B. <em>"Veröffentlichung mit freiem Zugang"</em>.</li>
+		<li>Schließen Sie ein Wort aus, indem Sie ihm <strong>-</strong> oder <em>NICHT</em> voranstellen, z.B. <em>Internetpublikation -Politik</em> oder <em>Internetpublikation NICHT Politik</em>.</li>
+		<li>Verwenden Sie <strong>*</strong> als Platzhalter für beliebige Zeichenfolgen, z.B. <em>Sozi* Moral</em> listet alle Dokumente, die "soziologisch" oder "sozial" enthalten.</li>
+		</ul>
+		</div>
+		</div>
 		<fieldset class="search-advanced">
 			<legend>
 				{translate key="search.advancedFilters"}
@@ -88,18 +111,18 @@
 				<div class="col-md-2">
 					<div class="form-group">
 						<label class="invisible">1</label>
-					 	<select id="boolesche_operatoren" class="form-control">
-						<option selected>UND</option>
-						<option value="1">ODER</option>
-						<option value="2">NICHT</option>
+					 	<select id="operator" class="form-control" for="operator" name="operator">
+						<option value="UND">UND</option>
+						<option value="ODER">ODER</option>
+						<option value="NICHT">NICHT</option>
 						 </select>
 					</div>
 					<div class="form-group">
 						<label class="invisible">2</label>
-					 	<select id="boolesche_operatoren" class="form-control">
-						<option selected>UND</option>
-						<option value="1">ODER</option>
-						<option value="2">NICHT</option>
+					 	<select id="operator" class="form-control" for="operator" name="operator">
+						<option value="UND">UND</option>
+						<option value="ODER">ODER</option>
+						<option value="NICHT">NICHT</option>
 						 </select>
 					</div>
 				</div>
@@ -162,9 +185,13 @@
 					<input type="submit" value="{translate key="common.search"}" class="btn btn-info">
 			</div>
 		</fieldset>
-
-		{* {$section|@print_r:true}
-		{$authors|@print_r:true}
+	
+ 		
+		
+		
+		
+		 {* {$section|@print_r:true}
+		{$authors|@print_r:true} 
 		{$query|@print_r:true} *}
 		
 		{* Search results *}
@@ -239,6 +266,8 @@
 
 			
 	</form>
+	
+		
 </div><!-- .page -->
 
 {* Interessante Einbindung von Fontawesome :^) *}
