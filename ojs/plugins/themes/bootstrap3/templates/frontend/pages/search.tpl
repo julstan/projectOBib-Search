@@ -205,8 +205,7 @@
 				{include file="frontend/components/notification.tpl" type="notice" messageKey="search.noResults"}
 			{/if}
 
-{*sehr schlechte Notlösung falls wir die Ergebniszählung mit dem Ursprünglichen Code garnicht hinbekommen*}
-{*kann sehr gerne rausgelöscht werden*}
+		{*Verbesserung der Trefferanzeige*}
 
 		{* Results pagination *}
 		{else}
@@ -219,10 +218,10 @@
 		
 			{elseif $section}			{* Trefferanzahl Code bei einer Rurbikensuche *}
 				
-				<p>hier zähler: {$zahler}</p>		{* Ausgabe der Trefferanzahl der Rubriken als Kontrolle *}
+				{* <p>hier zähler: {$zahler}</p>		Ausgabe der Trefferanzahl der Rubriken als Kontrolle *}
 				{$results['count']=$zahler}			{* die Trefferanzahl in $results wird verändert *}
-				{page_info iterator=$results}		{* eigentlich Ausgabe der Trefferanzahl, funktioniert immoment nch nicht *}
-													{* es funktioniert noch nicht mit einer Veränderung von $results *}
+				{*page_info iterator=$results*}		{* eigentlich Ausgabe der Trefferanzahl, funktioniert immoment nch nicht *}
+				<p>1 - {$zahler} von {$zahler} Treffern</p>									{* es funktioniert noch nicht mit einer Veränderung von $results *}
 				
 			{/if}
 
