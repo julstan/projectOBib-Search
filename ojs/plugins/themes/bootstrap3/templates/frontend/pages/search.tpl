@@ -201,7 +201,7 @@
 			{if $error}
 				{include file="frontend/components/notification.tpl" type="error" message=$error|escape}
 			{else}
-				{$results|@print_r:true}
+				{* {$results|@print_r:true}  *} {*VirtualArrayIterator Object*}
 				{include file="frontend/components/notification.tpl" type="notice" messageKey="search.noResults"}
 			{/if}
 
