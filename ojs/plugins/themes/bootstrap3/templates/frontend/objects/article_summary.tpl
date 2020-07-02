@@ -46,28 +46,29 @@
 
 		{* Rubrikenanzeige*}
  
-            <div>
-				{foreach name=sections from=$publishedSubmissions item=section}
-					{if $section.articles}
-						{if $section.title}
-							{assign var='rubrik' value=$section.title}
-							{assign var='artikelId' value=$articlePath}
-							{if $section.articles}						
-								{assign var="artikelProRubrik" value=-1}
-								{foreach from=$section.articles item=article}
-									{assign var="artikelProRubrik" value=$artikelProRubrik+1}
-									{assign var='tempArtikelId' value=$section.articles.$artikelProRubrik->_data.id}
-									{if $tempArtikelId == $artikelId}
-										Rubrik: {$section.title}
-										{* {$tempArtikelId}
-										{$artikelId} *}
-									{/if}
-								{/foreach}
+            
+		{foreach name=sections from=$publishedSubmissions item=section}
+			{if $section.articles}
+				{if $section.title}
+					{assign var='artikelId' value=$articlePath}
+					{if $section.articles}						
+						{assign var="artikelProRubrik" value=-1}
+						{foreach from=$section.articles item=article}
+							{assign var="artikelProRubrik" value=$artikelProRubrik+1}
+							{assign var='tempArtikelId' value=$section.articles.$artikelProRubrik->_data.id}
+							{if $tempArtikelId == $artikelId}
+								{assign var='rubrik' value=$section.title}
+								{* Rubrik: {$section.title} *}
+								{* {$tempArtikelId}
+								{$artikelId} *}
 							{/if}
-						{/if}
+						{/foreach}
 					{/if}
-				{/foreach}
-             </div>
+				{/if}
+			{/if}
+		{/foreach}
+        
+		Rubrik: {$rubrik}
 
 		{* Rubrikenanzeige Ende *}
 		
