@@ -63,20 +63,37 @@
 			{/if}
 
 			
-			{* Hier schlechter Rubrikenname Anzeigecode der so nicht in der Ergebnissliste von Search angezeigt wird, warum auch immer*}
+			{* Rubrikenanzeige*}
  
- 
-            {* <div>
-             {foreach name=sections from=$publishedSubmissions item=section}
-            {if $section.articles}
-            {if $section.title}
-             <div>
-             <h2>{$section.title|escape}</h2>
+            <div>
+				{foreach name=sections from=$publishedSubmissions item=section}
+					{if $section.articles}
+						{if $section.title}
+							{assign var='rubrik' value=$section.title}
+							{assign var='artikelId' value=$articlePath}
+							{$rubrik}
+							{$artikelId}
+
+							<section class="section">
+								{if $section.articles}						
+									{assign var="artikelProRubrik" value=-1}
+									{$section.title}
+									{foreach from=$section.articles item=article}
+										
+										{assign var="artikelProRubrik" value=$artikelProRubrik+1}
+										{assign var='tempArtikelId' value=$section.articles.$artikelProRubrik->_data.id}
+										{$tempArtikelId}
+									{/foreach}
+								{/if}
+
+							{* <br><br> *}
+							{* {$publishedSubmissions|@print_r:true} *}
+						{/if}
+					{/if}
+				{/foreach}
              </div>
-             {/if}
-             {/if}
-            {/foreach}
-             </div> *}
+
+			 {* Rubrikenanzeige Ende *}
  
 
 			{* AB HIER NEU-LABEL *}
