@@ -36,6 +36,9 @@
 		<h3 class="media-heading">
 			<a href="{url page="article" op="view" path=$articlePath}">
 				{$article->getLocalizedTitle()|strip_unsafe_html}
+
+				
+
 				{if $article->getLocalizedSubtitle()}
 					<p>
 						<small>{$article->getLocalizedSubtitle()|escape}</small>
@@ -118,7 +121,7 @@
 			{* wir wollen das Datum herausfinden das 28 Tage zurückliegt, um das Veröffentlichungsdatum zu bekommen, das ein Artikel maximal haben darf um noch mit dem Neu-Label ausgezeichnet zu werden *}
 			
 			{* vom aktuellen Datum (heute) 28 Tage subtrahieren *}
-			{assign var='zielTag' value=$tagDatumHeute-28}
+			{assign var='zielTag' value=$tagDatumHeute-28}		{* funktioniert nur bei maximal 28 Tagen *}
 
 			{* wenn die Zahl des zielTag kleiner als 1 ist, liegt das maximale Zieldatum im vorherigen Monat *}
 			{if $zielTag < 1}
@@ -148,13 +151,13 @@
 			{if $jahrArtikel >= $zielJahr}
 				{* wenn der Artikel im aktuellen Monat veröffentlicht wurde, wird ein New-Label angezeigt *}
                 {if $monatArtikel > $zielMonat}
-                    <button class="btn btn-success">NEW</button>
+                    <h4><span class="label label-success">NEW</span></h4>
                 {/if}
 				{* wenn der Monat der Veröffentlichung dem Monat des Zieldatums entspricht... *}
                 {if $monatArtikel == $zielMonat}
 					{* ...und der Veröffentlichungstag größer oder gleich dem Tag des Zieldatums ist, wird New-Label angezeigt *}
                     {if $tagArtikel >= $zielTag}
-                        <button class="btn btn-success">NEW</button>
+                        <h4><span class="label label-success">NEW</span></h4>
 					{/if}
                 {/if}
             {/if}
