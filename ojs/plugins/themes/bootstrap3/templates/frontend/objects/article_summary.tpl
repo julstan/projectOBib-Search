@@ -43,13 +43,42 @@
 				{/if}
 			</a>
 		</h3>
+
+		{* Rubrikenanzeige*}
+ 
+            <div>
+				{foreach name=sections from=$publishedSubmissions item=section}
+					{if $section.articles}
+						{if $section.title}
+							{assign var='rubrik' value=$section.title}
+							{assign var='artikelId' value=$articlePath}
+							{if $section.articles}						
+								{assign var="artikelProRubrik" value=-1}
+								{foreach from=$section.articles item=article}
+									{assign var="artikelProRubrik" value=$artikelProRubrik+1}
+									{assign var='tempArtikelId' value=$section.articles.$artikelProRubrik->_data.id}
+									{if $tempArtikelId == $artikelId}
+										Rubrik: {$section.title}
+										{* {$tempArtikelId}
+										{$artikelId} *}
+									{/if}
+								{/foreach}
+							{/if}
+						{/if}
+					{/if}
+				{/foreach}
+             </div>
+
+		{* Rubrikenanzeige Ende *}
 		
 {* hier Veroffentlicht*}
 		{if $article->getDatePublished()}
-				<p class="published">
-					{$article->getDatePublished()|escape|date_format:$dateFormatShort}
-				</p>
-			{/if}
+			<p class="published">
+				{$article->getDatePublished()|escape|date_format:$dateFormatShort}
+			</p>
+		{/if}
+
+
 		{if $showAuthor || $article->getPages()}
 
 			{if $showAuthor}	{* dieser Abschnitt ist für die ANzeige der Autorennamen zuständig *}
@@ -63,37 +92,7 @@
 			{/if}
 
 			
-			{* Rubrikenanzeige*}
- 
-            <div>
-				{foreach name=sections from=$publishedSubmissions item=section}
-					{if $section.articles}
-						{if $section.title}
-							{assign var='rubrik' value=$section.title}
-							{assign var='artikelId' value=$articlePath}
-							{$rubrik}
-							{$artikelId}
-
-							<section class="section">
-								{if $section.articles}						
-									{assign var="artikelProRubrik" value=-1}
-									{$section.title}
-									{foreach from=$section.articles item=article}
-										
-										{assign var="artikelProRubrik" value=$artikelProRubrik+1}
-										{assign var='tempArtikelId' value=$section.articles.$artikelProRubrik->_data.id}
-										{$tempArtikelId}
-									{/foreach}
-								{/if}
-
-							{* <br><br> *}
-							{* {$publishedSubmissions|@print_r:true} *}
-						{/if}
-					{/if}
-				{/foreach}
-             </div>
-
-			 {* Rubrikenanzeige Ende *}
+			
  
 
 			{* AB HIER NEU-LABEL *}
