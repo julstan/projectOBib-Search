@@ -46,18 +46,20 @@
 
 		{* Rubrikenanzeige*}
  
-            
-		{foreach name=sections from=$publishedSubmissions item=section}
+		{foreach name=sections from=$publishedSubmissions item=section}		{* durchgehen des Arrays publishedSubmissions *}
 			{if $section.articles}
 				{if $section.title}
-					{assign var='artikelId' value=$articlePath}
+					{assign var='artikelId' value=$articlePath}		{* artikelId enthält die Id des Artikels für den das Template article_summary aufgerufen wurde *}
 					{if $section.articles}						
-						{assign var="artikelProRubrik" value=-1}
-						{foreach from=$section.articles item=article}
+						{assign var="artikelProRubrik" value=-1}	{* artikelProRubrik ist eine Zahl die benötigt wird um den Pfad zum Artikel in publishedSubmissions auf der Ebende der Rubrik aufzurufen *}
+																	{* die Variable wird auf -1 gesetzt, da der erste Wert der zum Aufrufen benötigt wird 0 sein muss und in der Schleife immer um 1 addiert wird *}
+						{* herausfinden der Rubrik des Artikels *}
+						{foreach from=$section.articles item=article}	{* auf der Ebene des Artikels die Id überprüfen *}
 							{assign var="artikelProRubrik" value=$artikelProRubrik+1}
-							{assign var='tempArtikelId' value=$section.articles.$artikelProRubrik->_data.id}
-							{if $tempArtikelId == $artikelId}
-								{assign var='rubrik' value=$section.title}
+							{assign var='tempArtikelId' value=$section.articles.$artikelProRubrik->_data.id}	{* tempArtikelId enthält die Id des jeweiligen Artikels aus publishedSubmissions *}
+							{if $tempArtikelId == $artikelId}		{* wenn die Id des Artikels aus publishedSubmissions mit der Id des Artikels für den das Template aufgerufen wurde übereinstimmt... *}
+								{assign var='rubrik' value=$section.title}	{* ...wird rubrik die Rubrik zugewiesen *}
+								{* Ausgabe zum Testen *}
 								{* Rubrik: {$section.title} *}
 								{* {$tempArtikelId}
 								{$artikelId} *}
@@ -68,11 +70,12 @@
 			{/if}
 		{/foreach}
         
-		Rubrik: {$rubrik}
+		Rubrik: {$rubrik}		{* Variable muss außerhalb der Schleife aufgerufen werden, damit die Rubrik auch in der Suche angezeigt wird *}
 
 		{* Rubrikenanzeige Ende *}
 		
-{* hier Veroffentlicht*}
+		{* hier Veroffentlicht*}
+
 		{if $article->getDatePublished()}
 			<p class="published">
 				{$article->getDatePublished()|escape|date_format:$dateFormatShort}
