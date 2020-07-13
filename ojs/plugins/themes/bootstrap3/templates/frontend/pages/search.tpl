@@ -26,32 +26,36 @@
 
 	{* Main Search From *}
 	<div class="row">
-	<div class="col-10 col-xs-10 col-md-10 col-xl-10">
+	
+	<div class="col-md-2">
+					<div class="form-group">
+					 	<select id="querybool" class="form-control" for="operator" name="operator" onchange="GetSelectedValueQuery()">
+						<option value=" UND " >UND</option>
+						<option value=" ODER " >ODER</option>
+						<option value=" NICHT ">NICHT</option>
+						 </select>
+					</div>
+	</div>
+	<div class="col-md-10">
 	<form method="post" id="search-form" class="search-form" action="{url op="search"}" role="search">
 		{csrf}
-		 {*nur wichtig für Suchhinweise*}
 		<div class="form-group">
-			{* Repeat the label text just so that screen readers have a clear
-			   label/input relationship *}
 			<label class="sr-only" for="query">
 				{translate key="search.searchFor"}
 			</label>
-
 			<div class="input-group">
 				<span class="input-group-btn">
-				<input type="text" id="query" name="query" onfocus="this.value=''" value="{$query|escape}" class="query form-control" placeholder="{translate key="common.search"}">
-					{*<input type="submit" value="{translate key="common.search"}" class="btn btn-default">*}
-					<button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseHinweise" aria-expanded="false" aria-controls="collapseHinweise">
-					Suchhinweise <i class="fas fa-chevron-down"></i>
-  					</button>
+				<input type="text" id="query" name="query" value="{$query|escape}" class="query form-control" placeholder="{translate key="common.search"}">
 				</span>
 			</div>
-		
 		</div>
 		</div>
-
 	</div>
-
+		<div class="text-center">
+		<button class="btn btn-light " type="button" data-toggle="collapse" data-target="#collapseHinweise" aria-expanded="false" aria-controls="collapseHinweise">
+					Suchhinweise <i class="fas fa-chevron-down"></i>
+  					</button> 
+					  </div>
 		<div class="collapse" id="collapseHinweise">
   		<div class="card card-body">
 		<ul>
@@ -93,43 +97,45 @@
 							<div class="form-group">
 								{html_select_date prefix="dateTo" time=$dateTo start_year=$yearStart end_year=$yearEnd year_empty="" month_empty="" day_empty="" field_order="YMD"}
 							</div>
-							
 						</div>
-						
 					</div>
-					{*<p><span class="label label-info">Info:</span><br>Zeitraumsuche nur in Kombination mit Suchwort möglich</p>
-					<div class="panel panel-primary">
-      <div class="panel-heading">Info:</div>
-      <div class="panel-body">Zeitraumsuche nur in Kombination mit Suchwort möglich</div>
-    </div>*}
 				</div>
 				
-				{* Unser Code Patty Julika *}
-
-
-				{*Boolesche Operatoren*}
+		
+				{*Autorensuche Boolesche Operatoren*}
 				<div class="col-md-2">
 					<div class="form-group">
 						<label class="invisible">1</label>
-					 	<select id="operator" class="form-control" for="operator" name="operator">
-						<option value="UND">UND</option>
-						<option value="ODER">ODER</option>
-						<option value="NICHT">NICHT</option>
-						 </select>
-					</div>
-					<div class="form-group">
-						<label class="invisible">2</label>
-					 	<select id="operator" class="form-control" for="operator" name="operator">
-						<option value="UND">UND</option>
-						<option value="ODER">ODER</option>
-						<option value="NICHT">NICHT</option>
+					 	<select id="authorbool" class="form-control" for="operator" name="operator" onchange="GetSelectedValueAuthor()">
+						<option value=" UND " >UND</option>
+						<option value=" ODER " >ODER</option>
+						<option value=" NICHT ">NICHT</option>
 						 </select>
 					</div>
 				</div>
 
 
-				{*Autor Suche*}
+            {* Javascript Code*}
+			<script>
+			// Autorensuche
+			function GetSelectedValueAuthor(){
+				var e = document.getElementById("authorbool");  //Dropdown mit der richtigen ID wird ausgewählt
+				var result = e.options[e.selectedIndex].value;  //Ergebnisswert wird definiert, der value der options hier also UND,NICHT,ODER
+
+				document.getElementById("authors").value = document.getElementById("authors").value + result; //Inputsuchschlitz mit der richtigen ID wird ausgewählt, der dortige Value wird übernommen und result wird drangehängt, das ganze wird wieder abgespeichert, damit man mehrere results (boolesche Operatoren) miteinander verknüpfen kann
+			}
+			// Volltextsuche
+			function GetSelectedValueQuery(){
+				var e = document.getElementById("querybool");
+				var result = e.options[e.selectedIndex].value;
+
+				document.getElementById("query").value = document.getElementById("query").value + result;
+			}
+			</script>
+
+
 				
+				{*Autorensuche*}
 				<div class="col-md-5">
 					<div class="form-group">
 						<label for="authors">
@@ -137,63 +143,44 @@
 						</label>
 						<div class="input-group">
 						<span class="input-group-btn">
-						<input class="form-control" type="text" for="authors" name="authors" onfocus="this.value=''" value="{$authors|escape}" placeholder="{translate key="common.search"}">
+						<input class="form-control" type="text" id="authors" for="authors" name="authors"  value="{$authors|escape}" placeholder="{translate key="common.search"}">
 						{*<input type="submit" value="{translate key="common.search"}" class="btn btn-info">*}
 						</span>
 						</div>
 					</div>
 					
+
 					
-					{*Rubriken Suche*}
+					{*Rubrikensuche*}
 					<div class="form-group">
-						<div {*title="freie Rubrikensuche, muss mit einer Autoren- oder Freitextsuche kombiniert werden"*}>
-						</div>
-						<label for="section">
+					
+					<label for="section">
 					{*Rubriken Suche aufklappbar*}
 					<div class="form-group">
-					 	<label for="sections">Nach Rubrik</label>
-						 <span title="Muss mit einer Autoren- oder Freitextsuche kombiniert werden">
-							<i class="fas fa-info-circle"></i>
-						</span>
-					 	<select id="sections" class="form-control" for="section" name="section">
-						<option value="" selected>Alle</option>    {*value= für Alle wird als leer übergeben, da in der result Schleife abgefragt wird, ob eine section Abfrage vorhanden ist - value ist also lehr und es werden alle Artikel*}
-						<option value="Kongressbeiträge">Kongressbeiträge</option>
-						<option value="Aufsätze">Aufsätze</option>
-						<option value="Tagungsberichte">Tagungsberichte</option>
-						<option value="Berichte und Mitteilungen">Berichte und Mitteilungen</option>
-						<option value="Diskussionsbeiträge">Diskussionsbeiträge</option>
-						<option value="Rezensionen">Rezensionen</option>
-						<option value="Aus den Landes- und Regionalverbänden des VDB">Landes- und Regionalverbänden VDB</option>
-						 {* Es ist wichtig den value= genau so anzugeben, wie der richtige Rubrikenname lautet*}
-						 </select>
-					</div>
-					{*{translate key="search.section"}*} {*Der key dient nur für die Übersetzung*} 
-						{*
-						Nach Rubrik
-						</label>
-						<div class="input-group">
-						<input class="form-control" type="text" for="section" name="section" onfocus="this.value=''" value="{$section|escape}" placeholder="{translate key="common.search"}">
-						<span class="input-group-btn">
-						<input type="submit" value="{translate key="common.search"}" class="btn btn-info">
-						</span>
-						</div>
-					</div>*}
+					<label for="sections">Nach Rubrik</label>
+					<span title="Muss mit einer Autoren- oder Freitextsuche kombiniert werden"><i class="fas fa-info-circle"></i></span>
+					<select id="sections" class="form-control" for="section" name="section">
+					<option value="" selected>Alle</option>{*value= für Alle wird als leer übergeben, da in der result Schleife abgefragt wird, ob eine section Abfrage vorhanden ist - value ist also lehr und es werden alle Artikel*}
+					<option value="Kongressbeiträge">Kongressbeiträge</option>
+					<option value="Aufsätze">Aufsätze</option>
+					<option value="Tagungsberichte">Tagungsberichte</option>
+					<option value="Berichte und Mitteilungen">Berichte und Mitteilungen</option>
+					<option value="Diskussionsbeiträge">Diskussionsbeiträge</option>
+					<option value="Rezensionen">Rezensionen</option>
+					<option value="Aus den Landes- und Regionalverbänden des VDB">Landes- und Regionalverbänden VDB</option>
+					{* Es ist wichtig den value= genau so anzugeben, wie der richtige Rubrikenname lautet*}</select></div>
+					
+		
 										
 				</div>	
 			</div>
-			<div class="text-center"> {* ob mittig oder rechts ist einfach geschmackssache, müssen wir uns auf eine Variante einigen *}
+			{*Suchbutton*}
+			<div class="text-center">
 					<input type="submit" value="{translate key="common.search"}" class="btn btn-info">
 			</div>
+
 		</fieldset>
 	
- 		
-		
-		
-		
-		 {* {$section|@print_r:true}
-		{$authors|@print_r:true} 
-		{$query|@print_r:true} *}
-		
 		{* Search results *}
 		<div class="search-results">
 			<h2>
@@ -210,14 +197,11 @@
 					{assign var='zahler' value=$zahler+1}	{* hier wird die Anzahl an Suchergebnissen mit Rurbiken für die Trefferanzahl am Ende der Seite gezählt *}
 
 					{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission showDatePublished=true hideGalleys=true}
-					<span class="btn btn-danger">Rubrik: {$rubrik} </span>
 					{* so steht die Rubrik unter dem Aufsatz, da sie nicht mit article_summary übermittelt wird *}
 					{/if}
 				{else}		
 					{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission showDatePublished=true hideGalleys=true}
-					<span class="btn btn-info">Rubrik: {$rubrik} </span>
 				{/if}
-				
 			{/iterate}
 			
 		</div>
