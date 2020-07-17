@@ -73,7 +73,7 @@
 			{/if}
 		{/foreach}
         
-		{$rubrik}		{* Variable muss außerhalb der Schleife aufgerufen werden, damit die Rubrik auch in der Suche angezeigt wird *}
+		{$rubrik}		{* Variable muss außerhalb der Schleife aufgerufen werden, damit die Rubrik auch in der erweiterten Suche angezeigt wird *}
 
 		{* Rubrikenanzeige Ende *}
 		
