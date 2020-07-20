@@ -121,17 +121,17 @@
 			<script>
 			// Autorensuche
 			function GetSelectedValueAuthor(){
-				var e = document.getElementById("authorbool");  //Dropdown mit der richtigen ID wird ausgewählt
-				var result = e.options[e.selectedIndex].value;  //Ergebnisswert wird definiert, der value der options hier also UND,NICHT,ODER
+				var dropdown_author = document.getElementById("authorbool");  //Dropdown mit der richtigen ID wird ausgewählt
+				var selected_operator = dropdown_author.options[dropdown_author.selectedIndex].value;  //Ergebnisswert wird definiert, der value der options hier also UND,NICHT,ODER
 
-				document.getElementById("authors").value = document.getElementById("authors").value + result; //Inputsuchschlitz mit der richtigen ID wird ausgewählt, der dortige Value wird übernommen und result wird drangehängt, das ganze wird wieder abgespeichert, damit man mehrere results (boolesche Operatoren) miteinander verknüpfen kann
+				document.getElementById("authors").value = document.getElementById("authors").value + selected_operator; //Inputsuchschlitz mit der richtigen ID wird ausgewählt, der dortige Value wird übernommen und result wird drangehängt, das ganze wird wieder abgespeichert, damit man mehrere results (boolesche Operatoren) miteinander verknüpfen kann
 			}
 			// Volltextsuche
 			function GetSelectedValueQuery(){
-				var e = document.getElementById("querybool");
-				var result = e.options[e.selectedIndex].value;
+				var dropdown_search = document.getElementById("querybool");
+				var selected_operator = dropdown_search.options[dropdown_search.selectedIndex].value;
 
-				document.getElementById("query").value = document.getElementById("query").value + result;
+				document.getElementById("query").value = document.getElementById("query").value + selected_operator;
 			}
 			</script>
 
