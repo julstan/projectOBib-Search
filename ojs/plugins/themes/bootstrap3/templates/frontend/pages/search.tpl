@@ -30,6 +30,7 @@
 	<div class="col-md-2">
 					<div class="form-group">
 					 	<select id="querybool" class="form-control" for="operator" name="operator" onchange="GetSelectedValueQuery()">
+						<option value="" selected ></option>
 						<option value=" UND " >UND</option>
 						<option value=" ODER " >ODER</option>
 						<option value=" NICHT ">NICHT</option>
@@ -107,6 +108,7 @@
 					<div class="form-group">
 						<label class="invisible">1</label>
 					 	<select id="authorbool" class="form-control" for="operator" name="operator" onchange="GetSelectedValueAuthor()">
+						<option value="" selected ></option>
 						<option value=" UND " >UND</option>
 						<option value=" ODER " >ODER</option>
 						<option value=" NICHT ">NICHT</option>
