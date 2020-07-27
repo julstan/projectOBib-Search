@@ -81,9 +81,12 @@
 						<label for="dateFromYear">
 							{translate key="search.dateFrom"}
 						</label>
+						
+						{*Info-Icon*}
 						<span title="Muss mit einer Autoren- oder Freitextsuche kombiniert werden">
 							<i class="fas fa-info-circle"></i>
 						</span>
+
 						<div class="form-inline">
 							<div class="form-group">
 								{html_select_date prefix="dateFrom" time=$dateFrom start_year=$yearStart end_year=$yearEnd year_empty="" month_empty="" day_empty="" field_order="YMD"}
@@ -160,7 +163,12 @@
 					{*Rubrikensuche aufklappbar*}
 					<div class="form-group">
 					<label for="sections">Nach Rubrik</label>
-					<span title="Muss mit einer Autoren- oder Freitextsuche kombiniert werden"><i class="fas fa-info-circle"></i></span>
+
+					{*Info-Icon*}
+					<span title="Muss mit einer Autoren- oder Freitextsuche kombiniert werden">
+					<i class="fas fa-info-circle"></i>
+					</span>
+					
 					<select id="sections" class="form-control" for="section" name="section">
 					<option value="" selected>Alle</option>{*value= für Alle wird als leer übergeben, da in der result Schleife abgefragt wird, ob eine section Abfrage vorhanden ist - value ist also lehr und es werden alle Artikel*}
 					<option value="Kongressbeiträge">Kongressbeiträge</option>
