@@ -142,7 +142,7 @@
 			
 			{* vom aktuellen Datum (heute) 28 Tage subtrahieren *}
 			{assign var='zielTag' value=$tagDatumHeute-28}		{* funktioniert nur bei maximal 28 Tagen *}
-
+			
 			{* wenn die Zahl des zielTag kleiner als 1 ist, liegt das maximale Zieldatum im vorherigen Monat *}
 			{if $zielTag < 1}
 				{* überprüfen ob im Moment Januar ist *}
@@ -164,10 +164,16 @@
 						{/if}
 					{/foreach}
 				{/if}
+
+			{* wenn der Tag des aktuellen Datums > 28, dann müssen wir nicht in den letzten Monat zurück *}
+			{else}
+				{assign var="zielMonat" value=$monatDatumHeute}
+				{assign var="zielJahr" value=$jahrDatumHeute}
 			{/if}
 
 			{* prüfen ob Neu-Label angezeigt werden muss oder nicht *}
 			{* ausschließen welche Artikel vom Veröffentlichungsjahr her kein New-Label bekommen *}
+			
 			{if $jahrArtikel >= $zielJahr}
 				{* wenn der Artikel im aktuellen Monat veröffentlicht wurde, wird ein New-Label angezeigt *}
                 {if $monatArtikel > $zielMonat}
