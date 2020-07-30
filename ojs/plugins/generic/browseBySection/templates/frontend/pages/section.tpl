@@ -22,10 +22,12 @@
 {include file="frontend/components/header.tpl" pageTitleTranslated=$section->getLocalizedTitle()|escape}
 {include file="frontend/components/breadcrumbs.tpl" currentTitle=$section->getLocalizedTitle()|escape}
 <div class="page page_section page_section_{$sectionPath|escape}">
+
 	<h1 class="page_title">
 		{$section->getLocalizedTitle()|escape}
 	</h1>
-
+	<hr>  {* Trennlinie hinzugefügt *}
+	
 	<div class="section_description">
 		{$sectionDescription|strip_unsafe_html}
 	</div>
@@ -36,7 +38,7 @@
 				
 					{* TODO remove section=null workaround. article_summary.tpl expects a specific section array. See issue_toc.tpl. *}
 					{include file="frontend/objects/article_summary.tpl" section=null showDatePublished=true hideGalleys=true}
-			
+					<hr>  {* Trennlinie hinzugefügt *}
 			{/foreach}
 		</div>
 

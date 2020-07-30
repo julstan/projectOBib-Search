@@ -25,11 +25,13 @@
 	</div>
 
 	{* Main Search From *}
-	<div class="row">
+<div class="row">
 	
-	<div class="col-md-2">
+	<div class="col-md-2"> {* Bootstrap Grid-System Styling *}
+
+					{* Volltextsuche Boolesche Operatoren *}
 					<div class="form-group">
-					 	<select id="querybool" class="form-control" for="operator" name="operator" onchange="GetSelectedValueQuery()">
+					 	<select id="querybool" class="form-control" for="operator" name="operator" onchange="GetSelectedValueQuery()"> {* hier JS-Funktion für Boolesche Operatoren *}
 						<option value="" selected ></option>
 						<option value=" UND " >UND</option>
 						<option value=" ODER " >ODER</option>
@@ -37,7 +39,10 @@
 						 </select>
 					</div>
 	</div>
-	<div class="col-md-10">
+
+
+	{* Volltextsuche *}
+	<div class="col-md-10"> {* Bootstrap Grid-System Styling *}
 	<form method="post" id="search-form" class="search-form" action="{url op="search"}" role="search">
 		{csrf}
 		<div class="form-group">
@@ -50,16 +55,21 @@
 				</span>
 			</div>
 		</div>
-		</div>
 	</div>
+
+
+</div>
+
+		{*Suchhinweise Collapse-Button*}
 		<div class="text-center">
 		<button class="btn btn-light " type="button" data-toggle="collapse" data-target="#collapseHinweise" aria-expanded="false" aria-controls="collapseHinweise">
-					Suchhinweise <i class="fas fa-chevron-down"></i>
-  					</button> 
+					Suchhinweise <i class="fas fa-chevron-down"></i> {*Pfeil-Icon nach unten "v" *}
+  		</button> 
 					  </div>
 		<div class="collapse" id="collapseHinweise">
   		<div class="card card-body">
 		<ul>
+		{* Suchhinweise Text deutsch *}
    		<li>Groß- und Kleinschreibung der Suchbegriffe werden nicht unterschieden.</li>
 		<li>Häufig vorkommende Worte werden ignoriert</li>
 		<li>Standardmäßig werden nur die Artikel aufgelistet, die <em>alle</em> Suchbegriffe enthalten (implizites <em>UND</em>).</li>
@@ -71,17 +81,21 @@
 		</ul>
 		</div>
 		</div>
+		
+		{* Filter der Erweiterten Suche *}
 		<fieldset class="search-advanced">
 			<legend>
 				{translate key="search.advancedFilters"}
 			</legend>
 			<div class="row">
+
+				{* Zeitraumfilter *}
 				<div class="col-md-5">
 					<div class="form-group">
 						<label for="dateFromYear">
 							{translate key="search.dateFrom"}
 						</label>
-						
+
 						{*Info-Icon*}
 						<span title="Muss mit einer Autoren- oder Freitextsuche kombiniert werden">
 							<i class="fas fa-info-circle"></i>
@@ -107,10 +121,10 @@
 				
 		
 				{*Autorensuche Boolesche Operatoren*}
-				<div class="col-md-2">
+				<div class="col-md-2"> {* Bootstrap Grid-System Styling *}
 					<div class="form-group">
 						<label class="invisible">1</label>
-					 	<select id="authorbool" class="form-control" for="operator" name="operator" onchange="GetSelectedValueAuthor()">
+					 	<select id="authorbool" class="form-control" for="operator" name="operator" onchange="GetSelectedValueAuthor()"> {* hier JS-Funktion für Boolesche Operatoren *}
 						<option value="" selected ></option>
 						<option value=" UND " >UND</option>
 						<option value=" ODER " >ODER</option>
@@ -119,27 +133,6 @@
 					</div>
 				</div>
 
-
-            {* Javascript Code*}
-			<script>
-			// Autorensuche
-			function GetSelectedValueAuthor(){
-				var dropdown_author = document.getElementById("authorbool");  //Dropdown mit der richtigen ID wird ausgewählt
-				var selected_operator = dropdown_author.options[dropdown_author.selectedIndex].value;  //Ergebnisswert wird definiert, der value der options hier also UND,NICHT,ODER
-
-				document.getElementById("authors").value = document.getElementById("authors").value + selected_operator; //Inputsuchschlitz mit der richtigen ID wird ausgewählt, der dortige Value wird übernommen und result wird drangehängt, das ganze wird wieder abgespeichert, damit man mehrere results (boolesche Operatoren) miteinander verknüpfen kann
-			}
-			// Volltextsuche
-			function GetSelectedValueQuery(){
-				var dropdown_search = document.getElementById("querybool");
-				var selected_operator = dropdown_search.options[dropdown_search.selectedIndex].value;
-
-				document.getElementById("query").value = document.getElementById("query").value + selected_operator;
-			}
-			</script>
-
-
-				
 				{*Autorensuche*}
 				<div class="col-md-5">
 					<div class="form-group">
@@ -148,13 +141,11 @@
 						</label>
 						<div class="input-group">
 						<span class="input-group-btn">
-						<input class="form-control" type="text" id="authors" for="authors" name="authors"  value="{$authors|escape}" placeholder="{translate key="common.search"}">
+						<input class="form-control" type="text" id="authors" for="authors" name="authors"  value="{$authors|escape}" placeholder="{translate key="common.search"}"> {* Platzhalter "Suchen/Search" eingefügt vgl. Volltextsuche*}
 						{*<input type="submit" value="{translate key="common.search"}" class="btn btn-info">*}
 						</span>
 						</div>
 					</div>
-					
-
 					
 					{*Rubrikensuche*}
 					<div class="form-group">
@@ -184,9 +175,10 @@
 										
 				</div>	
 			</div>
-			{*Suchbutton*}
+			
+			{*Suchbutton um die Suche auszuführen*}
 			<div class="text-center">
-					<input type="submit" value="{translate key="common.search"}" class="btn btn-info">
+				<input type="submit" value="{translate key="common.search"}" class="btn btn-info">
 			</div>
 
 		</fieldset>
@@ -262,9 +254,31 @@
 	</form>
 	
 		
-</div><!-- .page -->
+</div> <!-- .page -->
 
-{* Interessante Einbindung von Fontawesome :^) *}
+
+{* Javascript Code -------------------------------------*}
+<script>
+
+// Boolesche Operatoren Funktion Volltextsuche
+function GetSelectedValueQuery(){
+var dropdown_search = document.getElementById("querybool");
+var selected_operator = dropdown_search.options[dropdown_search.selectedIndex].value;
+
+document.getElementById("query").value = document.getElementById("query").value + selected_operator;
+}
+
+// Boolesche Operatoren Funktion Autorensuche
+function GetSelectedValueAuthor(){
+var dropdown_author = document.getElementById("authorbool");  //Dropdown mit der richtigen ID wird ausgewählt
+var selected_operator = dropdown_author.options[dropdown_author.selectedIndex].value;  //Ergebnisswert wird definiert, der value der options hier also UND,NICHT,ODER
+
+document.getElementById("authors").value = document.getElementById("authors").value + selected_operator; //Inputsuchschlitz mit der richtigen ID wird ausgewählt, der dortige Value wird übernommen und result wird drangehängt, das ganze wird wieder abgespeichert, damit man mehrere results (boolesche Operatoren) miteinander verknüpfen kann
+}
+
+</script>
+
+{* Einbindung von Fontawesome für die Icons (Info und Pfeil)*}
 <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" data-auto-replace-svg="nest"></script>
 
 {include file="common/frontend/footer.tpl"}

@@ -44,4 +44,7 @@
 			{$issueDescription|strip_unsafe_html|nl2br}
 		</div>
 	</div>
+
+	<hr>  {* Trennlinie hinzugefügt *}
+	
 </div><!-- .issue-summary -->
