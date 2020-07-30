@@ -32,7 +32,7 @@
 					{* Volltextsuche Boolesche Operatoren *}
 					<div class="form-group">
 					 	<select id="querybool" class="form-control" for="operator" name="operator" onchange="GetSelectedValueQuery()"> {* hier JS-Funktion für Boolesche Operatoren *}
-						<option value="" selected ></option>
+						<option value="" selected ></option> {* Standardeinstellung leerer value *}
 						<option value=" UND " >UND</option>
 						<option value=" ODER " >ODER</option>
 						<option value=" NICHT ">NICHT</option>
@@ -125,7 +125,7 @@
 					<div class="form-group">
 						<label class="invisible">1</label>
 					 	<select id="authorbool" class="form-control" for="operator" name="operator" onchange="GetSelectedValueAuthor()"> {* hier JS-Funktion für Boolesche Operatoren *}
-						<option value="" selected ></option>
+						<option value="" selected ></option> {* Standardeinstellung leerer value *}
 						<option value=" UND " >UND</option>
 						<option value=" ODER " >ODER</option>
 						<option value=" NICHT ">NICHT</option>
@@ -161,7 +161,7 @@
 					</span>
 					
 					<select id="sections" class="form-control" for="section" name="section">
-					<option value="" selected>Alle</option>{*value= für Alle wird als leer übergeben, da in der result Schleife abgefragt wird, ob eine section Abfrage vorhanden ist - value ist also lehr und es werden alle Artikel*}
+					<option value="" selected>Alle</option>{* Alle muss einen leeren value haben *}
 					<option value="Kongressbeiträge">Kongressbeiträge</option>
 					<option value="Aufsätze">Aufsätze</option>
 					<option value="Tagungsberichte">Tagungsberichte</option>
