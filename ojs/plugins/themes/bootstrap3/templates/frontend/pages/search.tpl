@@ -9,6 +9,7 @@
  *
  * @uses $query Value of the primary search query
  * @uses $authors Value of the authors search filter
+---------$section Value for the section search filter (dropdown)---------------
  * @uses $dateFrom Value of the date from search filter (published after).
  *  Value is a single string: YYYY-MM-DD HH:MM:SS
  * @uses $dateTo Value of the date to search filter (published before).
@@ -147,20 +148,18 @@
 						</div>
 					</div>
 					
-					{*Rubrikensuche*}
+					{*Rubrikenfilter Dropdown*}
 					<div class="form-group">
-					
-					<label for="section">
-					{*Rubrikensuche aufklappbar*}
+				
 					<div class="form-group">
-					<label for="sections">Nach Rubrik</label>
+					<label for="section">Nach Rubrik</label>
 
 					{*Info-Icon*}
 					<span title="Muss mit einer Autoren- oder Freitextsuche kombiniert werden">
 					<i class="fas fa-info-circle"></i>
 					</span>
 					
-					<select id="sections" class="form-control" for="section" name="section">
+					<select id="section" class="form-control" for="section" name="section">
 					<option value="" selected>Alle</option>{* Alle muss einen leeren value haben *}
 					<option value="Kongressbeiträge">Kongressbeiträge</option>
 					<option value="Aufsätze">Aufsätze</option>
@@ -188,27 +187,38 @@
 			<h2>
 				{translate key="search.searchResults"}
 			</h2>
-			{assign var='zahler' value=0}
+			{*Zähler-Variable, die die Ergebisse zählt, 
+			-- wichtig für die Trefferanzeige bei der Suche mit dem Rubrikenfilter*}
+			{assign var='zahler' value=0}  
 
 			{iterate from=results item=result}
-				{foreach from=$result item=item}
-					{assign var='rubrik' value=$item->_data.title.de_DE}
-				{/foreach}
-				{if $section}
-					{if $rubrik==$section} {*hier wird überprüft ob section mit einer der ergebnisrubriken überenstimmt*}
-					{assign var='zahler' value=$zahler+1}	{* hier wird die Anzahl an Suchergebnissen mit Rurbiken für die Trefferanzahl am Ende der Seite gezählt *}
 
+				{* $rubrik = Variable für die Rubriken in den Suchergebnissen:
+				Diese wird später mit der gesuchten Rubrik ($section) verglichen, 
+				damit nur Artikel in den Suchergebnissen stehen, 
+				die die gleiche Rubrik ($rubrik) haben wie die gesuchte Rubrik ($section) *}
+				
+				{foreach from=$result item=item} {*für alle Suchergebnisse wird $rubrik definiert*}
+					{assign var='rubrik' value=$item->_data.title.de_DE} {*hier wird der Wert für die Variable aus dem result Array entnommen*}
+				{/foreach}
+
+				{*Anzeige der Suchergebnisse bei Benutzung des Rubrikenfilters*}
+				{if $section}
+					{if $rubrik==$section} {*hier wird überprüft ob $section mit einer Ergebnisrubrik ($rubrik) übereinstimmt*}
+					{assign var='zahler' value=$zahler+1}	{* hier werden die Suchergebnisse für die Trefferanzahl am Ende der Seite gezählt *}
+					
+					{*Ausgabe der Suchergebnisse nach Rubrikenfilterung*}
 					{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission showDatePublished=true hideGalleys=true}
-					{* so steht die Rubrik unter dem Aufsatz, da sie nicht mit article_summary übermittelt wird *}
 					{/if}
-				{else}		
+				{else}	
+
+				{*Anzeige der Suchergebnisse ohne den Rubrikenfilter*}
 					{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission showDatePublished=true hideGalleys=true}
 				{/if}
 			{/iterate}
 			
 		</div>
 	
-
 		{* No results found *}
 		{if $results->wasEmpty()}
 			{if $error}
@@ -219,38 +229,29 @@
 			{/if}
 
 		{*Verbesserung der Trefferanzeige*}
-
 		{* Results pagination *}
 		{else}
 			<div class="cmp_pagination">
-			{if !$section}	{* Trefferanzahl bei einer Suche ohne Rubriken*}
-				{page_info iterator=$results}	{* Hier wird die Trefferanzahl-Ausgabe generiert/dieser Code ist dafür zuständig *}
+			
+			{* Trefferanzahl bei einer Suche ohne Rubrikenfilter *}
+			{if !$section}	
+				{page_info iterator=$results}	{* Hier wird die Trefferanzahl-Ausgabe erzeugt *}
 				{page_links anchor="results" iterator=$results name="search" query=$query searchJournal=$searchJournal authors=$authors title=$title abstract=$abstract galleyFullText=$galleyFullText discipline=$discipline subject=$subject type=$type coverage=$coverage indexTerms=$indexTerms dateFromMonth=$dateFromMonth dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateToMonth=$dateToMonth dateToDay=$dateToDay dateToYear=$dateToYear orderBy=$orderBy orderDir=$orderDir}
+				
+				{*die beiden Kommentare unten müssen noch gelöscht werden? 02.08.2020 --Patty*}
+
 				{* Hier rubrik=$rubrik und section=$section eingefügt, hat die Trefferanzeige nicht beeinflusst*}
 				{*$results ist hier anders als im Rest des Codes - es ist die Trefferanzahl insgesammt und Informationen für die Pagination enthalten*}
-		
-			{elseif $section}			{* Trefferanzahl Code bei einer Rurbikensuche *}
-				
-				{* <p>hier zähler: {$zahler}</p>		Ausgabe der Trefferanzahl der Rubriken als Kontrolle *}
-				{$results['count']=$zahler}			{* die Trefferanzahl in $results wird verändert *}
-				{*page_info iterator=$results*}		{* eigentlich Ausgabe der Trefferanzahl, funktioniert immoment nch nicht *}
-				<p>1 - {$zahler} von {$zahler} Treffern</p>									{* es funktioniert noch nicht mit einer Veränderung von $results *}
-				
-			{/if}
+			
+			{* Trefferanzahl mit Rubrikenfilter *}
+			{elseif $section} 	
 
+				{$results['count']=$zahler}	{* die Trefferanzahl in $results wird verändert *}
+				<p>1 - {$zahler} von {$zahler} Treffern</p>	
+				{* Ausgabe des Textes, hier fest in deutsch *}
+			{/if}
 			</div>
 		{/if}
-					
-					
-	{*ursprünglicher Code für die Trefferzählung:*}
-		{*{else}
-			<div class="cmp_pagination">
-			{if !$section}
-				{page_info iterator=$results}
-				{page_links anchor="results" iterator=$results name="search" query=$query searchJournal=$searchJournal authors=$authors title=$title abstract=$abstract galleyFullText=$galleyFullText discipline=$discipline subject=$subject type=$type coverage=$coverage indexTerms=$indexTerms dateFromMonth=$dateFromMonth dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateToMonth=$dateToMonth dateToDay=$dateToDay dateToYear=$dateToYear orderBy=$orderBy orderDir=$orderDir}
-			{/if}	*}
-
-			
 	</form>
 	
 		
@@ -260,7 +261,7 @@
 {* Javascript Code -------------------------------------*}
 <script>
 
-// Boolesche Operatoren Funktion Volltextsuche
+// Boolesche Operatoren Funktion -- Volltextsuche
 function GetSelectedValueQuery(){
 var dropdown_search = document.getElementById("querybool");
 var selected_operator = dropdown_search.options[dropdown_search.selectedIndex].value;
@@ -268,17 +269,19 @@ var selected_operator = dropdown_search.options[dropdown_search.selectedIndex].v
 document.getElementById("query").value = document.getElementById("query").value + selected_operator;
 }
 
-// Boolesche Operatoren Funktion Autorensuche
+// Boolesche Operatoren Funktion -- Autorensuche
 function GetSelectedValueAuthor(){
 var dropdown_author = document.getElementById("authorbool");  //Dropdown mit der richtigen ID wird ausgewählt
 var selected_operator = dropdown_author.options[dropdown_author.selectedIndex].value;  //Ergebnisswert wird definiert, der value der options hier also UND,NICHT,ODER
 
-document.getElementById("authors").value = document.getElementById("authors").value + selected_operator; //Inputsuchschlitz mit der richtigen ID wird ausgewählt, der dortige Value wird übernommen und result wird drangehängt, das ganze wird wieder abgespeichert, damit man mehrere results (boolesche Operatoren) miteinander verknüpfen kann
+document.getElementById("authors").value = document.getElementById("authors").value + selected_operator; 
+//Inputsuchschlitz mit der richtigen ID wird ausgewählt, der dortige Value wird übernommen und result wird drangehängt, 
+//das ganze wird wieder abgespeichert, damit man mehrere results (boolesche Operatoren) miteinander verknüpfen kann
 }
 
 </script>
 
-{* Einbindung von Fontawesome für die Icons (Info und Pfeil)*}
+{* Einbindung des Fontawesome-Pakets für die Icon-Symbole (Info und Pfeil)*}
 <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" data-auto-replace-svg="nest"></script>
 
 {include file="common/frontend/footer.tpl"}
