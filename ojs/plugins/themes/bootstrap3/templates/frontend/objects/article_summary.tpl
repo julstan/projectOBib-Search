@@ -77,7 +77,7 @@
 
 		{* Rubrikenanzeige Ende *}
 		
-		{* hier Veroffentlicht*}
+		{* hier Anzeige des Veröffentlichungsdatums*}
 
 		{if $article->getDatePublished()}
 			<p class="published">
@@ -88,7 +88,8 @@
 
 		{if $showAuthor || $article->getPages()}
 
-			{if $showAuthor}	{* dieser Abschnitt ist für die ANzeige der Autorennamen zuständig *}
+			{* hier Anzeige Autorenname *}
+			{if $showAuthor}	
 				<div class="meta">
 					{if $showAuthor}
 						<div class="authors">
