@@ -243,8 +243,6 @@
 			
 			{* Trefferanzahl mit Rubrikenfilter *}
 			{elseif $section} 	
-
-				{$results['count']=$zahler}	{* die Trefferanzahl in $results wird verändert *}
 				<p>1 - {$zahler} von {$zahler} Treffern</p>	
 				{* Ausgabe des Textes, hier fest in deutsch *}
 			{/if}
