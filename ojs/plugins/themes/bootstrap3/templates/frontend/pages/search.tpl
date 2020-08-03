@@ -212,7 +212,7 @@
 					{/if}
 				{else}	
 
-				{*Anzeige der Suchergebnisse ohne den Rubrikenfilter*}
+					{*Anzeige der Suchergebnisse ohne den Rubrikenfilter*}
 					{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission showDatePublished=true hideGalleys=true}
 				{/if}
 			{/iterate}
@@ -224,7 +224,7 @@
 			{if $error}
 				{include file="frontend/components/notification.tpl" type="error" message=$error|escape}
 			{else}
-				{* {$results|@print_r:true}  *} {*VirtualArrayIterator Object*}
+				{* $results ist ein VirtualArrayIterator Object es kann wie ein normales Array behandelt werden *}
 				{include file="frontend/components/notification.tpl" type="notice" messageKey="search.noResults"}
 			{/if}
 
@@ -238,10 +238,8 @@
 				{page_info iterator=$results}	{* Hier wird die Trefferanzahl-Ausgabe erzeugt *}
 				{page_links anchor="results" iterator=$results name="search" query=$query searchJournal=$searchJournal authors=$authors title=$title abstract=$abstract galleyFullText=$galleyFullText discipline=$discipline subject=$subject type=$type coverage=$coverage indexTerms=$indexTerms dateFromMonth=$dateFromMonth dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateToMonth=$dateToMonth dateToDay=$dateToDay dateToYear=$dateToYear orderBy=$orderBy orderDir=$orderDir}
 				
-				{*die beiden Kommentare unten müssen noch gelöscht werden? 02.08.2020 --Patty*}
-
-				{* Hier rubrik=$rubrik und section=$section eingefügt, hat die Trefferanzeige nicht beeinflusst*}
-				{*$results ist hier anders als im Rest des Codes - es ist die Trefferanzahl insgesammt und Informationen für die Pagination enthalten*}
+		
+				{*$results ist hier anders als im Rest des Codes - es sind die Trefferanzahl insgesammt und Informationen für die Pagination enthalten*}
 			
 			{* Trefferanzahl mit Rubrikenfilter *}
 			{elseif $section} 	
